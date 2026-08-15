@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Finder / tools intermediate output (regenerated locally)
+finder_state.json
+config.generated.ini
+winner.txt
+pp.txt
+pointer_chains.txt
+pointer_final.txt
+areaid_winner.txt
+camera_winner.txt
+maps_dump.txt

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>DS2 Radar 3D</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#080a0f;font-family:Consolas,monospace;color:#cfe0ff}
+  #hud{position:fixed;left:12px;top:10px;font-size:13px;line-height:1.6;background:rgba(9,12,18,.94);
+       border:1px solid #26344a;border-radius:8px;padding:8px 12px;z-index:2}
+  #hud b{color:#3fd07f}
+  #st{position:fixed;right:12px;top:10px;font-size:12px;background:rgba(9,12,18,.94);border:1px solid #26344a;border-radius:8px;padding:6px 10px;z-index:2}
+  .on{color:#3fd07f}.off{color:#ff6b6b}
+  #areapanel{position:fixed;left:50%;top:10px;transform:translateX(-50%);z-index:2;background:rgba(9,12,18,.94);border:1px solid #26344a;border-radius:8px;padding:6px 10px}
+  #area,#mode,#listbtn{background:#16202e;color:#cfe0ff;border:1px solid #26344a;border-radius:6px;padding:5px 9px;font:inherit;max-width:360px;cursor:pointer}
+  #mode{max-width:220px} #verwrap{color:#cfe0ff}
+  #arealist{position:fixed;left:12px;top:150px;z-index:3;background:rgba(9,12,18,.96);border:1px solid #26344a;border-radius:8px;padding:6px 8px;max-height:66vh;overflow:auto;font-size:12px;display:none;min-width:250px}
+  #arealist .alh{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:bold;color:#9fd0ff;margin-bottom:5px;position:sticky;top:0}
+  #arealist .alr{display:flex;align-items:center;gap:6px;padding:2px 0}
+  #arealist .alr span{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px;color:#cfe0ff}
+  #arealist button{background:#243b55;color:#cfe0ff;border:1px solid #26344a;border-radius:5px;font:inherit;font-size:11px;cursor:pointer;padding:2px 7px}
+  #arealist .iso{background:#3a2b55}
+  /* chips de estado (rodape) */
+  #chips{position:fixed;left:12px;bottom:10px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;max-width:74vw}
+  .chip{background:#0e1420;border:1px solid #2a3547;color:#8ea3c0;border-radius:16px;padding:5px 11px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap;user-select:none}
+  .chip b{font-weight:bold}
+  .chip .k{opacity:.6;font-size:10px;border:1px solid currentColor;border-radius:4px;padding:0 4px;margin-left:5px}
+  .chip.on{background:rgba(63,208,127,.16);border-color:#3fd07f;color:#7dffb0}
+  .chip.off{color:#5f6f88}
+  .chip.neutral{background:#16233c;border-color:#3a5480;color:#bcd4ff}
+  .chip.action{background:#241a30;border-color:#7a5aa0;color:#d8bfff}
+  #helpbtn{position:fixed;right:12px;bottom:10px;z-index:5;background:#0e1420;border:1px solid #2a3547;color:#9fb0cc;border-radius:16px;padding:5px 12px;font:inherit;font-size:12px;cursor:pointer}
+  #help{position:fixed;right:12px;bottom:44px;z-index:5;display:none;background:rgba(9,12,18,.97);border:1px solid #2a3547;border-radius:10px;padding:10px 14px;font-size:12px;color:#aebbd0;max-width:540px;line-height:1.8}
+  #help b{color:#cfe0ff} #help .sec{color:#6f7f98;text-transform:uppercase;font-size:10px;letter-spacing:.5px}
+  #noclip{position:fixed;left:50%;bottom:48px;transform:translateX(-50%);z-index:4;display:none;
+    background:#0c1a12;border:1px solid #3fd07f;color:#8affb0;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:bold}
+  #camlock{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);z-index:4;display:none;
+    background:#0c1424;border:1px solid #7fa7ff;color:#bcd4ff;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:bold;white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="hud">DS2 Radar 3D<br><span id="coords">—</span><br><span id="meta"></span><br><span id="adbg" style="color:#7fd0ff"></span><br><span id="camdbg" style="color:#bcd4ff"></span></div>
+<div id="st">connecting…</div>
+<div id="areapanel">Mode:
+  <select id="mode">
+    <option value="dinamico">Dynamic (load/unload)</option>
+    <option value="inteiro">Whole world (all)</option>
+  </select>
+  <span id="verwrap">&nbsp; <label style="cursor:pointer"><input type="checkbox" id="addon"> additional content</label></span>
+  <span id="areanav" style="display:none">&nbsp; Go to area: <select id="area"><option>loading…</option></select>
+  &nbsp; <button id="listbtn">Areas ▾</button></span></div>
+<div id="arealist"></div>
+<div id="noclip">✈ NOCLIP · WASD/QE move · Shift faster · mouse look · scroll speed · N exit</div>
+<div id="chips"></div>
+<button id="helpbtn">? shortcuts</button>
+<div id="help">
+  <div class="sec">Camera</div>
+  left-drag: <b>orbit</b> · right/middle-drag or Shift+left: <b>pan</b> · scroll: <b>zoom</b><br>
+  <b>F</b> follow player · <b>L</b> align to movement · <b>N</b> noclip (fly: WASD/QE, Shift faster) · <b>M</b> mode dynamic/whole<br>
+  <div class="sec">Align to movement (L)</div>
+  <b>K</b> flip direction · <b>,</b> / <b>.</b> adjust offset<br>
+  <div class="sec">Player / trail</div>
+  <b>T</b> trail on/off · <b>[</b> / <b>]</b> dot size<br>
+  <div class="sec">Position calibration (advanced)</div>
+  arrows: move X/Z · PgUp/PgDn: height · <b>X</b>/<b>Z</b>: flip axis · <b>V</b>: swap XZ · <b>R</b>: reset (Shift = bigger step)
+</div>
+<script src="three.min.js"></script>
+<script>
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0x080a0f);
+const camera=new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 5000);
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth,innerHeight); renderer.setPixelRatio(devicePixelRatio); document.body.appendChild(renderer.domElement);
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+
+// luzes + grelha
+scene.add(new THREE.AmbientLight(0x8090b0, 0.9));
+const dl=new THREE.DirectionalLight(0xffffff, 0.8); dl.position.set(80,160,60); scene.add(dl);
+const dl2=new THREE.DirectionalLight(0x4060a0, 0.4); dl2.position.set(-80,60,-60); scene.add(dl2);
+const grid=new THREE.GridHelper(400,40,0x223047,0x141c2a); grid.position.y=-0.2; scene.add(grid);
+
+// ---- alvo de orbita + camera manual ----
+let target=new THREE.Vector3(0,0,0);
+let dist=180, yaw=0.7, pitch=0.9;
+// noclip = camera livre voando (WASD), sem mexer no personagem
+let noclip=false, lookYaw=0, lookPitch=0, flyFast=false;
+const freePos=new THREE.Vector3(); const keysDown=new Set(); let flySpeed=0.5;  // por quadro-60fps; scroll ajusta
+function lookDir(){ return new THREE.Vector3(Math.sin(lookYaw)*Math.cos(lookPitch), Math.sin(lookPitch), Math.cos(lookYaw)*Math.cos(lookPitch)); }
+function updateCam(){
+  if(noclip){
+    const d=lookDir();
+    camera.position.copy(freePos);
+    camera.lookAt(freePos.x+d.x, freePos.y+d.y, freePos.z+d.z);
+    return;
+  }
+  const cp=Math.cos(pitch), sp=Math.sin(pitch);
+  camera.position.set(target.x+dist*cp*Math.sin(yaw), target.y+dist*sp, target.z+dist*cp*Math.cos(yaw));
+  camera.lookAt(target);
+}
+function toggleNoclip(){
+  noclip=!noclip;
+  if(noclip){
+    freePos.copy(camera.position);
+    const d=new THREE.Vector3().subVectors(target, freePos).normalize();
+    lookPitch=Math.asin(Math.max(-1,Math.min(1,d.y))); lookYaw=Math.atan2(d.x, d.z);
+    follow=false;
+  } else { follow=true; if(havePos) target.copy(player.position); }
+  const b=document.getElementById('noclip'); if(b) b.style.display=noclip?'block':'none';
+}
+function flyStep(dt){
+  if(!keysDown.size) return;
+  const dir=lookDir(); const right=new THREE.Vector3().crossVectors(dir,new THREE.Vector3(0,1,0)).normalize();
+  const sp=flySpeed*dt*(flyFast?4:1);
+  if(keysDown.has('w')) freePos.addScaledVector(dir, sp);
+  if(keysDown.has('s')) freePos.addScaledVector(dir,-sp);
+  if(keysDown.has('d')) freePos.addScaledVector(right, sp);
+  if(keysDown.has('a')) freePos.addScaledVector(right,-sp);
+  if(keysDown.has('e')||keysDown.has('space')) freePos.y+=sp;
+  if(keysDown.has('q')) freePos.y-=sp;
+}
+// teclas de voo (so quando noclip): estado continuo
+addEventListener('keydown',e=>{ if(e.key==='Shift') flyFast=true; if(!noclip)return;
+  let k=e.key.toLowerCase(); if(k===' ')k='space';
+  if(['w','a','s','d','q','e','space'].includes(k)){ keysDown.add(k); e.preventDefault(); } });
+addEventListener('keyup',e=>{ if(e.key==='Shift') flyFast=false;
+  let k=e.key.toLowerCase(); if(k===' ')k='space'; keysDown.delete(k); });
+updateCam();
+let drag=null, panMode=false;
+const _fwd=new THREE.Vector3(), _right=new THREE.Vector3(), _up=new THREE.Vector3();
+function isPan(e){ return e.button===2 || e.button===1 || e.shiftKey; }  // direito/meio/Shift+esq = arrastar mapa
+renderer.domElement.addEventListener('mousedown',e=>{ drag=[e.clientX,e.clientY]; panMode=isPan(e); });
+addEventListener('mouseup',()=>drag=null);
+addEventListener('mousemove',e=>{ if(!drag)return; const dx=e.clientX-drag[0],dy=e.clientY-drag[1]; drag=[e.clientX,e.clientY];
+  if(noclip){                                    // NOCLIP: mouse olha em volta (FPS)
+    lookYaw-=dx*0.005; lookPitch=Math.max(-1.5,Math.min(1.5,lookPitch-dy*0.005)); return;
+  }
+  if(panMode){                                   // PAN: move o alvo no plano da tela (arrasta o mapa)
+    const s=dist*0.0016;
+    camera.getWorldDirection(_fwd);
+    _right.crossVectors(_fwd,camera.up).normalize();
+    _up.crossVectors(_right,_fwd).normalize();
+    target.addScaledVector(_right, -dx*s);
+    target.addScaledVector(_up,     dy*s);
+    follow=false;
+  } else {                                        // ORBIT: gira em torno do alvo
+    yaw-=dx*0.005; pitch=Math.max(-1.4,Math.min(1.4,pitch+dy*0.005));
+  }
+});
+renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();
+  if(noclip){ flySpeed=Math.max(0.05,Math.min(20, flySpeed*(e.deltaY<0?1.25:0.8)));  // scroll = velocidade de voo
+    const b=document.getElementById('noclip'); if(b) b.textContent=`✈ NOCLIP · speed ${flySpeed.toFixed(2)} · WASD/QE · Shift faster · scroll speed · N exit`; }
+  else { dist=Math.max(8,Math.min(1200,dist*(e.deltaY<0?0.9:1.1))); }
+},{passive:false});
+renderer.domElement.addEventListener('contextmenu',e=>e.preventDefault());
+
+// ---- jogador ----
+const player=new THREE.Mesh(new THREE.SphereGeometry(1.1,16,16), new THREE.MeshBasicMaterial({color:0xff4545}));
+scene.add(player);
+const ring=new THREE.Mesh(new THREE.RingGeometry(1.6,2.2,24), new THREE.MeshBasicMaterial({color:0xff4545,side:THREE.DoubleSide}));
+ring.rotation.x=-Math.PI/2; scene.add(ring);
+let pscale=1;   // tamanho da bola (teclas [ e ])
+function setPScale(v){ pscale=Math.max(0.2,Math.min(8,v)); player.scale.setScalar(pscale); ring.scale.setScalar(pscale); }
+let trailOn=true; const trailPts=[]; const trailRaw=[]; let trailLine=null;
+let follow=true, havePos=false;
+function clearTrail(){ if(trailLine){scene.remove(trailLine); trailLine.geometry.dispose(); trailLine=null;} trailPts.length=0; trailRaw.length=0; }
+function exportTrail(){
+  if(!trailRaw.length){ alert('Trail is empty — walk a bit first.'); return; }
+  const s='area,x,y,z\n'+trailRaw.map(p=>p.join(',')).join('\n');
+  const blob=new Blob([s],{type:'text/csv'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='ds2_trilha.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+}
+// item 4: ALINHAR o radar a direcao do MOVIMENTO (calculada da posicao). Tecla L.
+let camLock=false, camOff=Math.PI, camSign=1;
+let moveHeading=null, lastHX=null, lastHZ=null;
+function camBadge(){ }   // card removido (o chip "Alinhar mov." ja mostra o estado)
+function toggleCamLock(){ camLock=!camLock; if(camLock){ follow=true; } camBadge(); }
+
+// ---- websocket ----
+const coordsEl=document.getElementById('coords'), metaEl=document.getElementById('meta'), stEl=document.getElementById('st');
+let nverts=0;
+function connect(){
+  const ws=new WebSocket('ws://localhost:8766');
+  ws.onopen=()=>{stEl.textContent='● connected';stEl.className='on';};
+  ws.onclose=()=>{stEl.textContent='○ disconnected';stEl.className='off';setTimeout(connect,1000);};
+  ws.onerror=()=>ws.close();
+  ws.onmessage=e=>{ const p=JSON.parse(e.data);
+    if(p.area){ onArea(p.area); }
+    else if(p.adbg!==undefined){ document.getElementById('adbg').textContent='area: '+p.adbg; }
+    else if(p.x!==undefined){ onPos(p.x,p.y,p.z); }
+  };
+}
+connect();
+
+// geometria vem por HTTP. DOIS MODOS (seletor no topo, ou tecla M):
+//   'dinamico' = carrega a area atual + vizinhas, descarrega ao afastar
+//   'inteiro'  = carrega TODAS as areas de uma vez (mundo inteiro)
+const meshes={};                 // key -> THREE.Mesh (userData: {key,cx,cz,r,nv,nt})
+let AREAS=[], activeKey=null, pendingArea=null, areasReady=false;
+let worldMode='dinamico';
+let hidden=new Set();    // areas que o usuario escondeu (painel de areas)
+const cbById={};         // checkboxes do painel por chave
+const PRUNE_MARGIN=140;  // so descarrega area quando o player esta > raio+margem dela
+function removeMesh(k){ const m=meshes[k]; if(!m)return; scene.remove(m); m.geometry.dispose(); m.material.dispose(); delete meshes[k]; }
+function metaShow(extra){
+  const loaded=Object.keys(meshes).length;
+  const m=meshes[activeKey];
+  let s = m ? `${m.userData.nv.toLocaleString()} v · ${m.userData.nt.toLocaleString()} tris · centro(${m.userData.cx.toFixed(0)},0,${m.userData.cz.toFixed(0)}) r${m.userData.r.toFixed(0)}` : '';
+  if(loaded>1) s+=`  ·  ${loaded} areas`;
+  if(extra) s=extra+(s?'  ·  '+s:'');
+  metaEl.textContent=s;
+}
+// AUTO-TROCA: o server manda {area:"10_04"} quando voce muda de area no jogo.
+// Cada mapa (inclusive as DUAS Majulas 10_04 e 10_29) e uma area normal e independente.
+function onArea(key){
+  if(!areasReady){ pendingArea=key; return; }
+  if(!AREAS.find(a=>a.key===key)){ if(activeKey)metaShow('area '+key+' has no geometry (.iv)'); return; }
+  if(activeKey===key) return;
+  loadArea(key);
+}
+async function ensureLoaded(key){        // carrega+constroi se faltar
+  if(meshes[key]) return;
+  const [vb,ib]=await Promise.all([
+    fetch('maps/'+key+'_v.bin').then(r=>r.arrayBuffer()),
+    fetch('maps/'+key+'_i.bin').then(r=>r.arrayBuffer())
+  ]);
+  buildGeo(key, new Float32Array(vb), new Uint32Array(ib));
+}
+async function loadArea(key){            // define a area ATIVA (player) e garante que esta carregada
+  const sel=document.getElementById('area'); if(sel && [...sel.options].some(o=>o.value===key)) sel.value=key;
+  activeKey=key;
+  try{ await ensureLoaded(key); refreshVis(); metaShow(); }
+  catch(err){ metaShow('ERROR: '+err.message); }
+}
+async function loadAll(){                 // modo inteiro: carrega TODAS (escondidas ficam so invisiveis)
+  for(let i=0;i<AREAS.length;i++){
+    metaShow(`loading world ${i+1}/${AREAS.length}`);
+    try{ await ensureLoaded(AREAS[i].key); }catch(e){}
+  }
+  refreshVis(); metaShow('whole world');
+}
+// ---- painel de areas: liga/desliga e isola (com persistencia) ----
+// a area ATIVA (onde o player esta) sempre aparece, mesmo se escondida no painel
+function shouldShow(k){ return !hidden.has(k) || k===activeKey; }
+function refreshVis(){ for(const k in meshes) meshes[k].visible=shouldShow(k); }
+function saveHidden(){ try{ localStorage.setItem('ds2radar_hidden', JSON.stringify([...hidden])); }catch(e){} }
+function syncList(){ for(const k in cbById) cbById[k].checked=!hidden.has(k); }
+function showAll(){ hidden.clear(); saveHidden(); refreshVis(); syncList(); metaShow(); }
+async function isolate(key){ hidden=new Set(AREAS.map(a=>a.key)); hidden.delete(key); saveHidden();
+  if(worldMode==='inteiro' && !meshes[key]) await ensureLoaded(key);
+  refreshVis(); syncList(); metaShow(); }
+function buildAreaList(){
+  const box=document.getElementById('arealist'); if(!box) return;
+  box.innerHTML='';
+  const h=document.createElement('div'); h.className='alh';
+  h.innerHTML='<span>Areas</span>'; const ball=document.createElement('button'); ball.textContent='all';
+  ball.onclick=showAll; h.appendChild(ball); box.appendChild(h);
+  AREAS.forEach(a=>{
+    const row=document.createElement('div'); row.className='alr';
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=!hidden.has(a.key);
+    cb.onchange=async()=>{ if(cb.checked){ hidden.delete(a.key); if(worldMode==='inteiro' && !meshes[a.key]) await ensureLoaded(a.key); } else hidden.add(a.key);
+      saveHidden(); refreshVis(); metaShow(); };
+    cbById[a.key]=cb;
+    const nm=document.createElement('span'); const id=a.key.split('_').slice(0,2).join('_');
+    nm.textContent=`${id} · ${a.name}`; nm.title=a.name;
+    const iso=document.createElement('button'); iso.textContent='isolate'; iso.className='iso';
+    iso.onclick=()=>isolate(a.key);
+    row.appendChild(cb); row.appendChild(nm); row.appendChild(iso); box.appendChild(row);
+  });
+}
+function setMode(m){
+  worldMode=m;
+  const ms=document.getElementById('mode'); if(ms) ms.value=m;
+  if(m==='inteiro'){ loadAll(); }
+  else {                                   // dinamico: descarrega TUDO menos a area ativa
+    for(const k in meshes){ if(k!==activeKey) removeMesh(k); }
+    metaShow();
+  }
+  updateAreaNav();
+  if(typeof refreshChips==='function') refreshChips();
+}
+function updateAreaNav(){   // "Ir p/ area" e "Areas" so no modo mundo inteiro
+  const n=document.getElementById('areanav'); if(n) n.style.display = worldMode==='inteiro'?'inline':'none';
+  if(worldMode!=='inteiro'){ const al=document.getElementById('arealist'); if(al) al.style.display='none'; }
+}
+async function initAreas(){
+  try{
+    AREAS=await fetch('maps/areas.json').then(r=>r.json());
+    // carrega as escolhas de visibilidade salvas; 1a vez = esconde as que sujam o god-view
+    const saved=localStorage.getItem('ds2radar_hidden');
+    if(saved){ try{ hidden=new Set(JSON.parse(saved)); }catch(e){} }
+    else { hidden=new Set(['10_02_things_betwixt','20_26_dragon_memories']); saveHidden(); }
+    // "Ir p/ area": TODAS as areas (inclusive as duas Majulas; id no texto pra distinguir)
+    const sel=document.getElementById('area'); sel.innerHTML='';
+    AREAS.forEach(a=>{ const o=document.createElement('option'); o.value=a.key;
+      const id=a.key.split('_').slice(0,2).join('_');
+      o.textContent=`${a.name} · ${id} (${Math.round(a.nt/1000)}k tris)`; sel.appendChild(o); });
+    sel.onchange=()=>{ pendingArea=null; loadArea(sel.value); };
+    const wrap=document.getElementById('verwrap'); if(wrap) wrap.style.display='none';  // sem "adicional"
+    buildAreaList();
+    const lb=document.getElementById('listbtn'); const al=document.getElementById('arealist');
+    if(lb&&al) lb.onclick=()=>{ al.style.display = al.style.display==='block'?'none':'block'; };
+    areasReady=true;
+    const ms=document.getElementById('mode'); if(ms) ms.onchange=()=>setMode(ms.value);
+    let def=pendingArea && AREAS.find(a=>a.key===pendingArea) ? pendingArea
+            : (AREAS.find(a=>a.key==='10_04_majula')?'10_04_majula':AREAS[0].key);
+    pendingArea=null; loadArea(def);
+  }catch(err){ metaEl.textContent='ERROR areas.json: '+err.message; }
+}
+initAreas();
+
+function buildGeo(key, verts, idx){
+  const nv=verts.length/3, ni=idx.length;
+  nverts=nv;
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(verts,3));
+  g.setIndex(new THREE.BufferAttribute(idx,1));
+  let ymin=Infinity,ymax=-Infinity;
+  for(let i=1;i<verts.length;i+=3){ if(verts[i]<ymin)ymin=verts[i]; if(verts[i]>ymax)ymax=verts[i]; }
+  const col=new Float32Array(verts.length);
+  for(let i=0;i<verts.length;i+=3){ const t=(verts[i+1]-ymin)/(ymax-ymin||1);
+    col[i]=0.30+t*0.45; col[i+1]=0.50+t*0.4; col[i+2]=0.62-t*0.15; }
+  g.setAttribute('color', new THREE.BufferAttribute(col,3));
+  g.computeVertexNormals(); g.computeBoundingSphere();
+  const m=new THREE.MeshStandardMaterial({vertexColors:true, roughness:0.95, metalness:0.0, side:THREE.DoubleSide, flatShading:false});
+  const mesh=new THREE.Mesh(g,m); const bs=g.boundingSphere;
+  mesh.userData={key, nv, nt:ni/3, cx:bs.center.x, cz:bs.center.z, r:bs.radius};
+  mesh.visible=shouldShow(key);
+  scene.add(mesh); meshes[key]=mesh;
+  metaShow();
+  if(!havePos){ target.copy(bs.center); dist=bs.radius*1.6; follow=false; }
+}
+// descarrega areas de onde o player ja se afastou (so no modo dinamico)
+function pruneAreas(px,pz){
+  if(worldMode!=='dinamico') return;
+  for(const k in meshes){
+    if(k===activeKey) continue;
+    const u=meshes[k].userData;
+    if(Math.hypot(px-u.cx, pz-u.cz) > u.r + PRUNE_MARGIN) removeMesh(k);
+  }
+}
+
+// ajuste memoria->modelo (offset + flip + swap XZ). Ajuste ao vivo com teclas.
+const adj={ox:0,oy:0,oz:0,fx:1,fz:1,swap:true};  // memoria<->.iv: eixos X e Z trocados
+function xform(x,y,z){
+  let px=x, pz=z;
+  if(adj.swap){ const t=px; px=pz; pz=t; }
+  return {x:px*adj.fx+adj.ox, y:y+adj.oy, z:pz*adj.fz+adj.oz};
+}
+function onPos(x,y,z){
+  const P=xform(x,y,z);
+  player.position.set(P.x,P.y,P.z); ring.position.set(P.x,P.y+0.2,P.z); havePos=true;
+  coordsEl.innerHTML=`X <b>${x.toFixed(1)}</b> Y <b>${y.toFixed(1)}</b> Z <b>${z.toFixed(1)}</b>`
+    +`<br><span style="color:#8fa0bd">adjust: off(${adj.ox},${adj.oy},${adj.oz}) flip(${adj.fx},${adj.fz})${adj.swap?' SWAP':''}</span>`;
+  if(trailOn){ const last=trailPts[trailPts.length-1];
+    const jump=last?Math.abs(last.x-P.x)+Math.abs(last.z-P.z):0;
+    // mantem a trilha inteira (inclusive nos TPs) - util p/ speedrun: glitches, rotas, warps
+    if(!last||jump>0.3){ trailPts.push(new THREE.Vector3(P.x,P.y+0.3,P.z));
+      trailRaw.push([(activeKey||'').split('_').slice(0,2).join('_'), x.toFixed(2), y.toFixed(2), z.toFixed(2)]);
+      if(trailPts.length>20000){ trailPts.shift(); trailRaw.shift(); }
+      if(trailLine)scene.remove(trailLine);
+      const lg=new THREE.BufferGeometry().setFromPoints(trailPts);
+      trailLine=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x3fa7ff})); scene.add(trailLine);
+    }
+  }
+  if(follow) target.set(P.x,P.y,P.z);
+  pruneAreas(P.x,P.z);
+  // direcao do movimento (heading), so atualiza quando anda o bastante (fica travado parado)
+  if(lastHX===null){ lastHX=P.x; lastHZ=P.z; }
+  else { const dx=P.x-lastHX, dz=P.z-lastHZ; if(Math.hypot(dx,dz)>0.5){
+    const h=Math.atan2(dx,dz);
+    if(moveHeading===null) moveHeading=h;
+    else { let df=h-moveHeading; while(df>Math.PI)df-=2*Math.PI; while(df<-Math.PI)df+=2*Math.PI; moveHeading+=df*0.2; }
+    lastHX=P.x; lastHZ=P.z;
+    const el=document.getElementById('camdbg'); if(el&&camLock) el.textContent='mov: '+(moveHeading*180/Math.PI).toFixed(0)+'°';
+  }}
+}
+
+addEventListener('keydown',e=>{const k=e.key.toLowerCase(); const st=e.shiftKey?10:1;
+  if(k==='f'){ follow=!follow; if(follow&&havePos)target.copy(player.position); }
+  else if(k==='t'){ trailOn=!trailOn; if(!trailOn&&trailLine){scene.remove(trailLine);trailLine=null;trailPts.length=0;} }
+  else if(k==='m'){ setMode(worldMode==='dinamico'?'inteiro':'dinamico'); }
+  else if(k==='n'){ toggleNoclip(); }
+  else if(k==='l'){ toggleCamLock(); }
+  else if(k==='k'){ camSign*=-1; camBadge(); }
+  else if(e.key===','){ camOff-=e.shiftKey?0.5:0.05; camBadge(); }
+  else if(e.key==='.'){ camOff+=e.shiftKey?0.5:0.05; camBadge(); }
+  else if(e.key==='['){ setPScale(pscale*0.8); }
+  else if(e.key===']'){ setPScale(pscale*1.25); }
+  // AJUSTE de alinhamento (setas = offset X/Z; PgUp/PgDn = Y; x/z = flip; v = swap XZ; r = reset)
+  else if(e.key==='ArrowLeft'){ adj.ox-=st; }
+  else if(e.key==='ArrowRight'){ adj.ox+=st; }
+  else if(e.key==='ArrowUp'){ adj.oz-=st; }
+  else if(e.key==='ArrowDown'){ adj.oz+=st; }
+  else if(e.key==='PageUp'){ adj.oy+=st; }
+  else if(e.key==='PageDown'){ adj.oy-=st; }
+  else if(k==='x'){ adj.fx*=-1; }
+  else if(k==='z'){ adj.fz*=-1; }
+  else if(k==='v'){ adj.swap=!adj.swap; }
+  else if(k==='r'){ adj.ox=adj.oy=adj.oz=0; adj.fx=adj.fz=1; adj.swap=false; }
+  else return;
+  refreshChips();
+  e.preventDefault();
+});
+
+// ---- chips de estado (rodape) + ajuda ----
+let chipDefs=null;
+function makeChips(){
+  const bar=document.getElementById('chips'); if(!bar)return;
+  chipDefs=[
+    {id:'follow',label:'Follow',key:'F',on:()=>follow,act:()=>{follow=!follow; if(follow&&havePos)target.copy(player.position);}},
+    {id:'align',label:'Align to move',key:'L',on:()=>camLock,act:toggleCamLock},
+    {id:'trail',label:'Trail',key:'T',on:()=>trailOn,act:()=>{trailOn=!trailOn; if(!trailOn&&trailLine){scene.remove(trailLine);trailLine=null;trailPts.length=0;}}},
+    {id:'noclip',label:'Noclip',key:'N',on:()=>noclip,act:toggleNoclip},
+    {id:'mode',label:()=>worldMode==='inteiro'?'Whole world':'Dynamic',key:'M',neutral:true,act:()=>setMode(worldMode==='dinamico'?'inteiro':'dinamico')},
+    {id:'cleartrail',label:'Clear trail',action:true,act:clearTrail},
+    {id:'exporttrail',label:'Export trail',action:true,act:exportTrail},
+  ];
+  bar.innerHTML='';
+  chipDefs.forEach(d=>{ const c=document.createElement('button'); c.className='chip'; c.id='chip_'+d.id;
+    c.onclick=()=>{ d.act(); refreshChips(); }; bar.appendChild(c); });
+  refreshChips();
+}
+function refreshChips(){
+  if(!chipDefs)return;
+  chipDefs.forEach(d=>{ const c=document.getElementById('chip_'+d.id); if(!c)return;
+    const lbl=typeof d.label==='function'?d.label():d.label;
+    if(d.action){ c.className='chip action'; c.innerHTML=lbl; }
+    else if(d.neutral){ c.className='chip neutral'; c.innerHTML=`${lbl} <span class="k">${d.key}</span>`; }
+    else { const on=d.on(); c.className='chip '+(on?'on':'off'); c.innerHTML=`${lbl} <b>${on?'ON':'off'}</b> <span class="k">${d.key}</span>`; }
+  });
+}
+makeChips();
+updateAreaNav();
+document.getElementById('helpbtn').onclick=()=>{ const h=document.getElementById('help'); h.style.display=h.style.display==='block'?'none':'block'; };
+
+let lastT=Date.now();
+function loop(){ requestAnimationFrame(loop);
+  const now=Date.now(); const dt=Math.min(3,(now-lastT)/16.667); lastT=now;
+  if(noclip) flyStep(dt);
+  else if(camLock){
+    if(moveHeading!==null){                             // alinha ao movimento
+      let tgt=camSign*moveHeading+camOff;
+      let d=tgt-yaw; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;  // caminho curto
+      yaw+=d*Math.min(1,0.05*dt);                        // suave e independente de FPS
+    } }
+  updateCam();
+  ring.material.opacity=0.6+0.4*Math.sin(Date.now()*0.005); ring.material.transparent=true;
+  renderer.render(scene,camera); }
+loop();
+</script>
+</body>
+</html>
