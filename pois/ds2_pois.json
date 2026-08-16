@@ -1378,15 +1378,6 @@
           "spoiler": false
         },
         {
-          "id": "ffg_boss_last_giant",
-          "cat": "boss",
-          "name": "The Last Giant",
-          "desc": "Boss obrigatorio no fim de um elevador. Dropa a Soldier Key. (Ja derrotado por voce.)",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "ffg_key_soldier",
           "cat": "key",
           "name": "Soldier Key",
@@ -3373,15 +3364,6 @@
           "spoiler": false
         },
         {
-          "id": "hei_boss_dragonrider",
-          "cat": "boss",
-          "name": "Dragonrider",
-          "desc": "Halberd + greatshield; circular pelas costas evita o sweep.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "hei_enemy_hellkite",
           "cat": "enemy",
           "name": "Hellkite Dragon",
@@ -3572,7 +3554,11 @@
           "name": "Old Dragonslayer",
           "sub": "Cathedral of Blue",
           "desc": "Superboss opcional (referencia ao Ornstein). Lanca de raio.",
-          "coords": null,
+          "coords": [
+            -164.0,
+            5.0,
+            162.0
+          ],
           "missable": true,
           "spoiler": false
         },
@@ -3926,15 +3912,6 @@
             -66.76,
             431.13
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "wharf_boss_flexile",
-          "cat": "boss",
-          "name": "Flexile Sentry",
-          "desc": "Porao do navio-fantasma, apos tocar o sino que chama o barco.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -4576,16 +4553,6 @@
           "spoiler": false
         },
         {
-          "id": "lb_boss_ruin_sentinels",
-          "cat": "boss",
-          "name": "Ruin Sentinels",
-          "sub": "Lost Bastille",
-          "desc": "3 golems de pedra numa torre; da pra invocar ajuda.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "lb_npc_straid",
           "cat": "npc",
           "name": "Straid of Olaphis",
@@ -4660,16 +4627,6 @@
           "spoiler": false
         },
         {
-          "id": "sr_boss_lost_sinner",
-          "cat": "boss",
-          "name": "Lost Sinner",
-          "sub": "Sinner's Rise",
-          "desc": "1o Great Soul. Acenda o oleo em 2 salas laterais pra iluminar a arena antes.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "sr_primal",
           "cat": "bonfire",
           "name": "Primal Bonfire (Sinner's Rise)",
@@ -4720,16 +4677,6 @@
             29.64,
             664.61
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "bl_boss_gargoyles",
-          "cat": "boss",
-          "name": "Belfry Gargoyles",
-          "sub": "Belfry Luna",
-          "desc": "Toca-se um sino nos andares de cima pra ativar. Varias gargulas.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -6674,16 +6621,6 @@
           "spoiler": false
         },
         {
-          "id": "hc_boss_skeleton_lords",
-          "cat": "boss",
-          "name": "Skeleton Lords",
-          "sub": "Huntsman's Copse",
-          "desc": "Atras do fog gate; precisa da Undead Lockaway Key.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "hc_npc_felkin",
           "cat": "npc",
           "name": "Felkin the Outcast",
@@ -6734,16 +6671,6 @@
             57.94,
             -42.89
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "up_boss_chariot",
-          "cat": "boss",
-          "name": "Executioner's Chariot",
-          "sub": "Undead Purgatory",
-          "desc": "Mate 2 Necromancers pra parar o revive, depois puxe a alavanca pra derrubar a carruagem.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -7571,26 +7498,6 @@
             92.97,
             524.37
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "ep_boss_covetous",
-          "cat": "boss",
-          "name": "Covetous Demon",
-          "sub": "Earthen Peak",
-          "desc": "Boss lento; pode engolir voce (cospe de volta).",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "ep_boss_mytha",
-          "cat": "boss",
-          "name": "Mytha, the Baneful Queen",
-          "sub": "Earthen Peak",
-          "desc": "Incendeie o moinho com a tocha pra remover a agua envenenada da arena — unico jeito.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -8725,16 +8632,6 @@
           "spoiler": false
         },
         {
-          "id": "ik_boss_smelter",
-          "cat": "boss",
-          "name": "Smelter Demon",
-          "sub": "Iron Keep",
-          "desc": "Dano de fogo alto; opcional mas guarda loot e a Iron Key.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "ik_boss_pursuer",
           "cat": "boss",
           "name": "The Pursuer (reaparece)",
@@ -8742,16 +8639,6 @@
           "desc": "Volta como encontro aqui.",
           "coords": null,
           "missable": true,
-          "spoiler": false
-        },
-        {
-          "id": "ik_boss_old_iron_king",
-          "cat": "boss",
-          "name": "Old Iron King",
-          "sub": "Iron Keep",
-          "desc": "2o Great Soul.",
-          "coords": null,
-          "missable": false,
           "spoiler": false
         },
         {
@@ -9978,16 +9865,6 @@
           "spoiler": false
         },
         {
-          "id": "sw_boss_najka",
-          "cat": "boss",
-          "name": "Scorpioness Najka",
-          "sub": "Shaded Woods",
-          "desc": "Ha um tronco destrutivel na arena, importante taticamente.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "sw_npc_grandahl",
           "cat": "npc",
           "name": "Darkdiver Grandahl (Shaded Ruins)",
@@ -10944,15 +10821,6 @@
           "spoiler": false
         },
         {
-          "id": "dp_boss_rat_authority",
-          "cat": "boss",
-          "name": "Royal Rat Authority",
-          "desc": "Boss principal (rato grande + filhotes).",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "dp_npc_gavlan",
           "cat": "npc",
           "name": "Gavlan",
@@ -11318,16 +11186,6 @@
             116.29,
             -8.19
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "bct_boss_freja",
-          "cat": "boss",
-          "name": "The Duke's Dear Freja",
-          "sub": "Lord's Private Chamber",
-          "desc": "3o Great Soul (aranha de 2 cabecas). Foco de dano nas cabecas.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -12592,15 +12450,6 @@
           "spoiler": false
         },
         {
-          "id": "gos_boss_rat_vanguard",
-          "cat": "boss",
-          "name": "Royal Rat Vanguard",
-          "desc": "Ratos enxameiam; matar o suficiente faz o Vanguard (moicano) aparecer.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "gos_item_ash_knuckle",
           "cat": "item",
           "name": "Ash Knuckle Ring + Sublime Bone Dust",
@@ -12956,16 +12805,6 @@
             -142.1,
             12.2
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "bg_boss_rotten",
-          "cat": "boss",
-          "name": "The Rotten",
-          "sub": "Black Gulch",
-          "desc": "4o Great Soul (40.000 almas).",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -14563,15 +14402,6 @@
           "spoiler": false
         },
         {
-          "id": "sa_boss_demon_song",
-          "cat": "boss",
-          "name": "Demon of Song",
-          "desc": "Considerado facil; ataca quando abre a 'boca'.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "sa_npc_felicia",
           "cat": "npc",
           "name": "Felicia the Brave (phantom)",
@@ -15362,26 +15192,6 @@
           "spoiler": false
         },
         {
-          "id": "dc_boss_twin_dragonriders",
-          "cat": "boss",
-          "name": "Twin Dragonriders",
-          "sub": "Drangleic Castle",
-          "desc": "2 Dragonriders no salao principal.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "dc_boss_looking_glass",
-          "cat": "boss",
-          "name": "Looking Glass Knight",
-          "sub": "King's Passage",
-          "desc": "Pode invocar um jogador/phantom como aliado dele.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "dc_key_passage",
           "cat": "key",
           "name": "Key to King's Passage",
@@ -15410,26 +15220,6 @@
           "coords": null,
           "missable": false,
           "spoiler": false
-        },
-        {
-          "id": "tow_boss_nashandra",
-          "cat": "boss",
-          "name": "Nashandra",
-          "sub": "Throne of Want",
-          "desc": "Boss final padrao.",
-          "coords": null,
-          "missable": false,
-          "spoiler": true
-        },
-        {
-          "id": "tow_boss_aldia",
-          "cat": "boss",
-          "name": "Aldia, Scholar of the First Sin (condicional)",
-          "sub": "Throne of Want",
-          "desc": "Aparece sob condicoes especificas; ligado ao final exclusivo do SotFS.",
-          "coords": null,
-          "missable": true,
-          "spoiler": true
         },
         {
           "id": "tow_gate_throne",
@@ -15713,7 +15503,7 @@
         {
           "id": "boss_m20_21_00_00_21",
           "cat": "boss",
-          "name": "Aldia, Scholar of the First Sin",
+          "name": "Aldia, Scholar of the First Sin (condicional)",
           "coords": [
             -736.0,
             -12.0,
@@ -16004,15 +15794,6 @@
           ],
           "missable": false,
           "spoiler": false
-        },
-        {
-          "id": "uc_boss_velstadt",
-          "cat": "boss",
-          "name": "Velstadt, the Royal Aegis",
-          "desc": "Boss guardiao; depois libera o encontro com Vendrick.",
-          "coords": null,
-          "missable": false,
-          "spoiler": true
         },
         {
           "id": "uc_npc_vendrick",
@@ -16402,15 +16183,6 @@
             75.03,
             -270.94
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "ak_boss_guardian_dragon",
-          "cat": "boss",
-          "name": "Guardian Dragon",
-          "desc": "Dragao guardiao; cuidado com o sopro e o mergulho.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -16916,16 +16688,6 @@
           "spoiler": false
         },
         {
-          "id": "ds_boss_ancient_dragon",
-          "cat": "boss",
-          "name": "Ancient Dragon (opcional)",
-          "sub": "Dragon Shrine",
-          "desc": "So fica hostil se atacado. Da o Ashen Mist Heart so de falar.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "ds_key_ashen_mist",
           "cat": "key",
           "name": "Ashen Mist Heart",
@@ -17084,7 +16846,7 @@
         {
           "id": "boss_m10_27_00_00_15",
           "cat": "boss",
-          "name": "Ancient Dragon",
+          "name": "Ancient Dragon (opcional)",
           "coords": [
             -863.0,
             272.0,
@@ -17625,16 +17387,6 @@
           "spoiler": false
         },
         {
-          "id": "mem_jeigh_boss",
-          "cat": "boss",
-          "name": "Giant Lord (Memory of Jeigh)",
-          "sub": "Jeigh",
-          "desc": "Estatua perto de The Place Unbeknownst (precisa King's Ring). Dropa o Giant's Kinship.",
-          "coords": null,
-          "missable": false,
-          "spoiler": true
-        },
-        {
           "id": "mem_jeigh_kinship",
           "cat": "key",
           "name": "Giant's Kinship",
@@ -17754,7 +17506,7 @@
         {
           "id": "boss_m20_10_00_00_19",
           "cat": "boss",
-          "name": "Giant Lord",
+          "name": "Giant Lord (Memory of Jeigh)",
           "coords": [
             144.0,
             -54.0,
@@ -18367,15 +18119,6 @@
       "name": "Dark Chasm of Old",
       "role": "Pos-game/opcional. Covenant Pilgrims of Dark.",
       "pois": [
-        {
-          "id": "dco_boss_darklurker",
-          "cat": "boss",
-          "name": "Darklurker",
-          "desc": "So aparece apos acender o sconce nas 3 instancias do Chasm; ao tentar sair, vai direto pro boss.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
         {
           "id": "dco_access",
           "cat": "shortcut",

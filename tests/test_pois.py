@@ -84,3 +84,18 @@ def test_boss_throne_canonical(doc):
     names = [p["name"] for a in doc["areas"].values() for p in a["pois"] if p["cat"] == "boss"]
     assert "Throne Watcher & Throne Defender" in names
     assert "Throne Watcher & Defender" not in names
+
+
+def test_boss_positions_no_orphan_dups(doc):
+    # after dedup: each boss appears once per base-name; no coordless duplicate of a placed one
+    import re
+    def base(n): return re.sub(r"\s*\(.*?\)", "", n).strip()
+    bosses = [p for a in doc["areas"].values() for p in a["pois"] if p["cat"] == "boss"]
+    byb = {}
+    for p in bosses:
+        byb.setdefault(base(p["name"]), []).append(bool(p.get("coords")))
+    for bn, flags in byb.items():
+        if any(flags):
+            assert all(flags), f"{bn} has a coordless duplicate besides the placed one"
+    od = next(p for p in bosses if p["name"] == "Old Dragonslayer")
+    assert od["coords"] == [-164.0, 5.0, 162.0]
