@@ -42,33 +42,6 @@
           "spoiler": false
         },
         {
-          "id": "tb_npc_firekeepers",
-          "cat": "npc",
-          "name": "Firekeepers (Strowen, Grave of Saints trio)",
-          "desc": "As tres bruxas iniciais; uma se chama Strowen.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "tb_npc_milibeth",
-          "cat": "npc",
-          "name": "Milibeth",
-          "desc": "Recompensa a Handmaid's Ladle por matar 3 Ogres.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
-        {
-          "id": "tb_npc_dyna_tillo",
-          "cat": "npc",
-          "name": "Dyna & Tillo",
-          "desc": "Passaros de troca — deixe itens no ninho pra ganhar outros.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
           "id": "tb_enemy_pursuer",
           "cat": "enemy",
           "name": "The Pursuer (encontro SotFS)",
@@ -482,6 +455,56 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_02_dynatillo",
+          "cat": "npc",
+          "name": "Dyna & Tillo",
+          "coords": [
+            -136.2,
+            22.2,
+            -130.0
+          ]
+        },
+        {
+          "id": "npc_10_02_griant",
+          "cat": "npc",
+          "name": "Griant",
+          "coords": [
+            -188.7,
+            11.1,
+            -157.3
+          ]
+        },
+        {
+          "id": "npc_10_02_milibeth",
+          "cat": "npc",
+          "name": "Milibeth",
+          "coords": [
+            -188.0,
+            11.2,
+            -163.4
+          ]
+        },
+        {
+          "id": "npc_10_02_morrel",
+          "cat": "npc",
+          "name": "Morrel",
+          "coords": [
+            -185.0,
+            11.2,
+            -160.3
+          ]
+        },
+        {
+          "id": "npc_10_02_strowen",
+          "cat": "npc",
+          "name": "Strowen",
+          "coords": [
+            -187.2,
+            11.2,
+            -158.3
+          ]
         }
       ]
     },
@@ -499,114 +522,6 @@
             5.92,
             -16.96
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_emerald_herald",
-          "cat": "npc",
-          "name": "Emerald Herald",
-          "desc": "Sobe nivel e reforca o Estus. Fica perto da beira do penhasco.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_saulden",
-          "cat": "npc",
-          "name": "Crestfallen Saulden",
-          "desc": "Da dicas de rumo; sentado perto da fogueira.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_lenigrast",
-          "cat": "npc",
-          "name": "Blacksmith Lenigrast",
-          "desc": "Ferreiro (reparos/upgrades). A oficina abre com a Lenigrast Key.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_shalquoir",
-          "cat": "npc",
-          "name": "Sweet Shalquoir",
-          "desc": "Gata mercadora (aneis, Silvercat Ring pra quedas).",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_melentia",
-          "cat": "npc",
-          "name": "Merchant Hag Melentia",
-          "desc": "Mercadora de consumiveis e Lifegems.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_maughlin",
-          "cat": "npc",
-          "name": "Maughlin the Armourer",
-          "desc": "Vende armaduras; tem questline com gasto de almas.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_cale",
-          "cat": "npc",
-          "name": "Cale the Cartographer",
-          "desc": "Vende a Mansion Key (destrava a mansao -> Shaded Woods) e a House Key.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_licia",
-          "cat": "npc",
-          "name": "Licia of Lindelt",
-          "desc": "Cleriga/mercadora. Destrava Huntsman's Copse (Rotunda) por almas.",
-          "coords": null,
-          "missable": false,
-          "spoiler": true
-        },
-        {
-          "id": "maj_npc_gilligan",
-          "cat": "npc",
-          "name": "Laddersmith Gilligan",
-          "desc": "Vende escadas pra descer o The Pit com seguranca.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_carhillion",
-          "cat": "npc",
-          "name": "Carhillion of the Fold",
-          "desc": "Mercador de feiticaria (importante pra MAGO). Muda-se pra ca depois.",
-          "coords": null,
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_rosabeth",
-          "cat": "npc",
-          "name": "Rosabeth of Melfia",
-          "desc": "Petrificada na mansao; curada com Fragrant Branch of Yore. Vende pyromancy.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
-        {
-          "id": "maj_npc_chloanne",
-          "cat": "npc",
-          "name": "Stone Trader Chloanne",
-          "desc": "Mercadora de materiais de upgrade; muda-se pra Majula depois.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -1309,6 +1224,126 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_04_benhartofjugo",
+          "cat": "npc",
+          "name": "Benhart of Jugo",
+          "coords": [
+            -40.1,
+            16.7,
+            -76.3
+          ]
+        },
+        {
+          "id": "npc_10_04_blacksmithlenigrast",
+          "cat": "npc",
+          "name": "Blacksmith Lenigrast",
+          "coords": [
+            -1.1,
+            5.1,
+            -0.1
+          ]
+        },
+        {
+          "id": "npc_10_04_carhillionofthefold",
+          "cat": "npc",
+          "name": "Carhillion of the Fold",
+          "coords": [
+            13.9,
+            7.0,
+            12.0
+          ]
+        },
+        {
+          "id": "npc_10_04_cartographercale",
+          "cat": "npc",
+          "name": "Cartographer Cale",
+          "coords": [
+            -90.8,
+            4.8,
+            -1.0
+          ]
+        },
+        {
+          "id": "npc_10_04_crestfallensaulden",
+          "cat": "npc",
+          "name": "Crestfallen Saulden",
+          "coords": [
+            46.6,
+            15.6,
+            18.3
+          ]
+        },
+        {
+          "id": "npc_10_04_dynatillo",
+          "cat": "npc",
+          "name": "Dyna & Tillo",
+          "coords": [
+            -41.4,
+            12.4,
+            53.0
+          ]
+        },
+        {
+          "id": "npc_10_04_liciaoflindeldt",
+          "cat": "npc",
+          "name": "Licia of Lindeldt",
+          "coords": [
+            -51.7,
+            -3.2,
+            63.3
+          ]
+        },
+        {
+          "id": "npc_10_04_maughlinthearmourer",
+          "cat": "npc",
+          "name": "Maughlin the Armourer",
+          "coords": [
+            -49.0,
+            6.4,
+            -29.9
+          ]
+        },
+        {
+          "id": "npc_10_04_merchanthagmelentia",
+          "cat": "npc",
+          "name": "Merchant Hag Melentia",
+          "coords": [
+            -3.1,
+            4.7,
+            -27.2
+          ]
+        },
+        {
+          "id": "npc_10_04_rosabethofmelfia",
+          "cat": "npc",
+          "name": "Rosabeth of Melfia",
+          "coords": [
+            29.7,
+            9.2,
+            10.3
+          ]
+        },
+        {
+          "id": "npc_10_04_stonetraderchloanne",
+          "cat": "npc",
+          "name": "Stone Trader Chloanne",
+          "coords": [
+            2.0,
+            4.8,
+            -9.4
+          ]
+        },
+        {
+          "id": "npc_10_04_sweetshalquoir",
+          "cat": "npc",
+          "name": "Sweet Shalquoir",
+          "coords": [
+            -46.3,
+            7.5,
+            5.8
+          ]
         }
       ]
     },
@@ -1430,15 +1465,6 @@
           "coords": null,
           "missable": false,
           "spoiler": false
-        },
-        {
-          "id": "ffg_npc_pate",
-          "cat": "npc",
-          "name": "Mild-Mannered Pate",
-          "desc": "NPC ambiguo com questline; aparece cedo perto de uma sala com armadilha. Tem consequencias.",
-          "coords": null,
-          "missable": true,
-          "spoiler": true
         },
         {
           "id": "ffg_sc_rooftop_barrels",
@@ -3338,6 +3364,66 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_10_benhartofjugo",
+          "cat": "npc",
+          "name": "Benhart of Jugo",
+          "coords": [
+            144.5,
+            20.1,
+            -148.7
+          ]
+        },
+        {
+          "id": "npc_10_10_cartographercale",
+          "cat": "npc",
+          "name": "Cartographer Cale",
+          "coords": [
+            63.0,
+            5.1,
+            -274.8
+          ]
+        },
+        {
+          "id": "npc_10_10_masterlessglencour",
+          "cat": "npc",
+          "name": "Masterless Glencour",
+          "coords": [
+            82.1,
+            3.0,
+            -142.0
+          ]
+        },
+        {
+          "id": "npc_10_10_merchanthagmelentia",
+          "cat": "npc",
+          "name": "Merchant Hag Melentia",
+          "coords": [
+            79.3,
+            11.7,
+            -178.2
+          ]
+        },
+        {
+          "id": "npc_10_10_mildmanneredpate",
+          "cat": "npc",
+          "name": "Mild-mannered Pate",
+          "coords": [
+            91.9,
+            1.6,
+            -226.9
+          ]
+        },
+        {
+          "id": "npc_10_10_royalsorcerernavlaan",
+          "cat": "npc",
+          "name": "Royal Sorcerer Navlaan",
+          "coords": [
+            54.1,
+            -1.1,
+            -158.4
+          ]
         }
       ]
     },
@@ -3368,15 +3454,6 @@
           "cat": "enemy",
           "name": "Hellkite Dragon",
           "desc": "Dropa Petrified Dragon Bone + Watchdragon Parma.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
-        {
-          "id": "hei_npc_glencour",
-          "cat": "npc",
-          "name": "Masterless Glencour (phantom)",
-          "desc": "Invocavel pro boss.",
           "coords": null,
           "missable": true,
           "spoiler": false
@@ -3540,6 +3617,16 @@
           ],
           "descs": [
             "Grants additional Estus Flask uses"
+          ]
+        },
+        {
+          "id": "npc_10_30_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -27.9,
+            -65.9,
+            366.5
           ]
         }
       ]
@@ -3894,6 +3981,46 @@
           ],
           "descs": [
             "Invade the world of the guilty"
+          ]
+        },
+        {
+          "id": "npc_10_31_bluesentineltargray",
+          "cat": "npc",
+          "name": "Blue Sentinel Targray",
+          "coords": [
+            -191.3,
+            13.0,
+            146.0
+          ]
+        },
+        {
+          "id": "npc_10_31_devoteescarlett",
+          "cat": "npc",
+          "name": "Devotee Scarlett",
+          "coords": [
+            -86.7,
+            -4.1,
+            240.5
+          ]
+        },
+        {
+          "id": "npc_10_31_liciaoflindeldt",
+          "cat": "npc",
+          "name": "Licia of Lindeldt",
+          "coords": [
+            26.8,
+            -2.1,
+            278.3
+          ]
+        },
+        {
+          "id": "npc_10_31_lonehunterschmidt",
+          "cat": "npc",
+          "name": "Lone Hunter Schmidt",
+          "coords": [
+            -9.2,
+            -10.8,
+            269.6
           ]
         }
       ]
@@ -4475,6 +4602,56 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_18_carhillionofthefold",
+          "cat": "npc",
+          "name": "Carhillion of the Fold",
+          "coords": [
+            -11.7,
+            -62.2,
+            498.9
+          ]
+        },
+        {
+          "id": "npc_10_18_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -47.4,
+            -64.6,
+            528.3
+          ]
+        },
+        {
+          "id": "npc_10_18_lonesomegavlan",
+          "cat": "npc",
+          "name": "Lonesome Gavlan",
+          "coords": [
+            -80.9,
+            -52.4,
+            533.6
+          ]
+        },
+        {
+          "id": "npc_10_18_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -70.3,
+            -52.5,
+            459.7
+          ]
+        },
+        {
+          "id": "npc_10_18_vorgelthesinner",
+          "cat": "npc",
+          "name": "Vorgel the Sinner",
+          "coords": [
+            25.9,
+            -58.3,
+            520.8
+          ]
         }
       ]
     },
@@ -4549,26 +4726,6 @@
             7.23,
             535.43
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "lb_npc_straid",
-          "cat": "npc",
-          "name": "Straid of Olaphis",
-          "sub": "Lost Bastille",
-          "desc": "Feiticeiro petrificado (cure com Fragrant Branch). Troca almas de boss por feiticos/hexes — MUITO util pra MAGO.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
-        {
-          "id": "lb_npc_mcduff",
-          "cat": "npc",
-          "name": "Steady Hand McDuff",
-          "sub": "Lost Bastille",
-          "desc": "Ferreiro de infusao; precisa entregar o Dull Ember pra ele forjar.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -6571,6 +6728,66 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_16_bellkeeper",
+          "cat": "npc",
+          "name": "Bell Keeper",
+          "coords": [
+            -186.6,
+            2.3,
+            516.2
+          ]
+        },
+        {
+          "id": "npc_10_16_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -86.2,
+            14.8,
+            478.4
+          ]
+        },
+        {
+          "id": "npc_10_16_pilgrimbellclaire",
+          "cat": "npc",
+          "name": "Pilgrim Bellclaire",
+          "coords": [
+            -131.0,
+            13.8,
+            542.3
+          ]
+        },
+        {
+          "id": "npc_10_16_steadyhandmcduff",
+          "cat": "npc",
+          "name": "Steady Hand McDuff",
+          "coords": [
+            -80.4,
+            2.0,
+            584.8
+          ]
+        },
+        {
+          "id": "npc_10_16_straidofolaphis",
+          "cat": "npc",
+          "name": "Straid of Olaphis",
+          "coords": [
+            -128.3,
+            30.1,
+            599.1
+          ]
+        },
+        {
+          "id": "npc_10_16_vorgelthesinner",
+          "cat": "npc",
+          "name": "Vorgel the Sinner",
+          "coords": [
+            -225.6,
+            -3.1,
+            534.0
+          ]
         }
       ]
     },
@@ -6617,16 +6834,6 @@
             37.03,
             105.37
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "hc_npc_felkin",
-          "cat": "npc",
-          "name": "Felkin the Outcast",
-          "sub": "Huntsman's Copse",
-          "desc": "Hexer — vende Sunset Staff + Hexer's Set. Se voce tiver INT+FTH, hexes ficam fortes.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -7404,6 +7611,56 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_23_creightonthewanderer",
+          "cat": "npc",
+          "name": "Creighton the Wanderer",
+          "coords": [
+            -316.8,
+            24.2,
+            109.8
+          ]
+        },
+        {
+          "id": "npc_10_23_felkintheoutcast",
+          "cat": "npc",
+          "name": "Felkin the Outcast",
+          "coords": [
+            -164.2,
+            11.6,
+            71.7
+          ]
+        },
+        {
+          "id": "npc_10_23_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -306.7,
+            10.7,
+            7.2
+          ]
+        },
+        {
+          "id": "npc_10_23_mercilessroenna",
+          "cat": "npc",
+          "name": "Merciless Roenna",
+          "coords": [
+            -394.6,
+            36.5,
+            148.3
+          ]
+        },
+        {
+          "id": "npc_10_23_titchygren",
+          "cat": "npc",
+          "name": "Titchy Gren",
+          "coords": [
+            -283.1,
+            45.2,
+            -35.6
+          ]
         }
       ]
     },
@@ -8582,6 +8839,96 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_17_altarofsunlight",
+          "cat": "npc",
+          "name": "Altar of Sunlight",
+          "coords": [
+            -607.7,
+            86.4,
+            484.5
+          ]
+        },
+        {
+          "id": "npc_10_17_devoteescarlett",
+          "cat": "npc",
+          "name": "Devotee Scarlett",
+          "coords": [
+            -562.6,
+            100.6,
+            473.7
+          ]
+        },
+        {
+          "id": "npc_10_17_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -547.7,
+            124.9,
+            514.9
+          ]
+        },
+        {
+          "id": "npc_10_17_jesterthomas",
+          "cat": "npc",
+          "name": "Jester Thomas",
+          "coords": [
+            -559.3,
+            124.0,
+            520.5
+          ]
+        },
+        {
+          "id": "npc_10_17_laddersmithgilligan",
+          "cat": "npc",
+          "name": "Laddersmith Gilligan",
+          "coords": [
+            -535.6,
+            112.6,
+            473.4
+          ]
+        },
+        {
+          "id": "npc_10_17_lonesomegavlan",
+          "cat": "npc",
+          "name": "Lonesome Gavlan",
+          "coords": [
+            -525.1,
+            83.5,
+            375.0
+          ]
+        },
+        {
+          "id": "npc_10_17_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -511.6,
+            82.6,
+            485.4
+          ]
+        },
+        {
+          "id": "npc_10_17_mildmanneredpate",
+          "cat": "npc",
+          "name": "Mild-mannered Pate",
+          "coords": [
+            -583.6,
+            110.6,
+            507.0
+          ]
+        },
+        {
+          "id": "npc_10_17_stonetraderchloanne",
+          "cat": "npc",
+          "name": "Stone Trader Chloanne",
+          "coords": [
+            -506.5,
+            92.2,
+            334.9
+          ]
         }
       ]
     },
@@ -8632,16 +8979,6 @@
           "spoiler": false
         },
         {
-          "id": "ik_boss_pursuer",
-          "cat": "boss",
-          "name": "The Pursuer (reaparece)",
-          "sub": "Iron Keep",
-          "desc": "Volta como encontro aqui.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
-        },
-        {
           "id": "ik_primal",
           "cat": "bonfire",
           "name": "Primal Bonfire (Iron Keep)",
@@ -8683,16 +9020,6 @@
             649.6
           ],
           "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "bs_boss_bell_leader",
-          "cat": "boss",
-          "name": "Bell Guardian Leader",
-          "sub": "Belfry Sol",
-          "desc": "Guarda o fog gate pra entrar no covenant Bell Keepers.",
-          "coords": null,
-          "missable": true,
           "spoiler": false
         },
         {
@@ -9819,6 +10146,86 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_19_armorerdennis",
+          "cat": "npc",
+          "name": "Armorer Dennis",
+          "coords": [
+            -622.3,
+            163.9,
+            598.0
+          ]
+        },
+        {
+          "id": "npc_10_19_bellkeeper",
+          "cat": "npc",
+          "name": "Bell Keeper",
+          "coords": [
+            -781.7,
+            197.2,
+            652.6
+          ]
+        },
+        {
+          "id": "npc_10_19_drifterswordsmanaide",
+          "cat": "npc",
+          "name": "Drifter Swordsman Aidel",
+          "coords": [
+            -778.5,
+            197.2,
+            654.3
+          ]
+        },
+        {
+          "id": "npc_10_19_fencersharron",
+          "cat": "npc",
+          "name": "Fencer Sharron",
+          "coords": [
+            -622.6,
+            163.8,
+            611.0
+          ]
+        },
+        {
+          "id": "npc_10_19_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -595.1,
+            166.7,
+            601.1
+          ]
+        },
+        {
+          "id": "npc_10_19_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -691.6,
+            169.8,
+            649.0
+          ]
+        },
+        {
+          "id": "npc_10_19_mageroldoflanafir",
+          "cat": "npc",
+          "name": "Magerold of Lanafir",
+          "coords": [
+            -640.0,
+            164.9,
+            635.6
+          ]
+        },
+        {
+          "id": "npc_10_19_oliverthecollector",
+          "cat": "npc",
+          "name": "Oliver the Collector",
+          "coords": [
+            -791.2,
+            190.0,
+            691.8
+          ]
         }
       ]
     },
@@ -9862,16 +10269,6 @@
           "desc": "Perto da arena da Najka.",
           "coords": null,
           "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "sw_npc_grandahl",
-          "cat": "npc",
-          "name": "Darkdiver Grandahl (Shaded Ruins)",
-          "sub": "Shaded Woods",
-          "desc": "1 dos 3 pontos pra entrar no Pilgrims of Dark (Dark Chasm).",
-          "coords": null,
-          "missable": true,
           "spoiler": false
         },
         {
@@ -10787,6 +11184,76 @@
           "descs": [
             "Crossbow bolt inflicting magic damage"
           ]
+        },
+        {
+          "id": "npc_10_32_bradleyoftheoldguard",
+          "cat": "npc",
+          "name": "Bradley of the Old Guard",
+          "coords": [
+            -461.3,
+            61.4,
+            -218.2
+          ]
+        },
+        {
+          "id": "npc_10_32_creightonthewanderer",
+          "cat": "npc",
+          "name": "Creighton the Wanderer",
+          "coords": [
+            -458.0,
+            69.4,
+            -219.3
+          ]
+        },
+        {
+          "id": "npc_10_32_darkdivergrandahl",
+          "cat": "npc",
+          "name": "Darkdiver Grandahl",
+          "coords": [
+            -453.8,
+            54.5,
+            -218.2
+          ]
+        },
+        {
+          "id": "npc_10_32_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -416.7,
+            37.2,
+            -83.4
+          ]
+        },
+        {
+          "id": "npc_10_32_headofvengarl",
+          "cat": "npc",
+          "name": "Head of Vengarl",
+          "coords": [
+            -379.0,
+            42.7,
+            -191.7
+          ]
+        },
+        {
+          "id": "npc_10_32_manscorpiontark",
+          "cat": "npc",
+          "name": "Manscorpion Tark",
+          "coords": [
+            -396.3,
+            55.0,
+            -236.1
+          ]
+        },
+        {
+          "id": "npc_10_32_weaponsmithornifex",
+          "cat": "npc",
+          "name": "Weaponsmith Ornifex",
+          "coords": [
+            -450.4,
+            54.0,
+            -256.4
+          ]
         }
       ]
     },
@@ -10818,15 +11285,6 @@
             -174.31
           ],
           "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "dp_npc_gavlan",
-          "cat": "npc",
-          "name": "Gavlan",
-          "desc": "Mercador que COMPRA seu loot por almas (raro no jogo).",
-          "coords": null,
-          "missable": true,
           "spoiler": false
         },
         {
@@ -11140,6 +11598,26 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_33_bowmanguthry",
+          "cat": "npc",
+          "name": "Bowman Guthry",
+          "coords": [
+            -601.3,
+            96.9,
+            -163.3
+          ]
+        },
+        {
+          "id": "npc_10_33_lonesomegavlan",
+          "cat": "npc",
+          "name": "Lonesome Gavlan",
+          "coords": [
+            -541.9,
+            104.5,
+            -220.3
+          ]
         }
       ]
     },
@@ -12416,6 +12894,116 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_14_ashenknightboyd",
+          "cat": "npc",
+          "name": "Ashen Knight Boyd",
+          "coords": [
+            -604.0,
+            74.0,
+            -160.9
+          ]
+        },
+        {
+          "id": "npc_10_14_bashfulray",
+          "cat": "npc",
+          "name": "Bashful Ray",
+          "coords": [
+            -644.3,
+            97.1,
+            -31.0
+          ]
+        },
+        {
+          "id": "npc_10_14_benhartofjugo",
+          "cat": "npc",
+          "name": "Benhart of Jugo",
+          "coords": [
+            -703.2,
+            137.7,
+            -141.0
+          ]
+        },
+        {
+          "id": "npc_10_14_bowmanguthry",
+          "cat": "npc",
+          "name": "Bowman Guthry",
+          "coords": [
+            -676.5,
+            95.5,
+            -18.9
+          ]
+        },
+        {
+          "id": "npc_10_14_creightonthewanderer",
+          "cat": "npc",
+          "name": "Creighton the Wanderer",
+          "coords": [
+            -684.0,
+            108.8,
+            -56.0
+          ]
+        },
+        {
+          "id": "npc_10_14_cromwellthepardoner",
+          "cat": "npc",
+          "name": "Cromwell the Pardoner",
+          "coords": [
+            -643.0,
+            126.8,
+            -44.0
+          ]
+        },
+        {
+          "id": "npc_10_14_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -648.3,
+            98.7,
+            -76.3
+          ]
+        },
+        {
+          "id": "npc_10_14_manhunteroharrah",
+          "cat": "npc",
+          "name": "Manhunter O'Harrah",
+          "coords": [
+            -619.0,
+            97.2,
+            -105.9
+          ]
+        },
+        {
+          "id": "npc_10_14_mildmanneredpate",
+          "cat": "npc",
+          "name": "Mild-mannered Pate",
+          "coords": [
+            -682.1,
+            108.8,
+            -59.1
+          ]
+        },
+        {
+          "id": "npc_10_14_royalsorcerernavlaan",
+          "cat": "npc",
+          "name": "Royal Sorcerer Navlaan",
+          "coords": [
+            -636.4,
+            97.5,
+            -100.4
+          ]
+        },
+        {
+          "id": "npc_10_14_weaponsmithornifex",
+          "cat": "npc",
+          "name": "Weaponsmith Ornifex",
+          "coords": [
+            -646.8,
+            97.3,
+            -22.0
+          ]
         }
       ]
     },
@@ -12725,6 +13313,26 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_34_lonehunterschmidt",
+          "cat": "npc",
+          "name": "Lone Hunter Schmidt",
+          "coords": [
+            -103.2,
+            -103.2,
+            -23.5
+          ]
+        },
+        {
+          "id": "npc_10_34_rhoytheexplorer",
+          "cat": "npc",
+          "name": "Rhoy the Explorer",
+          "coords": [
+            -137.5,
+            -48.5,
+            36.8
+          ]
         }
       ]
     },
@@ -12757,16 +13365,6 @@
             -147.97,
             -92.4
           ],
-          "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "gut_npc_queen",
-          "cat": "npc",
-          "name": "Rotten Vermin / Giant Ant Queen",
-          "sub": "The Gutter",
-          "desc": "NPC amigavel, nao ataca; o gas azul cura veneno.",
-          "coords": null,
           "missable": false,
           "spoiler": false
         },
@@ -14368,6 +14966,96 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_25_darkdivergrandahl",
+          "cat": "npc",
+          "name": "Darkdiver Grandahl",
+          "coords": [
+            -199.1,
+            -219.4,
+            -110.5
+          ]
+        },
+        {
+          "id": "npc_10_25_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -73.8,
+            -156.0,
+            -83.6
+          ]
+        },
+        {
+          "id": "npc_10_25_gutterdenizen",
+          "cat": "npc",
+          "name": "Gutter Denizen",
+          "coords": [
+            -80.6,
+            -177.0,
+            -88.9
+          ]
+        },
+        {
+          "id": "npc_10_25_lonehunterschmidt",
+          "cat": "npc",
+          "name": "Lone Hunter Schmidt",
+          "coords": [
+            -191.6,
+            -212.4,
+            -104.1
+          ]
+        },
+        {
+          "id": "npc_10_25_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -197.2,
+            -209.7,
+            -114.1
+          ]
+        },
+        {
+          "id": "npc_10_25_melindathebutcher",
+          "cat": "npc",
+          "name": "Melinda the Butcher",
+          "coords": [
+            -114.8,
+            -134.7,
+            -13.8
+          ]
+        },
+        {
+          "id": "npc_10_25_royalsorcerernavlaan",
+          "cat": "npc",
+          "name": "Royal Sorcerer Navlaan",
+          "coords": [
+            -57.4,
+            -146.8,
+            -22.8
+          ]
+        },
+        {
+          "id": "npc_10_25_woodlandchildgully",
+          "cat": "npc",
+          "name": "Woodland Child Gully",
+          "coords": [
+            -227.0,
+            -221.0,
+            -85.7
+          ]
+        },
+        {
+          "id": "npc_10_25_woodlandchildvictor",
+          "cat": "npc",
+          "name": "Woodland Child Victor",
+          "coords": [
+            -228.6,
+            -221.6,
+            -89.3
+          ]
         }
       ]
     },
@@ -14399,15 +15087,6 @@
             -409.89
           ],
           "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "sa_npc_felicia",
-          "cat": "npc",
-          "name": "Felicia the Brave (phantom)",
-          "desc": "Invocavel na area.",
-          "coords": null,
-          "missable": true,
           "spoiler": false
         },
         {
@@ -15128,6 +15807,46 @@
           "descs": [
             "Arrow that inflicts magic damage"
           ]
+        },
+        {
+          "id": "npc_20_11_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -769.2,
+            -64.5,
+            -384.7
+          ]
+        },
+        {
+          "id": "npc_20_11_masterlessglencour",
+          "cat": "npc",
+          "name": "Masterless Glencour",
+          "coords": [
+            -1064.5,
+            -86.5,
+            -225.5
+          ]
+        },
+        {
+          "id": "npc_20_11_milfanito",
+          "cat": "npc",
+          "name": "Milfanito",
+          "coords": [
+            -819.8,
+            -85.6,
+            -360.4
+          ]
+        },
+        {
+          "id": "npc_20_11_peculiarkindalur",
+          "cat": "npc",
+          "name": "Peculiar Kindalur",
+          "coords": [
+            -1023.8,
+            -86.8,
+            -183.4
+          ]
         }
       ]
     },
@@ -15199,16 +15918,6 @@
           "desc": "Sala no topo do elevador ativado pelo golem (mate um soldado de pedra ao lado dele).",
           "coords": null,
           "missable": false,
-          "spoiler": false
-        },
-        {
-          "id": "dc_npc_grandahl",
-          "cat": "npc",
-          "name": "Darkdiver Grandahl (Drangleic Castle)",
-          "sub": "Drangleic Castle",
-          "desc": "3o e ultimo ponto do Pilgrims of Dark (Dark Chasm).",
-          "coords": null,
-          "missable": true,
           "spoiler": false
         },
         {
@@ -15762,6 +16471,86 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_20_21_benhartofjugo",
+          "cat": "npc",
+          "name": "Benhart of Jugo",
+          "coords": [
+            -505.7,
+            178.7,
+            -356.6
+          ]
+        },
+        {
+          "id": "npc_20_21_chancellorwellager",
+          "cat": "npc",
+          "name": "Chancellor Wellager",
+          "coords": [
+            -445.6,
+            153.0,
+            -362.2
+          ]
+        },
+        {
+          "id": "npc_20_21_darkdivergrandahl",
+          "cat": "npc",
+          "name": "Darkdiver Grandahl",
+          "coords": [
+            -446.0,
+            135.2,
+            -326.2
+          ]
+        },
+        {
+          "id": "npc_20_21_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -414.9,
+            148.2,
+            -343.5
+          ]
+        },
+        {
+          "id": "npc_20_21_headofvengarl",
+          "cat": "npc",
+          "name": "Head of Vengarl",
+          "coords": [
+            -690.9,
+            63.7,
+            -258.0
+          ]
+        },
+        {
+          "id": "npc_20_21_imprisonedmilfanito",
+          "cat": "npc",
+          "name": "Imprisoned Milfanito",
+          "coords": [
+            -541.0,
+            281.4,
+            -340.9
+          ]
+        },
+        {
+          "id": "npc_20_21_namelessusurper",
+          "cat": "npc",
+          "name": "Nameless Usurper",
+          "coords": [
+            -439.0,
+            168.2,
+            -399.0
+          ]
+        },
+        {
+          "id": "npc_20_21_royalsorcerernavlaan",
+          "cat": "npc",
+          "name": "Royal Sorcerer Navlaan",
+          "coords": [
+            -439.0,
+            168.2,
+            -399.0
+          ]
         }
       ]
     },
@@ -15796,15 +16585,6 @@
           "spoiler": false
         },
         {
-          "id": "uc_npc_vendrick",
-          "cat": "npc",
-          "name": "King Vendrick",
-          "desc": "Encontro (nao-combate na 1a vez) na camara do outro lado da sala.",
-          "coords": null,
-          "missable": false,
-          "spoiler": true
-        },
-        {
           "id": "uc_key_kings_ring",
           "cat": "key",
           "name": "King's Ring",
@@ -15812,15 +16592,6 @@
           "coords": null,
           "missable": false,
           "spoiler": true
-        },
-        {
-          "id": "uc_npc_agdayne",
-          "cat": "npc",
-          "name": "Grave Warden Agdayne",
-          "desc": "Fica hostil se voce acender tocha perto da entrada da cripta.",
-          "coords": null,
-          "missable": true,
-          "spoiler": false
         },
         {
           "id": "uc_item_avelyn",
@@ -16153,6 +16924,46 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_20_24_devoteescarlett",
+          "cat": "npc",
+          "name": "Devotee Scarlett",
+          "coords": [
+            -1101.7,
+            -135.8,
+            -156.9
+          ]
+        },
+        {
+          "id": "npc_20_24_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -1054.9,
+            -130.4,
+            -155.0
+          ]
+        },
+        {
+          "id": "npc_20_24_gravewardenagdayne",
+          "cat": "npc",
+          "name": "Grave Warden Agdayne",
+          "coords": [
+            -1114.5,
+            -129.9,
+            -202.4
+          ]
+        },
+        {
+          "id": "npc_20_24_namelessusurper",
+          "cat": "npc",
+          "name": "Nameless Usurper",
+          "coords": [
+            -1024.9,
+            -125.8,
+            -215.4
+          ]
         }
       ]
     },
@@ -16185,15 +16996,6 @@
           ],
           "missable": false,
           "spoiler": false
-        },
-        {
-          "id": "ak_npc_lucatiel",
-          "cat": "npc",
-          "name": "Lucatiel of Mirrah",
-          "desc": "Questline culmina aqui; mante-la viva nas invocacoes dela pelo jogo tem recompensa.",
-          "coords": null,
-          "missable": true,
-          "spoiler": true
         },
         {
           "id": "ak_key_aldia",
@@ -16622,6 +17424,66 @@
           "descs": [
             "Use to acquire souls"
           ]
+        },
+        {
+          "id": "npc_10_15_aslatielofmirrah",
+          "cat": "npc",
+          "name": "Aslatiel of Mirrah",
+          "coords": [
+            -474.1,
+            58.6,
+            -248.6
+          ]
+        },
+        {
+          "id": "npc_10_15_emeraldherald",
+          "cat": "npc",
+          "name": "Emerald Herald",
+          "coords": [
+            -840.2,
+            242.0,
+            -247.8
+          ]
+        },
+        {
+          "id": "npc_10_15_forlorn",
+          "cat": "npc",
+          "name": "Forlorn",
+          "coords": [
+            -535.5,
+            58.4,
+            -248.2
+          ]
+        },
+        {
+          "id": "npc_10_15_lucatielofmirrah",
+          "cat": "npc",
+          "name": "Lucatiel of Mirrah",
+          "coords": [
+            -425.7,
+            52.7,
+            -269.6
+          ]
+        },
+        {
+          "id": "npc_10_15_royalsorcerernavlaan",
+          "cat": "npc",
+          "name": "Royal Sorcerer Navlaan",
+          "coords": [
+            -513.4,
+            58.4,
+            -232.7
+          ]
+        },
+        {
+          "id": "npc_10_15_ruinedaflis",
+          "cat": "npc",
+          "name": "Ruined Aflis",
+          "coords": [
+            -551.7,
+            67.6,
+            -257.5
+          ]
         }
       ]
     },
@@ -16706,16 +17568,6 @@
           "coords": null,
           "missable": false,
           "spoiler": false
-        },
-        {
-          "id": "ds_npc_scholar",
-          "cat": "npc",
-          "name": "Scholar of the First Sin (SotFS)",
-          "sub": "Dragon Shrine",
-          "desc": "Encontro exclusivo do SotFS perto da fogueira, com dialogo proprio antes de sumir.",
-          "coords": null,
-          "missable": true,
-          "spoiler": true
         },
         {
           "id": "chest_m10_27_00_00_0",
@@ -17359,6 +18211,66 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_10_27_dragonfangvillard",
+          "cat": "npc",
+          "name": "Dragonfang Villard",
+          "coords": [
+            -886.7,
+            253.6,
+            -547.8
+          ]
+        },
+        {
+          "id": "npc_10_27_headofvengarl",
+          "cat": "npc",
+          "name": "Head of Vengarl",
+          "coords": [
+            -859.0,
+            282.2,
+            -657.8
+          ]
+        },
+        {
+          "id": "npc_10_27_hexernicholai",
+          "cat": "npc",
+          "name": "Hexer Nicholai",
+          "coords": [
+            -887.2,
+            236.9,
+            -521.8
+          ]
+        },
+        {
+          "id": "npc_10_27_melindathebutcher",
+          "cat": "npc",
+          "name": "Melinda the Butcher",
+          "coords": [
+            -868.6,
+            260.6,
+            -555.2
+          ]
+        },
+        {
+          "id": "npc_10_27_royalsorcerernavlaan",
+          "cat": "npc",
+          "name": "Royal Sorcerer Navlaan",
+          "coords": [
+            -862.6,
+            209.0,
+            -348.9
+          ]
+        },
+        {
+          "id": "npc_10_27_transcendentedde",
+          "cat": "npc",
+          "name": "Transcendent Edde",
+          "coords": [
+            -860.8,
+            278.1,
+            -616.8
+          ]
         }
       ]
     },
@@ -17971,6 +18883,26 @@
           "source": "msb:mapobj_type3",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_20_10_benhartofjugo",
+          "cat": "npc",
+          "name": "Benhart of Jugo",
+          "coords": [
+            157.5,
+            -17.6,
+            -185.9
+          ]
+        },
+        {
+          "id": "npc_20_10_captaindrummond",
+          "cat": "npc",
+          "name": "Captain Drummond",
+          "coords": [
+            174.0,
+            -16.2,
+            -164.9
+          ]
         }
       ]
     },
@@ -18112,6 +19044,26 @@
             "Use to acquire souls",
             "Reverses hollowing"
           ]
+        },
+        {
+          "id": "npc_10_29_benhartofjugo",
+          "cat": "npc",
+          "name": "Benhart of Jugo",
+          "coords": [
+            -118.2,
+            12.1,
+            -121.5
+          ]
+        },
+        {
+          "id": "npc_10_29_rosabethofmelfia",
+          "cat": "npc",
+          "name": "Rosabeth of Melfia",
+          "coords": [
+            -148.6,
+            13.4,
+            -116.4
+          ]
         }
       ]
     },
@@ -18159,6 +19111,16 @@
           "source": "msb:bgm_region",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "npc_40_03_pilgrimbellclaire",
+          "cat": "npc",
+          "name": "Pilgrim Bellclaire",
+          "coords": [
+            -1040.7,
+            42.3,
+            258.5
+          ]
         }
       ]
     }

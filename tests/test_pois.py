@@ -86,6 +86,15 @@ def test_boss_throne_canonical(doc):
     assert "Throne Watcher & Defender" not in names
 
 
+def test_npcs_positioned_from_game_data(doc):
+    # NPC layer rebuilt from game data (generator + npcmenu + offset): canonical names + coords
+    npc = [p for a in doc["areas"].values() for p in a["pois"] if p["cat"] == "npc"]
+    assert len(npc) >= 100, len(npc)
+    assert all(p.get("coords") for p in npc), "every NPC has coords"
+    maj = {p["name"] for p in doc["areas"]["10_04_majula"]["pois"] if p["cat"] == "npc"}
+    assert {"Cartographer Cale", "Blacksmith Lenigrast", "Merchant Hag Melentia"} <= maj
+
+
 def test_boss_positions_no_orphan_dups(doc):
     # after dedup: each boss appears once per base-name; no coordless duplicate of a placed one
     import re
