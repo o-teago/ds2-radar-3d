@@ -334,6 +334,20 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_02_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -187.41,
+            17.71,
+            -150.86
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -824,6 +838,48 @@
           ],
           "auto": true,
           "source": "msb:o00_0240",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_04_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -54.4,
+            10.46,
+            -38.99
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_04_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -67.37,
+            12.2,
+            -2.25
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_04_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -3.28,
+            6.24,
+            1.12
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
           "missable": false,
           "spoiler": false
         }
@@ -2012,6 +2068,76 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_10_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            86.16,
+            11.22,
+            -183.2
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_10_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -42.51,
+            -8.15,
+            -98.82
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_10_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            17.79,
+            -12.46,
+            -214.47
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_10_00_00_3",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            109.04,
+            -7.92,
+            -175.11
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_10_00_00_4",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            84.51,
+            -7.05,
+            -141.72
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -2450,6 +2576,20 @@
           "source": "msb:o00_0100",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_31_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -193.01,
+            8.98,
+            148.21
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -2829,6 +2969,48 @@
           ],
           "auto": true,
           "source": "msb:o00_0240",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_18_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -56.08,
+            -61.75,
+            452.94
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_18_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -92.55,
+            -53.8,
+            527.62
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_18_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -89.73,
+            -62.47,
+            541.81
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
           "missable": false,
           "spoiler": false
         }
@@ -4126,6 +4308,118 @@
           ],
           "auto": false,
           "source": "live:manual",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -133.97,
+            -0.49,
+            595.81
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -161.95,
+            7.19,
+            573.43
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -173.3,
+            -0.49,
+            538.92
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_3",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -78.08,
+            -0.49,
+            592.85
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_4",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -77.94,
+            -0.49,
+            589.33
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_5",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -81.7,
+            -0.49,
+            589.79
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_6",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -81.75,
+            -0.49,
+            586.56
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_16_00_00_7",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -170.61,
+            23.2,
+            516.45
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
           "missable": false,
           "spoiler": false
         }
@@ -5441,6 +5735,48 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_17_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -525.96,
+            42.58,
+            370.25
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_17_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -574.17,
+            56.39,
+            508.79
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_17_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -555.74,
+            92.96,
+            524.93
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -6171,6 +6507,20 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_19_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -768.28,
+            196.48,
+            675.65
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -6833,6 +7183,34 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_32_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -429.05,
+            64.88,
+            -220.96
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_32_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -430.9,
+            57.31,
+            -206.67
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -7078,6 +7456,34 @@
           ],
           "auto": true,
           "source": "msb:o00_0240",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_33_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -564.27,
+            101.15,
+            -75.2
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_33_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -588.78,
+            101.56,
+            -224.51
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
           "missable": false,
           "spoiler": false
         }
@@ -8078,6 +8484,20 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_34_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -90.9,
+            -119.71,
+            36.61
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -9016,6 +9436,34 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_25_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -107.33,
+            -140.09,
+            -59.63
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_25_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -60.62,
+            -167.27,
+            -77.42
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -9496,6 +9944,76 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m20_11_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -754.85,
+            -14.21,
+            -331.03
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_11_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -781.77,
+            -29.85,
+            -390.5
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_11_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -883.69,
+            -29.52,
+            -429.47
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_11_00_00_3",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -823.47,
+            -28.94,
+            -352.1
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_11_00_00_4",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -1000.99,
+            -29.5,
+            -101.76
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -9932,6 +10450,48 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m20_21_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -455.08,
+            93.73,
+            -384.69
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_21_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -460.73,
+            85.02,
+            -389.03
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_21_00_00_2",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -455.67,
+            74.02,
+            -395.99
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -10191,6 +10751,20 @@
           ],
           "auto": true,
           "source": "msb:o00_0240",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_24_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -1066.95,
+            -129.25,
+            -152.36
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
           "missable": false,
           "spoiler": false
         }
@@ -11031,6 +11605,34 @@
           "source": "msb:o00_0240",
           "missable": false,
           "spoiler": false
+        },
+        {
+          "id": "wchest_m10_27_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -896.06,
+            290.72,
+            -533.25
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m10_27_00_00_1",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            -851.35,
+            294.53,
+            -487.26
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
+          "missable": false,
+          "spoiler": false
         }
       ]
     },
@@ -11187,6 +11789,20 @@
           ],
           "auto": true,
           "source": "msb:o00_0500",
+          "missable": false,
+          "spoiler": false
+        },
+        {
+          "id": "wchest_m20_10_00_00_0",
+          "cat": "chest",
+          "name": "Chest",
+          "coords": [
+            102.69,
+            -28.59,
+            -146.63
+          ],
+          "auto": true,
+          "source": "msb:o00_0200",
           "missable": false,
           "spoiler": false
         }
