@@ -37,3 +37,30 @@ test('xform/unxform: round-trip com offset/flip/swap', () => {
   const back=RL.unxform(adj, m.x, m.y, m.z);
   assert.ok(Math.abs(back.x-g.x)<1e-6 && Math.abs(back.y-g.y)<1e-6 && Math.abs(back.z-g.z)<1e-6);
 });
+
+test('poiRows: 1 item com descricao', () => {
+  const r=RL.poiRows({label:'Chloranthy Ring', items:['Chloranthy Ring'], descs:['Raises stamina recovery speed']});
+  assert.deepStrictEqual(r.rows, [{name:'Chloranthy Ring', desc:'Raises stamina recovery speed'}]);
+  assert.strictEqual(r.hasDesc, true);
+});
+
+test('poiRows: multi-item pareia nome<->desc por indice', () => {
+  const r=RL.poiRows({label:'Life Ring +N', items:['Life Ring','Large Titanite Shard'],
+                      descs:['Raises maximum HP','Reinforces equipment']});
+  assert.strictEqual(r.rows.length, 2);
+  assert.strictEqual(r.rows[1].name, 'Large Titanite Shard');
+  assert.strictEqual(r.rows[1].desc, 'Reinforces equipment');
+});
+
+test('poiRows: item sem descricao -> desc vazia, hasDesc so se algum tiver', () => {
+  const r=RL.poiRows({label:'Halberd +N', items:['Halberd','Soul of a Nameless Soldier'],
+                      descs:['','Use to acquire souls']});
+  assert.strictEqual(r.rows[0].desc, '');
+  assert.strictEqual(r.hasDesc, true);
+});
+
+test('poiRows: sem items (boss/bonfire) -> fallback no label, sem +', () => {
+  const r=RL.poiRows({label:'The Pursuer', cat:'boss'});
+  assert.deepStrictEqual(r.rows, [{name:'The Pursuer', desc:''}]);
+  assert.strictEqual(r.hasDesc, false);
+});

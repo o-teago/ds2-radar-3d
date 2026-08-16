@@ -213,6 +213,9 @@
           "lot": 10026000,
           "items": [
             "Rusted Coin"
+          ],
+          "descs": [
+            "Temporarily boosts luck"
           ]
         },
         {
@@ -231,6 +234,9 @@
           "lot": 10026020,
           "items": [
             "Gold Pine Resin"
+          ],
+          "descs": [
+            "Apply lightning to right-hand weapon"
           ]
         },
         {
@@ -249,6 +255,9 @@
           "lot": 10026030,
           "items": [
             "Small Smooth & Silky Stone"
+          ],
+          "descs": [
+            "A smooth and silky stone"
           ]
         },
         {
@@ -267,6 +276,9 @@
           "lot": 10026040,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -286,6 +298,10 @@
           "items": [
             "Soul of a Lost Undead",
             "Torch"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -304,6 +320,9 @@
           "lot": 10026060,
           "items": [
             "Cracked Red Eye Orb"
+          ],
+          "descs": [
+            "Invade other worlds"
           ]
         },
         {
@@ -340,6 +359,9 @@
           "lot": 10026080,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -358,6 +380,9 @@
           "lot": 10026090,
           "items": [
             "Amber Herb"
+          ],
+          "descs": [
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -376,6 +401,9 @@
           "lot": 10026100,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -394,6 +422,9 @@
           "lot": 10025010,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -749,6 +780,9 @@
           "lot": 10045060,
           "items": [
             "Rusted Coin"
+          ],
+          "descs": [
+            "Temporarily boosts luck"
           ]
         },
         {
@@ -785,6 +819,9 @@
           "lot": 10046010,
           "items": [
             "Divine Blessing"
+          ],
+          "descs": [
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -841,6 +878,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Slightly restores HP"
           ]
         },
         {
@@ -859,6 +900,9 @@
           "lot": 10046050,
           "items": [
             "Poison Moss"
+          ],
+          "descs": [
+            "Reduces poison build-up and cures poison"
           ]
         },
         {
@@ -877,6 +921,9 @@
           "lot": 10046060,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -895,6 +942,9 @@
           "lot": 10046080,
           "items": [
             "Rouge Water"
+          ],
+          "descs": [
+            "Restores HP and spell uses"
           ]
         },
         {
@@ -913,6 +963,9 @@
           "lot": 10046090,
           "items": [
             "Ring of the Evil Eye+1"
+          ],
+          "descs": [
+            "Absorb HP from each defeated foe"
           ]
         },
         {
@@ -931,6 +984,9 @@
           "lot": 10046100,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -949,6 +1005,9 @@
           "lot": 10046110,
           "items": [
             "Homeward Bone"
+          ],
+          "descs": [
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -967,6 +1026,9 @@
           "lot": 10046120,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -985,6 +1047,9 @@
           "lot": 10046130,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -1003,6 +1068,9 @@
           "lot": 10046140,
           "items": [
             "Dragon Talon"
+          ],
+          "descs": [
+            "Guides one to an unknown land"
           ]
         },
         {
@@ -1021,6 +1089,9 @@
           "lot": 10046150,
           "items": [
             "Homeward Bone"
+          ],
+          "descs": [
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -1039,6 +1110,9 @@
           "lot": 10045000,
           "items": [
             "Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -1058,6 +1132,10 @@
           "items": [
             "Titanite Shard",
             "Torch"
+          ],
+          "descs": [
+            "Reinforces equipment",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -1451,6 +1529,10 @@
           "items": [
             "Small White Sign Soapstone",
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Leave summon sign",
+            "Restores HP"
           ]
         },
         {
@@ -1487,6 +1569,9 @@
           "lot": 10105080,
           "items": [
             "Chloranthy Ring"
+          ],
+          "descs": [
+            "Raises stamina recovery speed"
           ]
         },
         {
@@ -1505,6 +1590,9 @@
           "lot": 10105090,
           "items": [
             "Titanite Slab"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -1524,6 +1612,10 @@
           "items": [
             "Life Ring",
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Raises maximum HP",
+            "Reinforces equipment"
           ]
         },
         {
@@ -1562,6 +1654,10 @@
           "items": [
             "Sorcerer's Staff",
             "Amber Herb"
+          ],
+          "descs": [
+            "",
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -1580,6 +1676,9 @@
           "lot": 10105110,
           "items": [
             "Flame Quartz Ring+1"
+          ],
+          "descs": [
+            "Increases fire defense"
           ]
         },
         {
@@ -1696,6 +1795,9 @@
           "lot": 10106000,
           "items": [
             "Soul of a Lost Undead"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -1715,6 +1817,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Cracked Red Eye Orb"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Invade other worlds"
           ]
         },
         {
@@ -1733,6 +1839,9 @@
           "lot": 10106030,
           "items": [
             "Amber Herb"
+          ],
+          "descs": [
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -1751,6 +1860,9 @@
           "lot": 10106050,
           "items": [
             "Divine Blessing"
+          ],
+          "descs": [
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -1769,6 +1881,9 @@
           "lot": 10106060,
           "items": [
             "Wood Bolt"
+          ],
+          "descs": [
+            "Crossbow bolt made from wood"
           ]
         },
         {
@@ -1788,6 +1903,10 @@
           "items": [
             "Black Firebomb",
             "Homeward Bone"
+          ],
+          "descs": [
+            "Explodes, inflicting fire damage",
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -1806,6 +1925,9 @@
           "lot": 10106080,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -1825,6 +1947,10 @@
           "items": [
             "Lifegem",
             "Homeward Bone"
+          ],
+          "descs": [
+            "Slightly restores HP",
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -1844,6 +1970,10 @@
           "items": [
             "Halberd",
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "",
+            "Use to acquire souls"
           ]
         },
         {
@@ -1863,6 +1993,10 @@
           "items": [
             "Homeward Bone",
             "Soul of a Lost Undead"
+          ],
+          "descs": [
+            "Return to last bonfire rested at",
+            "Use to acquire souls"
           ]
         },
         {
@@ -1881,6 +2015,9 @@
           "lot": 10106120,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -1899,6 +2036,9 @@
           "lot": 10106130,
           "items": [
             "Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -1935,6 +2075,9 @@
           "lot": 10106150,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -1953,6 +2096,9 @@
           "lot": 10106160,
           "items": [
             "Aromatic Ooze"
+          ],
+          "descs": [
+            "Apply magic to right-hand weapon"
           ]
         },
         {
@@ -1972,6 +2118,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Throwing Knife"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Throw at enemies to inflict damage"
           ]
         },
         {
@@ -1990,6 +2140,9 @@
           "lot": 10106180,
           "items": [
             "Green Blossom"
+          ],
+          "descs": [
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -2009,6 +2162,10 @@
           "items": [
             "Shortsword",
             "Soul of a Lost Undead"
+          ],
+          "descs": [
+            "",
+            "Use to acquire souls"
           ]
         },
         {
@@ -2028,6 +2185,10 @@
           "items": [
             "Soul of a Lost Undead",
             "Torch"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -2082,6 +2243,9 @@
           "lot": 10106240,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -2101,6 +2265,10 @@
           "items": [
             "Large Leather Shield",
             "Lifegem"
+          ],
+          "descs": [
+            "",
+            "Slightly restores HP"
           ]
         },
         {
@@ -2119,6 +2287,9 @@
           "lot": 10106260,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -2137,6 +2308,9 @@
           "lot": 10106270,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -2155,6 +2329,9 @@
           "lot": 10106280,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -2195,6 +2372,9 @@
           "lot": 10106300,
           "items": [
             "Soul of a Lost Undead"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -2214,6 +2394,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Slightly restores HP"
           ]
         },
         {
@@ -2250,6 +2434,9 @@
           "lot": 10106320,
           "items": [
             "Amber Herb"
+          ],
+          "descs": [
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -2268,6 +2455,9 @@
           "lot": 10106190,
           "items": [
             "Large Soul of a Lost Undead"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -2286,6 +2476,9 @@
           "lot": 10106380,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -2304,6 +2497,9 @@
           "lot": 10106390,
           "items": [
             "Witching Urn"
+          ],
+          "descs": [
+            "Explodes to deal magic damage"
           ]
         },
         {
@@ -2322,6 +2518,9 @@
           "lot": 10106400,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -2340,6 +2539,9 @@
           "lot": 10106410,
           "items": [
             "Fire Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts fire damage"
           ]
         },
         {
@@ -2359,6 +2561,10 @@
           "items": [
             "Twinkling Titanite",
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Reinforces what cannot normally be reinforced",
+            "Restores living things from petrification"
           ]
         },
         {
@@ -2378,6 +2584,10 @@
           "items": [
             "Amber Herb",
             "Green Blossom"
+          ],
+          "descs": [
+            "Slightly restores spell uses",
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -2415,6 +2625,10 @@
           "items": [
             "Large Soul of a Lost Undead",
             "Blue Wooden Shield"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            ""
           ]
         },
         {
@@ -2434,6 +2648,10 @@
           "items": [
             "Hand Axe",
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "",
+            "Restores HP"
           ]
         },
         {
@@ -2453,6 +2671,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Torch"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -2489,6 +2711,9 @@
           "lot": 10106520,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -2508,6 +2733,10 @@
           "items": [
             "Human Effigy",
             "Lifegem"
+          ],
+          "descs": [
+            "Reverses hollowing",
+            "Slightly restores HP"
           ]
         },
         {
@@ -2526,6 +2755,9 @@
           "lot": 10106540,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -2544,6 +2776,9 @@
           "lot": 10106550,
           "items": [
             "Repair Powder"
+          ],
+          "descs": [
+            "Restore equipment durability"
           ]
         },
         {
@@ -2562,6 +2797,9 @@
           "lot": 10106560,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -2616,6 +2854,9 @@
           "lot": 10106590,
           "items": [
             "Green Blossom"
+          ],
+          "descs": [
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -2634,6 +2875,9 @@
           "lot": 10106600,
           "items": [
             "Prism Stone"
+          ],
+          "descs": [
+            "Emits light, and marks one's path"
           ]
         },
         {
@@ -2688,6 +2932,9 @@
           "lot": 10106630,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -2707,6 +2954,10 @@
           "items": [
             "Small Leather Shield",
             "Repair Powder"
+          ],
+          "descs": [
+            "",
+            "Restore equipment durability"
           ]
         },
         {
@@ -2725,6 +2976,9 @@
           "lot": 10105020,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -2747,6 +3001,13 @@
             "Leather Armor",
             "Leather Gloves",
             "Leather Boots"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "",
+            "",
+            "",
+            ""
           ]
         },
         {
@@ -2766,6 +3027,10 @@
           "items": [
             "Ring of Restoration",
             "Torch"
+          ],
+          "descs": [
+            "Gradually restores HP",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -2784,6 +3049,9 @@
           "lot": 10105150,
           "items": [
             "Amber Herb"
+          ],
+          "descs": [
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -3204,6 +3472,9 @@
           "lot": 10305020,
           "items": [
             "Sublime Bone Dust"
+          ],
+          "descs": [
+            "Burn in bonfire to upgrade Estus Flask"
           ]
         },
         {
@@ -3222,6 +3493,9 @@
           "lot": 10306000,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -3241,6 +3515,10 @@
           "items": [
             "Human Effigy",
             "Dark Troches"
+          ],
+          "descs": [
+            "Reverses hollowing",
+            "Temporarily boosts dark DEF"
           ]
         },
         {
@@ -3277,6 +3555,9 @@
           "lot": 10306030,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         }
       ]
@@ -3321,6 +3602,9 @@
           "lot": 10315030,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -3358,6 +3642,9 @@
           "lot": 10315000,
           "items": [
             "Ring of Binding"
+          ],
+          "descs": [
+            "Limits HP reduction when Hollow"
           ]
         },
         {
@@ -3447,6 +3734,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Human Effigy"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing"
           ]
         },
         {
@@ -3465,6 +3756,9 @@
           "lot": 10316040,
           "items": [
             "Monastery Charm"
+          ],
+          "descs": [
+            "Cures poison and restores HP"
           ]
         },
         {
@@ -3483,6 +3777,9 @@
           "lot": 10316050,
           "items": [
             "Divine Blessing"
+          ],
+          "descs": [
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -3502,6 +3799,10 @@
           "items": [
             "Soul of a Lost Undead",
             "Broken Thief Sword"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            ""
           ]
         },
         {
@@ -3520,6 +3821,9 @@
           "lot": 10316100,
           "items": [
             "Lloyd's Talisman"
+          ],
+          "descs": [
+            "Blocks Estus recovery within a limited area"
           ]
         },
         {
@@ -3538,6 +3842,9 @@
           "lot": 10316110,
           "items": [
             "Old Radiant Lifegem"
+          ],
+          "descs": [
+            "Greatly restores HP"
           ]
         },
         {
@@ -3598,6 +3905,9 @@
           "lot": 10315020,
           "items": [
             "Cracked Blue Eye Orb"
+          ],
+          "descs": [
+            "Invade the world of the guilty"
           ]
         }
       ]
@@ -3707,6 +4017,9 @@
           "lot": 10185060,
           "items": [
             "Royal Soldier's Ring"
+          ],
+          "descs": [
+            "Increases maximum load"
           ]
         },
         {
@@ -3725,6 +4038,9 @@
           "lot": 10185070,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -3762,6 +4078,9 @@
           "lot": 10185110,
           "items": [
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Restores living things from petrification"
           ]
         },
         {
@@ -3844,6 +4163,9 @@
           "lot": 10186000,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -3863,6 +4185,10 @@
           "items": [
             "Human Effigy",
             "Lifegem"
+          ],
+          "descs": [
+            "Reverses hollowing",
+            "Slightly restores HP"
           ]
         },
         {
@@ -3881,6 +4207,9 @@
           "lot": 10186020,
           "items": [
             "Fire Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts fire damage"
           ]
         },
         {
@@ -3915,6 +4244,10 @@
           "items": [
             "Large Soul of a Lost Undead",
             "Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Slightly restores HP"
           ]
         },
         {
@@ -3933,6 +4266,9 @@
           "lot": 10186070,
           "items": [
             "Iron Arrow"
+          ],
+          "descs": [
+            "Arrow made from iron"
           ]
         },
         {
@@ -3967,6 +4303,10 @@
           "items": [
             "Large Soul of a Proud Knight",
             "Small Smooth & Silky Stone"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "A smooth and silky stone"
           ]
         },
         {
@@ -3986,6 +4326,10 @@
           "items": [
             "Large Soul of a Lost Undead",
             "Emit Force"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            ""
           ]
         },
         {
@@ -4005,6 +4349,10 @@
           "items": [
             "Lifegem",
             "Homeward Bone"
+          ],
+          "descs": [
+            "Slightly restores HP",
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -4023,6 +4371,9 @@
           "lot": 10186150,
           "items": [
             "Dark Pine Resin"
+          ],
+          "descs": [
+            "Apply dark to right-hand weapon"
           ]
         },
         {
@@ -4041,6 +4392,9 @@
           "lot": 10186030,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -4060,6 +4414,10 @@
           "items": [
             "Throwing Knife",
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Throw at enemies to inflict damage",
+            "Light torch autonomously"
           ]
         },
         {
@@ -4078,6 +4436,9 @@
           "lot": 10185000,
           "items": [
             "Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -4097,6 +4458,10 @@
           "items": [
             "Repair Powder",
             "Titanite Shard"
+          ],
+          "descs": [
+            "Restore equipment durability",
+            "Reinforces equipment"
           ]
         },
         {
@@ -4115,6 +4480,9 @@
           "lot": 10185080,
           "items": [
             "Firebomb"
+          ],
+          "descs": [
+            "Explodes, inflicting fire damage"
           ]
         },
         {
@@ -4401,6 +4769,9 @@
           "lot": 10165110,
           "items": [
             "Wilted Dusk Herb"
+          ],
+          "descs": [
+            "Restores many spell uses"
           ]
         },
         {
@@ -4420,6 +4791,10 @@
           "items": [
             "Fragrant Branch of Yore",
             "Elizabeth Mushroom"
+          ],
+          "descs": [
+            "Restores living things from petrification",
+            "Large gradual restoration of HP"
           ]
         },
         {
@@ -4440,6 +4815,11 @@
             "Covetous Silver Serpent Ring",
             "Human Effigy",
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Fallen foes yield more souls",
+            "Reverses hollowing",
+            "Restores living things from petrification"
           ]
         },
         {
@@ -4459,6 +4839,10 @@
           "items": [
             "Craftsman's Hammer",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -4513,6 +4897,9 @@
           "lot": 10165220,
           "items": [
             "Blue Tearstone Ring"
+          ],
+          "descs": [
+            "Increases defense when HP is low"
           ]
         },
         {
@@ -4531,6 +4918,9 @@
           "lot": 10165230,
           "items": [
             "Southern Ritual Band"
+          ],
+          "descs": [
+            "Allows attunement of additional spells"
           ]
         },
         {
@@ -4604,6 +4994,10 @@
           "items": [
             "Estus Flask Shard",
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses",
+            "Reinforces equipment"
           ]
         },
         {
@@ -4622,6 +5016,9 @@
           "lot": 10165240,
           "items": [
             "Antiquated Key"
+          ],
+          "descs": [
+            "A very old key"
           ]
         },
         {
@@ -4640,6 +5037,9 @@
           "lot": 10165250,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -4658,6 +5058,9 @@
           "lot": 10165260,
           "items": [
             "Dull Ember"
+          ],
+          "descs": [
+            "An ember that radiates a dull light"
           ]
         },
         {
@@ -4872,6 +5275,9 @@
           "lot": 10166000,
           "items": [
             "Homeward Bone"
+          ],
+          "descs": [
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -4890,6 +5296,9 @@
           "lot": 10166010,
           "items": [
             "Alluring Skull"
+          ],
+          "descs": [
+            "Lures certain types of enemies"
           ]
         },
         {
@@ -4909,6 +5318,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Human Effigy"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing"
           ]
         },
         {
@@ -4928,6 +5341,10 @@
           "items": [
             "Large Soul of a Nameless Soldier",
             "Green Blossom"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -4946,6 +5363,9 @@
           "lot": 10166070,
           "items": [
             "Gold Pine Resin"
+          ],
+          "descs": [
+            "Apply lightning to right-hand weapon"
           ]
         },
         {
@@ -4965,6 +5385,10 @@
           "items": [
             "Radiant Lifegem",
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Restores HP",
+            "Reinforces equipment"
           ]
         },
         {
@@ -4983,6 +5407,9 @@
           "lot": 10166100,
           "items": [
             "Rusted Coin"
+          ],
+          "descs": [
+            "Temporarily boosts luck"
           ]
         },
         {
@@ -5001,6 +5428,9 @@
           "lot": 10166110,
           "items": [
             "Lacerating Knife"
+          ],
+          "descs": [
+            "Sharp throwing knife that causes bleeding"
           ]
         },
         {
@@ -5037,6 +5467,9 @@
           "lot": 10166130,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -5055,6 +5488,9 @@
           "lot": 10166140,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -5073,6 +5509,9 @@
           "lot": 10166150,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -5091,6 +5530,9 @@
           "lot": 10166160,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -5109,6 +5551,9 @@
           "lot": 10166170,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -5127,6 +5572,9 @@
           "lot": 10166180,
           "items": [
             "Bastille Key"
+          ],
+          "descs": [
+            "Opens cells of the Lost Bastille"
           ]
         },
         {
@@ -5145,6 +5593,9 @@
           "lot": 10166190,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -5163,6 +5614,9 @@
           "lot": 10166200,
           "items": [
             "Bracing Knuckle Ring"
+          ],
+          "descs": [
+            "Slows equipment degradation"
           ]
         },
         {
@@ -5212,6 +5666,10 @@
           "items": [
             "Northern Ritual Band",
             "Bleed Stone"
+          ],
+          "descs": [
+            "Increases spell uses, but reduces HP",
+            "Makes equipment lacerating"
           ]
         },
         {
@@ -5247,6 +5705,11 @@
             "Dragon Tooth",
             "Petrified Something",
             "Brightbug"
+          ],
+          "descs": [
+            "",
+            "A petrified object that is pleasant to touch",
+            "Inflict more damage, receive less"
           ]
         },
         {
@@ -5266,6 +5729,10 @@
           "items": [
             "Flame Butterfly",
             "Torch"
+          ],
+          "descs": [
+            "Light torch autonomously",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -5285,6 +5752,10 @@
           "items": [
             "Soul of a Proud Knight",
             "Human Effigy"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing"
           ]
         },
         {
@@ -5304,6 +5775,10 @@
           "items": [
             "Soul of a Proud Knight",
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -5322,6 +5797,9 @@
           "lot": 10166020,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -5341,6 +5819,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Golden Wing Shield"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            ""
           ]
         },
         {
@@ -5359,6 +5841,9 @@
           "lot": 10166060,
           "items": [
             "Large Soul of a Lost Undead"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -5377,6 +5862,9 @@
           "lot": 10166090,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -5395,6 +5883,9 @@
           "lot": 10166290,
           "items": [
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Light torch autonomously"
           ]
         },
         {
@@ -5413,6 +5904,9 @@
           "lot": 10166350,
           "items": [
             "Smooth & Silky Stone"
+          ],
+          "descs": [
+            "Perfectly smooth and silky stone"
           ]
         },
         {
@@ -5431,6 +5925,9 @@
           "lot": 10166360,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -5449,6 +5946,9 @@
           "lot": 10166370,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -5503,6 +6003,9 @@
           "lot": 10166400,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -5521,6 +6024,9 @@
           "lot": 10166410,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -5539,6 +6045,9 @@
           "lot": 10166420,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -5576,6 +6085,9 @@
           "lot": 10166450,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -5595,6 +6107,10 @@
           "items": [
             "Soul of a Proud Knight",
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Restores HP"
           ]
         },
         {
@@ -5614,6 +6130,10 @@
           "items": [
             "Scimitar",
             "Repair Powder"
+          ],
+          "descs": [
+            "",
+            "Restore equipment durability"
           ]
         },
         {
@@ -5632,6 +6152,9 @@
           "lot": 10166480,
           "items": [
             "Green Blossom"
+          ],
+          "descs": [
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -5685,6 +6208,9 @@
           "lot": 10165010,
           "items": [
             "Soul Vessel"
+          ],
+          "descs": [
+            "Show this to a certain person, and..."
           ]
         },
         {
@@ -5703,6 +6229,9 @@
           "lot": 10165040,
           "items": [
             "Rouge Water"
+          ],
+          "descs": [
+            "Restores HP and spell uses"
           ]
         },
         {
@@ -5739,6 +6268,9 @@
           "lot": 10165160,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -5757,6 +6289,9 @@
           "lot": 10165170,
           "items": [
             "Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -5775,6 +6310,9 @@
           "lot": 10165180,
           "items": [
             "Iron Arrow"
+          ],
+          "descs": [
+            "Arrow made from iron"
           ]
         },
         {
@@ -5793,6 +6331,9 @@
           "lot": 10165190,
           "items": [
             "Heavy Bolt"
+          ],
+          "descs": [
+            "Crossbow bolt made from iron"
           ]
         },
         {
@@ -5812,6 +6353,10 @@
           "items": [
             "Radiant Lifegem",
             "Twilight Herb"
+          ],
+          "descs": [
+            "Restores HP",
+            "Restores spell uses"
           ]
         },
         {
@@ -6246,6 +6791,9 @@
           "lot": 10235020,
           "items": [
             "Sublime Bone Dust"
+          ],
+          "descs": [
+            "Burn in bonfire to upgrade Estus Flask"
           ]
         },
         {
@@ -6292,6 +6840,9 @@
           "lot": 10236000,
           "items": [
             "Cracked Red Eye Orb"
+          ],
+          "descs": [
+            "Invade other worlds"
           ]
         },
         {
@@ -6310,6 +6861,9 @@
           "lot": 10236010,
           "items": [
             "Cracked Red Eye Orb"
+          ],
+          "descs": [
+            "Invade other worlds"
           ]
         },
         {
@@ -6328,6 +6882,9 @@
           "lot": 10236020,
           "items": [
             "Aromatic Ooze"
+          ],
+          "descs": [
+            "Apply magic to right-hand weapon"
           ]
         },
         {
@@ -6347,6 +6904,10 @@
           "items": [
             "Large Soul of a Lost Undead",
             "Small Orange Burr"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Temporarily boosts fire DEF"
           ]
         },
         {
@@ -6384,6 +6945,10 @@
           "items": [
             "Mace",
             "Titanite Shard"
+          ],
+          "descs": [
+            "",
+            "Reinforces equipment"
           ]
         },
         {
@@ -6403,6 +6968,10 @@
           "items": [
             "Combustion",
             "Titanite Shard"
+          ],
+          "descs": [
+            "",
+            "Reinforces equipment"
           ]
         },
         {
@@ -6422,6 +6991,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Slightly restores HP"
           ]
         },
         {
@@ -6441,6 +7014,10 @@
           "items": [
             "Poison Moss",
             "Lifegem"
+          ],
+          "descs": [
+            "Reduces poison build-up and cures poison",
+            "Slightly restores HP"
           ]
         },
         {
@@ -6460,6 +7037,10 @@
           "items": [
             "Morning Star",
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "",
+            "Use to acquire souls"
           ]
         },
         {
@@ -6479,6 +7060,10 @@
           "items": [
             "Poison Moss",
             "Green Blossom"
+          ],
+          "descs": [
+            "Reduces poison build-up and cures poison",
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -6533,6 +7118,9 @@
           "lot": 10236130,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -6552,6 +7140,10 @@
           "items": [
             "Pharros' Lockstone",
             "Token of Fidelity"
+          ],
+          "descs": [
+            "Activates Pharros' contraption",
+            "Proof of helping another world's master"
           ]
         },
         {
@@ -6570,6 +7162,9 @@
           "lot": 10236160,
           "items": [
             "Undead Lockaway Key"
+          ],
+          "descs": [
+            "Opens the stone lockaway in Huntsman's Copse"
           ]
         },
         {
@@ -6606,6 +7201,9 @@
           "lot": 10236180,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -6624,6 +7222,9 @@
           "lot": 10236190,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -6642,6 +7243,9 @@
           "lot": 10236200,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -6660,6 +7264,9 @@
           "lot": 10236210,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -6678,6 +7285,9 @@
           "lot": 10236220,
           "items": [
             "Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -6696,6 +7306,9 @@
           "lot": 10236230,
           "items": [
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Light torch autonomously"
           ]
         },
         {
@@ -6714,6 +7327,9 @@
           "lot": 10236250,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -6733,6 +7349,10 @@
           "items": [
             "Monastery Charm",
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Cures poison and restores HP",
+            "Use to acquire souls"
           ]
         },
         {
@@ -6751,6 +7371,9 @@
           "lot": 10236240,
           "items": [
             "Fire Seed"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -6769,6 +7392,9 @@
           "lot": 10236140,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -6789,6 +7415,11 @@
             "Human Effigy",
             "Lacerating Arrow",
             "Prism Stone"
+          ],
+          "descs": [
+            "Reverses hollowing",
+            "Arrow that inflicts bleeding damage",
+            "Emits light, and marks one's path"
           ]
         },
         {
@@ -7000,6 +7631,10 @@
           "items": [
             "Fire Seed",
             "Divine Blessing"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame",
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -7019,6 +7654,10 @@
           "items": [
             "Poisonbite Ring",
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Increases poison resistance",
+            "Use to acquire souls"
           ]
         },
         {
@@ -7074,6 +7713,10 @@
           "items": [
             "Poison Stone",
             "Rotten Pine Resin"
+          ],
+          "descs": [
+            "Makes equipment poisonous",
+            "Apply poison to right-hand weapon"
           ]
         },
         {
@@ -7093,6 +7736,10 @@
           "items": [
             "Heavy Crossbow",
             "Heavy Bolt"
+          ],
+          "descs": [
+            "",
+            "Crossbow bolt made from iron"
           ]
         },
         {
@@ -7112,6 +7759,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Crimson Water"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Greatly restores HP and spell uses"
           ]
         },
         {
@@ -7232,6 +7883,9 @@
           "lot": 10176000,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -7251,6 +7905,10 @@
           "items": [
             "Broadsword",
             "Human Effigy"
+          ],
+          "descs": [
+            "",
+            "Reverses hollowing"
           ]
         },
         {
@@ -7269,6 +7927,9 @@
           "lot": 10176020,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -7287,6 +7948,9 @@
           "lot": 10176030,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -7305,6 +7969,9 @@
           "lot": 10176040,
           "items": [
             "Spell Quartz Ring+1"
+          ],
+          "descs": [
+            "Increases magic defense"
           ]
         },
         {
@@ -7324,6 +7991,10 @@
           "items": [
             "Large Soul of a Proud Knight",
             "Divine Blessing"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -7342,6 +8013,9 @@
           "lot": 10176060,
           "items": [
             "Hexing Urn"
+          ],
+          "descs": [
+            "Explodes, inflicting dark damage"
           ]
         },
         {
@@ -7360,6 +8034,9 @@
           "lot": 10176080,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -7378,6 +8055,9 @@
           "lot": 10176090,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -7396,6 +8076,9 @@
           "lot": 10176100,
           "items": [
             "Repair Powder"
+          ],
+          "descs": [
+            "Restore equipment durability"
           ]
         },
         {
@@ -7414,6 +8097,9 @@
           "lot": 10176110,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -7432,6 +8118,9 @@
           "lot": 10176120,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -7451,6 +8140,10 @@
           "items": [
             "Pharros' Lockstone",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Activates Pharros' contraption",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -7469,6 +8162,9 @@
           "lot": 10176150,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -7487,6 +8183,9 @@
           "lot": 10176170,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -7506,6 +8205,10 @@
           "items": [
             "Fragrant Branch of Yore",
             "Torch"
+          ],
+          "descs": [
+            "Restores living things from petrification",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -7525,6 +8228,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Titanite Shard"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reinforces equipment"
           ]
         },
         {
@@ -7543,6 +8250,9 @@
           "lot": 10176390,
           "items": [
             "Petrified Something"
+          ],
+          "descs": [
+            "A petrified object that is pleasant to touch"
           ]
         },
         {
@@ -7561,6 +8271,9 @@
           "lot": 10176130,
           "items": [
             "Soul of a Lost Undead"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -7599,6 +8312,10 @@
           "items": [
             "Large Soul of a Brave Warrior",
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Restores HP"
           ]
         },
         {
@@ -7617,6 +8334,9 @@
           "lot": 10176420,
           "items": [
             "Black Firebomb"
+          ],
+          "descs": [
+            "Explodes, inflicting fire damage"
           ]
         },
         {
@@ -7653,6 +8373,9 @@
           "lot": 10176440,
           "items": [
             "Small Smooth & Silky Stone"
+          ],
+          "descs": [
+            "A smooth and silky stone"
           ]
         },
         {
@@ -7671,6 +8394,9 @@
           "lot": 10176460,
           "items": [
             "Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -7689,6 +8415,9 @@
           "lot": 10176470,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -7707,6 +8436,9 @@
           "lot": 10176480,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -7725,6 +8457,9 @@
           "lot": 10176490,
           "items": [
             "Green Blossom"
+          ],
+          "descs": [
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -7743,6 +8478,9 @@
           "lot": 10175020,
           "items": [
             "Raw Stone"
+          ],
+          "descs": [
+            "Change weapon to Raw"
           ]
         },
         {
@@ -7779,6 +8517,9 @@
           "lot": 10175050,
           "items": [
             "Petrified Something"
+          ],
+          "descs": [
+            "A petrified object that is pleasant to touch"
           ]
         },
         {
@@ -8139,6 +8880,9 @@
           "lot": 10195130,
           "items": [
             "Thunder Quartz Ring+1"
+          ],
+          "descs": [
+            "Increases lightning defense"
           ]
         },
         {
@@ -8157,6 +8901,9 @@
           "lot": 10195150,
           "items": [
             "Petrified Something"
+          ],
+          "descs": [
+            "A petrified object that is pleasant to touch"
           ]
         },
         {
@@ -8267,6 +9014,10 @@
           "items": [
             "Life Ring+1",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Raises maximum HP",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -8286,6 +9037,10 @@
           "items": [
             "Porcine Shield",
             "Flame Butterfly"
+          ],
+          "descs": [
+            "",
+            "Light torch autonomously"
           ]
         },
         {
@@ -8472,6 +9227,9 @@
           "lot": 10196000,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -8490,6 +9248,9 @@
           "lot": 10196010,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -8508,6 +9269,9 @@
           "lot": 10196020,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -8527,6 +9291,10 @@
           "items": [
             "Soul of a Proud Knight",
             "Repair Powder"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Restore equipment durability"
           ]
         },
         {
@@ -8545,6 +9313,9 @@
           "lot": 10196040,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -8564,6 +9335,10 @@
           "items": [
             "Large Soul of a Nameless Soldier",
             "Red Leech Troches"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Temporarily boosts bleeding resist"
           ]
         },
         {
@@ -8583,6 +9358,10 @@
           "items": [
             "Old Radiant Lifegem",
             "Green Blossom"
+          ],
+          "descs": [
+            "Greatly restores HP",
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -8601,6 +9380,9 @@
           "lot": 10196080,
           "items": [
             "Iron Key"
+          ],
+          "descs": [
+            "Opens the iron door of the Iron Keep"
           ]
         },
         {
@@ -8619,6 +9401,9 @@
           "lot": 10196090,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -8638,6 +9423,10 @@
           "items": [
             "Cracked Red Eye Orb",
             "Torch"
+          ],
+          "descs": [
+            "Invade other worlds",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -8656,6 +9445,9 @@
           "lot": 10196110,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -8675,6 +9467,10 @@
           "items": [
             "Large Soul of a Nameless Soldier",
             "Monastery Charm"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Cures poison and restores HP"
           ]
         },
         {
@@ -8712,6 +9508,10 @@
           "items": [
             "Large Soul of a Proud Knight",
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Restores HP"
           ]
         },
         {
@@ -8730,6 +9530,9 @@
           "lot": 10196150,
           "items": [
             "Fire Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts fire damage"
           ]
         },
         {
@@ -8749,6 +9552,10 @@
           "items": [
             "Human Effigy",
             "Triclops Snake Troches"
+          ],
+          "descs": [
+            "Reverses hollowing",
+            "Temporarily boosts petrify resist"
           ]
         },
         {
@@ -8768,6 +9575,10 @@
           "items": [
             "Large Titanite Shard",
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Reinforces equipment",
+            "Reinforces special equipment"
           ]
         },
         {
@@ -8787,6 +9598,10 @@
           "items": [
             "Titanite Shard",
             "Fire Arrow"
+          ],
+          "descs": [
+            "Reinforces equipment",
+            "Arrow that inflicts fire damage"
           ]
         },
         {
@@ -8805,6 +9620,9 @@
           "lot": 10195000,
           "items": [
             "Destructive Greatarrow"
+          ],
+          "descs": [
+            "Greatarrow inflicting break damage"
           ]
         },
         {
@@ -9245,6 +10063,9 @@
           "lot": 10325020,
           "items": [
             "Chloranthy Ring+1"
+          ],
+          "descs": [
+            "Raises stamina recovery speed"
           ]
         },
         {
@@ -9266,6 +10087,12 @@
             "Lion Mage Robe",
             "Lion Mage Cuffs",
             "Lion Mage Skirt"
+          ],
+          "descs": [
+            "Restores living things from petrification",
+            "",
+            "",
+            ""
           ]
         },
         {
@@ -9284,6 +10111,9 @@
           "lot": 10325050,
           "items": [
             "Old Sun Ring"
+          ],
+          "descs": [
+            "Explodes at damage threshold"
           ]
         },
         {
@@ -9302,6 +10132,9 @@
           "lot": 10325080,
           "items": [
             "Clear Bluestone Ring+1"
+          ],
+          "descs": [
+            "Shortens spell casting time"
           ]
         },
         {
@@ -9374,6 +10207,9 @@
           "lot": 10325120,
           "items": [
             "Sublime Bone Dust"
+          ],
+          "descs": [
+            "Burn in bonfire to upgrade Estus Flask"
           ]
         },
         {
@@ -9394,6 +10230,11 @@
             "Repair",
             "Human Effigy",
             "Bleeding Serum"
+          ],
+          "descs": [
+            "",
+            "Reverses hollowing",
+            "Adds bleeding effect to right-hand weapon"
           ]
         },
         {
@@ -9440,6 +10281,9 @@
           "lot": 10326000,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -9460,6 +10304,11 @@
             "Large Soul of a Proud Knight",
             "Human Effigy",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -9498,6 +10347,10 @@
           "items": [
             "Soul of a Proud Knight",
             "Human Effigy"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing"
           ]
         },
         {
@@ -9517,6 +10370,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Restores HP"
           ]
         },
         {
@@ -9535,6 +10392,9 @@
           "lot": 10326080,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -9553,6 +10413,9 @@
           "lot": 10326090,
           "items": [
             "Amber Herb"
+          ],
+          "descs": [
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -9571,6 +10434,9 @@
           "lot": 10326100,
           "items": [
             "Lloyd's Talisman"
+          ],
+          "descs": [
+            "Blocks Estus recovery within a limited area"
           ]
         },
         {
@@ -9590,6 +10456,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Firebomb"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Explodes, inflicting fire damage"
           ]
         },
         {
@@ -9608,6 +10478,9 @@
           "lot": 10326130,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -9626,6 +10499,9 @@
           "lot": 10326160,
           "items": [
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Restores living things from petrification"
           ]
         },
         {
@@ -9645,6 +10521,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -9663,6 +10543,9 @@
           "lot": 10326190,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -9681,6 +10564,9 @@
           "lot": 10326200,
           "items": [
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Light torch autonomously"
           ]
         },
         {
@@ -9699,6 +10585,9 @@
           "lot": 10326140,
           "items": [
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -9718,6 +10607,10 @@
           "items": [
             "Flame Butterfly",
             "Torch"
+          ],
+          "descs": [
+            "Light torch autonomously",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -9737,6 +10630,10 @@
           "items": [
             "Pharros' Lockstone",
             "Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Activates Pharros' contraption",
+            "Use to acquire souls"
           ]
         },
         {
@@ -9771,6 +10668,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -9790,6 +10691,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Twilight Herb"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Restores spell uses"
           ]
         },
         {
@@ -9808,6 +10713,9 @@
           "lot": 10326110,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -9826,6 +10734,9 @@
           "lot": 10326170,
           "items": [
             "Red Tearstone Ring"
+          ],
+          "descs": [
+            "Boosts attacks when HP is low"
           ]
         },
         {
@@ -9844,6 +10755,9 @@
           "lot": 10326220,
           "items": [
             "Soul of a Hero"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -9862,6 +10776,9 @@
           "lot": 10326230,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -9880,6 +10797,9 @@
           "lot": 10326250,
           "items": [
             "Divine Blessing"
+          ],
+          "descs": [
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -9899,6 +10819,10 @@
           "items": [
             "Large Soul of a Nameless Soldier",
             "Human Effigy"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing"
           ]
         },
         {
@@ -9917,6 +10841,9 @@
           "lot": 10326270,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -9935,6 +10862,9 @@
           "lot": 10326280,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -9954,6 +10884,10 @@
           "items": [
             "Titanite Chunk",
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Reinforces equipment",
+            "Reinforces special equipment"
           ]
         },
         {
@@ -9972,6 +10906,9 @@
           "lot": 10325000,
           "items": [
             "Magic Bolt"
+          ],
+          "descs": [
+            "Crossbow bolt inflicting magic damage"
           ]
         }
       ]
@@ -10141,6 +11078,9 @@
           "lot": 10336000,
           "items": [
             "Prism Stone"
+          ],
+          "descs": [
+            "Emits light, and marks one's path"
           ]
         },
         {
@@ -10159,6 +11099,9 @@
           "lot": 10336010,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -10177,6 +11120,9 @@
           "lot": 10336040,
           "items": [
             "Amber Herb"
+          ],
+          "descs": [
+            "Slightly restores spell uses"
           ]
         },
         {
@@ -10196,6 +11142,10 @@
           "items": [
             "Gyrm Axe",
             "Torch"
+          ],
+          "descs": [
+            "",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -10215,6 +11165,10 @@
           "items": [
             "Twisted Barricade",
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "",
+            "Use to acquire souls"
           ]
         },
         {
@@ -10234,6 +11188,10 @@
           "items": [
             "Pharros' Lockstone",
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Activates Pharros' contraption",
+            "Use to acquire souls"
           ]
         },
         {
@@ -10252,6 +11210,9 @@
           "lot": 10336080,
           "items": [
             "Large Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10271,6 +11232,10 @@
           "items": [
             "Faintstone",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Imbues equipment with magic",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -10289,6 +11254,9 @@
           "lot": 10335030,
           "items": [
             "Dragon Charm"
+          ],
+          "descs": [
+            "Cures poison and greatly restores HP"
           ]
         },
         {
@@ -10448,6 +11416,9 @@
           "lot": 10145120,
           "items": [
             "Southern Ritual Band+1"
+          ],
+          "descs": [
+            "Allows attunement of additional spells"
           ]
         },
         {
@@ -10468,6 +11439,11 @@
             "Black Knight Ultra Greatsword",
             "Great Fireball",
             "Fire Seed"
+          ],
+          "descs": [
+            "",
+            "",
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -10561,6 +11537,10 @@
           "items": [
             "Soul of a Hero",
             "Gold Pine Resin"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Apply lightning to right-hand weapon"
           ]
         },
         {
@@ -10579,6 +11559,9 @@
           "lot": 10146010,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -10598,6 +11581,10 @@
           "items": [
             "Fading Soul",
             "Cleric's Small Shield"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            ""
           ]
         },
         {
@@ -10616,6 +11603,9 @@
           "lot": 10146030,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -10655,6 +11645,9 @@
           "lot": 10146050,
           "items": [
             "Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -10673,6 +11666,9 @@
           "lot": 10146060,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10691,6 +11687,9 @@
           "lot": 10146070,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -10709,6 +11708,9 @@
           "lot": 10146080,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10728,6 +11730,10 @@
           "items": [
             "Titanite Chunk",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Reinforces equipment",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -10746,6 +11752,9 @@
           "lot": 10146100,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -10764,6 +11773,9 @@
           "lot": 10146120,
           "items": [
             "Titanite Chunk"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -10782,6 +11794,9 @@
           "lot": 10146230,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10800,6 +11815,9 @@
           "lot": 10146240,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10818,6 +11836,9 @@
           "lot": 10146250,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -10836,6 +11857,9 @@
           "lot": 10146260,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -10854,6 +11878,9 @@
           "lot": 10146270,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10872,6 +11899,9 @@
           "lot": 10146140,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10890,6 +11920,9 @@
           "lot": 10146150,
           "items": [
             "Large Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -10908,6 +11941,9 @@
           "lot": 10146280,
           "items": [
             "Homeward Bone"
+          ],
+          "descs": [
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -10926,6 +11962,9 @@
           "lot": 10146290,
           "items": [
             "Lacerating Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts bleeding damage"
           ]
         },
         {
@@ -10944,6 +11983,9 @@
           "lot": 10146300,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -10962,6 +12004,9 @@
           "lot": 10146310,
           "items": [
             "Wilted Dusk Herb"
+          ],
+          "descs": [
+            "Restores many spell uses"
           ]
         },
         {
@@ -10980,6 +12025,9 @@
           "lot": 10146320,
           "items": [
             "Charcoal Pine Resin"
+          ],
+          "descs": [
+            "Apply fire to right-hand weapon"
           ]
         },
         {
@@ -10998,6 +12046,9 @@
           "lot": 10146330,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -11016,6 +12067,9 @@
           "lot": 10146110,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -11034,6 +12088,9 @@
           "lot": 10146130,
           "items": [
             "Holy Water Urn"
+          ],
+          "descs": [
+            "Cleanse Undead with holy essence"
           ]
         },
         {
@@ -11052,6 +12109,9 @@
           "lot": 10146160,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -11070,6 +12130,9 @@
           "lot": 10146210,
           "items": [
             "Large Titanite Shard"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -11088,6 +12151,9 @@
           "lot": 10146220,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -11106,6 +12172,9 @@
           "lot": 10146170,
           "items": [
             "Lightning Urn"
+          ],
+          "descs": [
+            "Explodes, inflicting lightning damage"
           ]
         },
         {
@@ -11124,6 +12193,9 @@
           "lot": 10146190,
           "items": [
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Light torch autonomously"
           ]
         },
         {
@@ -11142,6 +12214,9 @@
           "lot": 10146340,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -11160,6 +12235,9 @@
           "lot": 10146350,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -11178,6 +12256,9 @@
           "lot": 10146360,
           "items": [
             "Corrosive Urn"
+          ],
+          "descs": [
+            "Uses acid to destroy equipment"
           ]
         },
         {
@@ -11196,6 +12277,9 @@
           "lot": 10146370,
           "items": [
             "Simpleton's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell"
           ]
         },
         {
@@ -11214,6 +12298,9 @@
           "lot": 10146380,
           "items": [
             "Twilight Herb"
+          ],
+          "descs": [
+            "Restores spell uses"
           ]
         },
         {
@@ -11232,6 +12319,9 @@
           "lot": 10146390,
           "items": [
             "Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -11250,6 +12340,9 @@
           "lot": 10146400,
           "items": [
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Reinforces special equipment"
           ]
         },
         {
@@ -11268,6 +12361,9 @@
           "lot": 10146410,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -11288,6 +12384,11 @@
             "Titanite Shard",
             "Titanite Chunk",
             "Titanite Slab"
+          ],
+          "descs": [
+            "Reinforces equipment",
+            "Reinforces equipment",
+            "Reinforces equipment"
           ]
         },
         {
@@ -11306,6 +12407,9 @@
           "lot": 10146480,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -11324,6 +12428,9 @@
           "lot": 10146490,
           "items": [
             "Cracked Red Eye Orb"
+          ],
+          "descs": [
+            "Invade other worlds"
           ]
         },
         {
@@ -11342,6 +12449,9 @@
           "lot": 10146510,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -11360,6 +12470,9 @@
           "lot": 10146520,
           "items": [
             "Poison Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts poison damage"
           ]
         },
         {
@@ -11521,6 +12634,9 @@
           "lot": 10345000,
           "items": [
             "Ash Knuckle Ring"
+          ],
+          "descs": [
+            "Increases petrification resistance"
           ]
         },
         {
@@ -11539,6 +12655,9 @@
           "lot": 10345020,
           "items": [
             "Sublime Bone Dust"
+          ],
+          "descs": [
+            "Burn in bonfire to upgrade Estus Flask"
           ]
         },
         {
@@ -11585,6 +12704,9 @@
           "lot": 10346000,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -11603,6 +12725,9 @@
           "lot": 10346010,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -11621,6 +12746,9 @@
           "lot": 10345010,
           "items": [
             "Token of Spite"
+          ],
+          "descs": [
+            "Proof of defeating another world's master"
           ]
         },
         {
@@ -11907,6 +13035,11 @@
             "Petrified Something",
             "Simpleton's Spice",
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "A petrified object that is pleasant to touch",
+            "Lowers required intelligence by 1 for chosen spell",
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -11945,6 +13078,10 @@
           "items": [
             "Ring of Giants+1",
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Increases poise",
+            "Reinforces special equipment"
           ]
         },
         {
@@ -11984,6 +13121,9 @@
           "lot": 10255040,
           "items": [
             "Ring of Soul Protection"
+          ],
+          "descs": [
+            "Nullifies death and petrification, but breaks"
           ]
         },
         {
@@ -12126,6 +13266,9 @@
           "lot": 10256060,
           "items": [
             "Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -12174,6 +13317,9 @@
           "lot": 10256090,
           "items": [
             "Black Firebomb"
+          ],
+          "descs": [
+            "Explodes, inflicting fire damage"
           ]
         },
         {
@@ -12238,6 +13384,10 @@
           "items": [
             "Dark Fog",
             "Torch"
+          ],
+          "descs": [
+            "",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -12286,6 +13436,9 @@
           "lot": 10256160,
           "items": [
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Restores living things from petrification"
           ]
         },
         {
@@ -12334,6 +13487,9 @@
           "lot": 10256210,
           "items": [
             "Fire Seed"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -12352,6 +13508,9 @@
           "lot": 10256220,
           "items": [
             "Dung Pie"
+          ],
+          "descs": [
+            "Poisons foes, but also affects oneself"
           ]
         },
         {
@@ -12370,6 +13529,9 @@
           "lot": 10256230,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -12388,6 +13550,9 @@
           "lot": 10256240,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -12407,6 +13572,10 @@
           "items": [
             "Dark Pyromancy Flame",
             "Rotten Pine Resin"
+          ],
+          "descs": [
+            "",
+            "Apply poison to right-hand weapon"
           ]
         },
         {
@@ -12425,6 +13594,9 @@
           "lot": 10256260,
           "items": [
             "Titanite Chunk"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -12464,6 +13636,9 @@
           "lot": 10256280,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -12482,6 +13657,9 @@
           "lot": 10256290,
           "items": [
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Light torch autonomously"
           ]
         },
         {
@@ -12500,6 +13678,9 @@
           "lot": 10256300,
           "items": [
             "Poison Moss"
+          ],
+          "descs": [
+            "Reduces poison build-up and cures poison"
           ]
         },
         {
@@ -12518,6 +13699,9 @@
           "lot": 10256310,
           "items": [
             "Poison Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts poison damage"
           ]
         },
         {
@@ -12536,6 +13720,9 @@
           "lot": 10256320,
           "items": [
             "Dung Pie"
+          ],
+          "descs": [
+            "Poisons foes, but also affects oneself"
           ]
         },
         {
@@ -12554,6 +13741,9 @@
           "lot": 10256330,
           "items": [
             "Rotten Pine Resin"
+          ],
+          "descs": [
+            "Apply poison to right-hand weapon"
           ]
         },
         {
@@ -12572,6 +13762,9 @@
           "lot": 10256340,
           "items": [
             "Lifegem"
+          ],
+          "descs": [
+            "Slightly restores HP"
           ]
         },
         {
@@ -12590,6 +13783,9 @@
           "lot": 10256350,
           "items": [
             "Silver Talisman"
+          ],
+          "descs": [
+            "Transform to blend in to environment"
           ]
         },
         {
@@ -12608,6 +13804,9 @@
           "lot": 10256360,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -12626,6 +13825,9 @@
           "lot": 10256370,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -12645,6 +13847,10 @@
           "items": [
             "Scraps of Life",
             "Torch"
+          ],
+          "descs": [
+            "",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -12663,6 +13869,9 @@
           "lot": 10256390,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -12681,6 +13890,9 @@
           "lot": 10256170,
           "items": [
             "Poison Moss"
+          ],
+          "descs": [
+            "Reduces poison build-up and cures poison"
           ]
         },
         {
@@ -12777,6 +13989,9 @@
           "lot": 10256400,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -12795,6 +14010,9 @@
           "lot": 10256410,
           "items": [
             "Human Effigy"
+          ],
+          "descs": [
+            "Reverses hollowing"
           ]
         },
         {
@@ -12813,6 +14031,9 @@
           "lot": 10256420,
           "items": [
             "Smooth & Silky Stone"
+          ],
+          "descs": [
+            "Perfectly smooth and silky stone"
           ]
         },
         {
@@ -12831,6 +14052,9 @@
           "lot": 10256430,
           "items": [
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -12849,6 +14073,9 @@
           "lot": 10256440,
           "items": [
             "Smooth & Silky Stone"
+          ],
+          "descs": [
+            "Perfectly smooth and silky stone"
           ]
         },
         {
@@ -12867,6 +14094,9 @@
           "lot": 10256450,
           "items": [
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Restores living things from petrification"
           ]
         },
         {
@@ -12885,6 +14115,9 @@
           "lot": 10255010,
           "items": [
             "Black Firebomb"
+          ],
+          "descs": [
+            "Explodes, inflicting fire damage"
           ]
         },
         {
@@ -13475,6 +14708,10 @@
           "items": [
             "Twinkling Titanite",
             "Smooth & Silky Stone"
+          ],
+          "descs": [
+            "Reinforces what cannot normally be reinforced",
+            "Perfectly smooth and silky stone"
           ]
         },
         {
@@ -13493,6 +14730,9 @@
           "lot": 20115110,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -13544,6 +14784,10 @@
           "items": [
             "Large Soul of a Proud Knight",
             "Green Blossom"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -13562,6 +14806,9 @@
           "lot": 20116010,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -13581,6 +14828,10 @@
           "items": [
             "Soul of a Lost Undead",
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -13599,6 +14850,9 @@
           "lot": 20116040,
           "items": [
             "Fire Seed"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -13632,6 +14886,9 @@
           "lot": 20116060,
           "items": [
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -13651,6 +14908,10 @@
           "items": [
             "Soul of a Brave Warrior",
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reinforces special equipment"
           ]
         },
         {
@@ -13670,6 +14931,10 @@
           "items": [
             "Red Iron Twinblade",
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "",
+            "Use to acquire souls"
           ]
         },
         {
@@ -13707,6 +14972,10 @@
           "items": [
             "Large Soul of a Proud Knight",
             "Green Blossom"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -13725,6 +14994,9 @@
           "lot": 20116110,
           "items": [
             "Fire Seed"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -13743,6 +15015,9 @@
           "lot": 20116120,
           "items": [
             "Large Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -13762,6 +15037,10 @@
           "items": [
             "Flame Butterfly",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Light torch autonomously",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -13780,6 +15059,9 @@
           "lot": 20116150,
           "items": [
             "Green Blossom"
+          ],
+          "descs": [
+            "Temporarily boost stamina recovery speed"
           ]
         },
         {
@@ -13799,6 +15081,10 @@
           "items": [
             "Soul of a Lost Undead",
             "Torch"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -13818,6 +15104,10 @@
           "items": [
             "Singer's Dress",
             "Life Ring+2"
+          ],
+          "descs": [
+            "",
+            "Raises maximum HP"
           ]
         },
         {
@@ -13836,6 +15126,9 @@
           "lot": 20116030,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -13855,6 +15148,10 @@
           "items": [
             "Soul of a Hero",
             "Divine Blessing"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Fully restores HP and cures all status effects"
           ]
         },
         {
@@ -13874,6 +15171,10 @@
           "items": [
             "Large Soul of a Proud Knight",
             "Old Radiant Lifegem"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Greatly restores HP"
           ]
         },
         {
@@ -13908,6 +15209,10 @@
           "items": [
             "Wilted Dusk Herb",
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Restores many spell uses",
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -13926,6 +15231,9 @@
           "lot": 20115010,
           "items": [
             "Elizabeth Mushroom"
+          ],
+          "descs": [
+            "Large gradual restoration of HP"
           ]
         },
         {
@@ -13944,6 +15252,9 @@
           "lot": 20115020,
           "items": [
             "Dragon Charm"
+          ],
+          "descs": [
+            "Cures poison and greatly restores HP"
           ]
         },
         {
@@ -13962,6 +15273,9 @@
           "lot": 20115030,
           "items": [
             "Crimson Water"
+          ],
+          "descs": [
+            "Greatly restores HP and spell uses"
           ]
         },
         {
@@ -13980,6 +15294,9 @@
           "lot": 20115050,
           "items": [
             "Magic Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts magic damage"
           ]
         }
       ]
@@ -14095,16 +15412,6 @@
           "spoiler": false
         },
         {
-          "id": "tow_boss_watcher_defender",
-          "cat": "boss",
-          "name": "Throne Watcher & Throne Defender",
-          "sub": "Throne of Want",
-          "desc": "Dupla; primeiros da sequencia final.",
-          "coords": null,
-          "missable": false,
-          "spoiler": true
-        },
-        {
           "id": "tow_boss_nashandra",
           "cat": "boss",
           "name": "Nashandra",
@@ -14150,6 +15457,9 @@
           "lot": 20215050,
           "items": [
             "Royal Soldier's Ring+1"
+          ],
+          "descs": [
+            "Increases maximum load"
           ]
         },
         {
@@ -14169,6 +15479,10 @@
           "items": [
             "Soul Vessel",
             "Fire Seed"
+          ],
+          "descs": [
+            "Show this to a certain person, and...",
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -14205,6 +15519,9 @@
           "lot": 20215100,
           "items": [
             "Key to King's Passage"
+          ],
+          "descs": [
+            "Key to King's Passage in Drangleic Castle"
           ]
         },
         {
@@ -14242,6 +15559,10 @@
           "items": [
             "Hunter's Blackbow",
             "Iron Arrow"
+          ],
+          "descs": [
+            "",
+            "Arrow made from iron"
           ]
         },
         {
@@ -14260,6 +15581,9 @@
           "lot": 20215070,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -14279,6 +15603,10 @@
           "items": [
             "Great Combustion",
             "Fire Seed"
+          ],
+          "descs": [
+            "",
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -14317,6 +15645,11 @@
             "Soul Bolt",
             "Spell Quartz Ring+2",
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "",
+            "Increases magic defense",
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -14372,6 +15705,9 @@
           "lot": 20215160,
           "items": [
             "Sublime Bone Dust"
+          ],
+          "descs": [
+            "Burn in bonfire to upgrade Estus Flask"
           ]
         },
         {
@@ -14419,7 +15755,7 @@
         {
           "id": "boss_m20_21_00_00_24",
           "cat": "boss",
-          "name": "Throne Watcher & Defender",
+          "name": "Throne Watcher & Throne Defender",
           "coords": [
             -736.0,
             -12.0,
@@ -14460,6 +15796,9 @@
           "lot": 20216090,
           "items": [
             "Holy Water Urn"
+          ],
+          "descs": [
+            "Cleanse Undead with holy essence"
           ]
         },
         {
@@ -14479,6 +15818,10 @@
           "items": [
             "Repair Powder",
             "Flame Butterfly"
+          ],
+          "descs": [
+            "Restore equipment durability",
+            "Light torch autonomously"
           ]
         },
         {
@@ -14498,6 +15841,10 @@
           "items": [
             "Large Soul of a Brave Warrior",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -14516,6 +15863,9 @@
           "lot": 20215010,
           "items": [
             "Corrosive Urn"
+          ],
+          "descs": [
+            "Uses acid to destroy equipment"
           ]
         },
         {
@@ -14534,6 +15884,9 @@
           "lot": 20215020,
           "items": [
             "Dark Arrow"
+          ],
+          "descs": [
+            "Arrow that inflicts dark damage"
           ]
         },
         {
@@ -14715,6 +16068,11 @@
             "Dried Fingers",
             "Bonfire Ascetic",
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Dried fingers with multiple knuckles",
+            "Burn in bonfire to strengthen nearby foes",
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -14734,6 +16092,10 @@
           "items": [
             "Crushed Eye Orb",
             "Fire Seed"
+          ],
+          "descs": [
+            "Invade world of a traitor",
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -14772,6 +16134,10 @@
           "items": [
             "Avelyn",
             "Heavy Bolt"
+          ],
+          "descs": [
+            "",
+            "Crossbow bolt made from iron"
           ]
         },
         {
@@ -14790,6 +16156,9 @@
           "lot": 20245070,
           "items": [
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "Restores living things from petrification"
           ]
         },
         {
@@ -14808,6 +16177,9 @@
           "lot": 20245080,
           "items": [
             "Torch"
+          ],
+          "descs": [
+            "Light on sconces or bonfires for illumination"
           ]
         },
         {
@@ -14826,6 +16198,9 @@
           "lot": 20245090,
           "items": [
             "Poison Throwing Knife"
+          ],
+          "descs": [
+            "Throwing knife coated with poison"
           ]
         },
         {
@@ -14844,6 +16219,9 @@
           "lot": 20245100,
           "items": [
             "Darknight Stone"
+          ],
+          "descs": [
+            "Imbues equipment with dark"
           ]
         },
         {
@@ -14862,6 +16240,9 @@
           "lot": 20245000,
           "items": [
             "Soul Vessel"
+          ],
+          "descs": [
+            "Show this to a certain person, and..."
           ]
         },
         {
@@ -14922,6 +16303,9 @@
           "lot": 20246010,
           "items": [
             "Large Soul of a Nameless Soldier"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -14941,6 +16325,10 @@
           "items": [
             "Magic Stone",
             "Darknight Stone"
+          ],
+          "descs": [
+            "Imbues weapon with magic",
+            "Imbues equipment with dark"
           ]
         },
         {
@@ -15087,6 +16475,9 @@
           "lot": 10155010,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -15141,6 +16532,9 @@
           "lot": 10155030,
           "items": [
             "Brightbug"
+          ],
+          "descs": [
+            "Inflict more damage, receive less"
           ]
         },
         {
@@ -15173,6 +16567,9 @@
           "lot": 10156000,
           "items": [
             "Fading Soul"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15192,6 +16589,10 @@
           "items": [
             "Northern Ritual Band+2",
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Increases spell uses, but reduces HP",
+            "Reinforces special equipment"
           ]
         },
         {
@@ -15210,6 +16611,9 @@
           "lot": 10156030,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -15228,6 +16632,9 @@
           "lot": 10156040,
           "items": [
             "Large Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15247,6 +16654,10 @@
           "items": [
             "Simpleton's Spice",
             "Twilight Herb"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell",
+            "Restores spell uses"
           ]
         },
         {
@@ -15265,6 +16676,9 @@
           "lot": 10156080,
           "items": [
             "Poison Throwing Knife"
+          ],
+          "descs": [
+            "Throwing knife coated with poison"
           ]
         },
         {
@@ -15283,6 +16697,9 @@
           "lot": 10156090,
           "items": [
             "Fire Seed"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -15301,6 +16718,9 @@
           "lot": 10156130,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -15319,6 +16739,9 @@
           "lot": 10156140,
           "items": [
             "Soul of a Proud Knight"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15337,6 +16760,9 @@
           "lot": 10156150,
           "items": [
             "Dragon Scale"
+          ],
+          "descs": [
+            "Scale to offer to the dragon"
           ]
         },
         {
@@ -15356,6 +16782,10 @@
           "items": [
             "Soul of a Nameless Soldier",
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reinforces special equipment"
           ]
         },
         {
@@ -15374,6 +16804,9 @@
           "lot": 10156180,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -15392,6 +16825,9 @@
           "lot": 10156190,
           "items": [
             "Twilight Herb"
+          ],
+          "descs": [
+            "Restores spell uses"
           ]
         },
         {
@@ -15410,6 +16846,9 @@
           "lot": 10156200,
           "items": [
             "Large Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         }
       ]
@@ -15551,6 +16990,9 @@
           "lot": 10275040,
           "items": [
             "Third Dragon Ring"
+          ],
+          "descs": [
+            "Increases HP, stamina, and maximum load"
           ]
         },
         {
@@ -15570,6 +17012,10 @@
           "items": [
             "Crystal Magic Weapon",
             "Fragrant Branch of Yore"
+          ],
+          "descs": [
+            "",
+            "Restores living things from petrification"
           ]
         },
         {
@@ -15588,6 +17034,9 @@
           "lot": 10275000,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -15627,6 +17076,9 @@
           "lot": 10275070,
           "items": [
             "Petrified Something"
+          ],
+          "descs": [
+            "A petrified object that is pleasant to touch"
           ]
         },
         {
@@ -15677,6 +17129,9 @@
           "lot": 10276020,
           "items": [
             "Boltstone"
+          ],
+          "descs": [
+            "Imbues equipment with lightning"
           ]
         },
         {
@@ -15695,6 +17150,9 @@
           "lot": 10276030,
           "items": [
             "Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15713,6 +17171,9 @@
           "lot": 10276040,
           "items": [
             "Radiant Lifegem"
+          ],
+          "descs": [
+            "Restores HP"
           ]
         },
         {
@@ -15731,6 +17192,9 @@
           "lot": 10276060,
           "items": [
             "Petrified Dragon Bone"
+          ],
+          "descs": [
+            "Reinforces special equipment"
           ]
         },
         {
@@ -15749,6 +17213,9 @@
           "lot": 10276080,
           "items": [
             "Large Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15767,6 +17234,9 @@
           "lot": 10276090,
           "items": [
             "Firedrake Stone"
+          ],
+          "descs": [
+            "Imbues equipment with fire"
           ]
         },
         {
@@ -15785,6 +17255,9 @@
           "lot": 10276100,
           "items": [
             "Ring of the Evil Eye+1"
+          ],
+          "descs": [
+            "Absorb HP from each defeated foe"
           ]
         },
         {
@@ -15803,6 +17276,9 @@
           "lot": 10276110,
           "items": [
             "Dragon Charm"
+          ],
+          "descs": [
+            "Cures poison and greatly restores HP"
           ]
         },
         {
@@ -15821,6 +17297,9 @@
           "lot": 10276140,
           "items": [
             "Faintstone"
+          ],
+          "descs": [
+            "Imbues equipment with magic"
           ]
         },
         {
@@ -15840,6 +17319,10 @@
           "items": [
             "Skeptic's Spice",
             "Twilight Herb"
+          ],
+          "descs": [
+            "Lowers required faith by 1 for chosen spell",
+            "Restores spell uses"
           ]
         },
         {
@@ -15858,6 +17341,9 @@
           "lot": 10276130,
           "items": [
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -15876,6 +17362,9 @@
           "lot": 10276160,
           "items": [
             "Soul of a Great Hero"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15894,6 +17383,9 @@
           "lot": 10276000,
           "items": [
             "Soul of a Brave Warrior"
+          ],
+          "descs": [
+            "Use to acquire souls"
           ]
         },
         {
@@ -15912,6 +17404,9 @@
           "lot": 10276050,
           "items": [
             "Pharros' Lockstone"
+          ],
+          "descs": [
+            "Activates Pharros' contraption"
           ]
         },
         {
@@ -15930,6 +17425,9 @@
           "lot": 10276070,
           "items": [
             "Old Radiant Lifegem"
+          ],
+          "descs": [
+            "Greatly restores HP"
           ]
         },
         {
@@ -15948,6 +17446,9 @@
           "lot": 10276120,
           "items": [
             "Darknight Stone"
+          ],
+          "descs": [
+            "Imbues equipment with dark"
           ]
         },
         {
@@ -15966,6 +17467,9 @@
           "lot": 10276170,
           "items": [
             "Bleed Stone"
+          ],
+          "descs": [
+            "Makes equipment lacerating"
           ]
         },
         {
@@ -15984,6 +17488,9 @@
           "lot": 10276180,
           "items": [
             "Magic Stone"
+          ],
+          "descs": [
+            "Imbues weapon with magic"
           ]
         },
         {
@@ -16002,6 +17509,9 @@
           "lot": 10276190,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -16020,6 +17530,9 @@
           "lot": 10275010,
           "items": [
             "Titanite Slab"
+          ],
+          "descs": [
+            "Reinforces equipment"
           ]
         },
         {
@@ -16038,6 +17551,9 @@
           "lot": 10275020,
           "items": [
             "Twinkling Titanite"
+          ],
+          "descs": [
+            "Reinforces what cannot normally be reinforced"
           ]
         },
         {
@@ -16144,6 +17660,9 @@
           "lot": 20105030,
           "items": [
             "Fire Seed"
+          ],
+          "descs": [
+            "Strengthens pyromancy flame"
           ]
         },
         {
@@ -16183,6 +17702,9 @@
           "lot": 20105050,
           "items": [
             "Bonfire Ascetic"
+          ],
+          "descs": [
+            "Burn in bonfire to strengthen nearby foes"
           ]
         },
         {
@@ -16201,6 +17723,9 @@
           "lot": 20105010,
           "items": [
             "Petrified Something"
+          ],
+          "descs": [
+            "A petrified object that is pleasant to touch"
           ]
         },
         {
@@ -16220,6 +17745,10 @@
           "items": [
             "Simpleton's Spice",
             "Skeptic's Spice"
+          ],
+          "descs": [
+            "Lowers required intelligence by 1 for chosen spell",
+            "Lowers required faith by 1 for chosen spell"
           ]
         },
         {
@@ -16280,6 +17809,9 @@
           "lot": 20105000,
           "items": [
             "Smooth & Silky Stone"
+          ],
+          "descs": [
+            "Perfectly smooth and silky stone"
           ]
         },
         {
@@ -16743,6 +18275,9 @@
           "lot": 10295000,
           "items": [
             "Estus Flask Shard"
+          ],
+          "descs": [
+            "Grants additional Estus Flask uses"
           ]
         },
         {
@@ -16775,6 +18310,9 @@
           "lot": 10296000,
           "items": [
             "Lloyd's Talisman"
+          ],
+          "descs": [
+            "Blocks Estus recovery within a limited area"
           ]
         },
         {
@@ -16794,6 +18332,10 @@
           "items": [
             "Lifegem",
             "Homeward Bone"
+          ],
+          "descs": [
+            "Slightly restores HP",
+            "Return to last bonfire rested at"
           ]
         },
         {
@@ -16813,6 +18355,10 @@
           "items": [
             "Soul of a Proud Knight",
             "Human Effigy"
+          ],
+          "descs": [
+            "Use to acquire souls",
+            "Reverses hollowing"
           ]
         }
       ]

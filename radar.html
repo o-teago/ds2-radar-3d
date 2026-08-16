@@ -59,6 +59,22 @@
     background:#0c1a12;border:1px solid #3fd07f;color:#8affb0;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:bold}
   #camlock{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);z-index:4;display:none;
     background:#0c1424;border:1px solid #7fa7ff;color:#bcd4ff;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:bold;white-space:nowrap}
+  /* POI info panel (click a pin) — descriptions collapsed by default */
+  #poiinfo{position:fixed;z-index:50;display:none;min-width:180px;max-width:260px;
+    background:rgba(9,12,18,0.96);border:1px solid #2a3550;border-radius:10px;
+    font:13px Consolas,monospace;color:#eef3fb;box-shadow:0 6px 24px rgba(0,0,0,.55)}
+  #poiinfo .pi-h{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid #223}
+  #poiinfo .pi-t{font-weight:bold}
+  #poiinfo .pi-x{cursor:pointer;color:#9fecc8;opacity:.7;padding:0 2px;font-weight:bold}
+  #poiinfo .pi-x:hover{opacity:1}
+  #poiinfo .pi-b{padding:4px 0;max-height:240px;overflow:auto}
+  #poiinfo .pi-r{padding:5px 10px}
+  #poiinfo .pi-r.pi-tog{cursor:pointer}
+  #poiinfo .pi-r.pi-nod{opacity:.9}
+  #poiinfo .pi-tg{display:inline-block;width:14px;color:#d1ff55;font-weight:bold}
+  #poiinfo .pi-d{display:none;margin:4px 0 2px 18px;color:#9fb0c8;font-size:12px;line-height:1.35}
+  #poiinfo .pi-r.open .pi-d{display:block}
+  #poiinfo .pi-r.pi-tog:hover{background:rgba(255,255,255,.04)}
 </style>
 </head>
 <body>
@@ -235,7 +251,7 @@ async function loadPOIPack(){
     const doc=await fetch('pois/ds2_pois.json').then(r=>r.json());
     poiMarks=[];
     for(const ak in doc.areas){ for(const p of doc.areas[ak].pois){
-      if(p.coords){ poiMarks.push({id:'poi_'+p.id, area:ak, x:p.coords[0], y:p.coords[1], z:p.coords[2], cat:p.cat, label:p.name}); } } }
+      if(p.coords){ poiMarks.push({id:'poi_'+p.id, area:ak, x:p.coords[0], y:p.coords[1], z:p.coords[2], cat:p.cat, label:p.name, items:p.items, descs:p.descs}); } } }
     if(typeof renderMarkers==='function') renderMarkers();
   }catch(e){ console.log('POI pack:',e); }
 }
@@ -292,9 +308,12 @@ function renderMarkers(){
     if(hiddenCat.has(m.cat)) return;
     if(m.area && !meshes[m.area]) return;               // only show over the loaded area
     const P=xform(m.x,m.y,m.z);
-    const g=new THREE.Group(); g.position.set(P.x,P.y+2.6,P.z);
+    // boss comes from a BGM region (volume origin ~below the floor) -> float it up so it doesn't sink
+    const lift=(m.cat==='boss')?8:0;
+    const g=new THREE.Group(); g.position.set(P.x,P.y+2.6+lift,P.z);
     g.add(makeIcon(m.cat));
     if(showLabels){ const lbl=makeLabel(m.label, mkColor(m.cat)); lbl.position.y=5.2; g.add(lbl); }
+    g.userData=m;                                        // for the info-panel raycast
     scene.add(g); markerMeshes[m.id]=g;
   });
 }
@@ -375,12 +394,40 @@ document.getElementById('markerbtn').onclick=()=>{ const b=document.getElementBy
 const _rc=new THREE.Raycaster(), _m2=new THREE.Vector2(); let _downXY=null;
 function unxform(px,py,pz){ return RL.unxform(adj,px,py,pz); }   // radar_logic.js (tested)
 renderer.domElement.addEventListener('mousedown',e=>{ _downXY=[e.clientX,e.clientY]; });
+
+// POI info panel (pin name + descriptions; each description opens on a '+', collapsed by default)
+let _poiPanel=null;
+function _pesc(s){ return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function hidePOIInfo(){ if(_poiPanel) _poiPanel.style.display='none'; }
+function openPOIInfo(mark, x, y){
+  if(!_poiPanel){ _poiPanel=document.createElement('div'); _poiPanel.id='poiinfo'; document.body.appendChild(_poiPanel);
+    document.addEventListener('mousedown',ev=>{ if(_poiPanel&&_poiPanel.style.display==='block'&&!_poiPanel.contains(ev.target)) hidePOIInfo(); }, true); }
+  const info=RL.poiRows(mark), emoji=MK_EMOJI[mark.cat]||'📍';
+  let h='<div class="pi-h"><span class="pi-t">'+emoji+' '+_pesc(mark.label)+'</span><span class="pi-x">×</span></div><div class="pi-b">';
+  info.rows.forEach(r=>{
+    if(r.desc) h+='<div class="pi-r pi-tog"><span class="pi-tg">＋</span>'+_pesc(r.name)+'<div class="pi-d">'+_pesc(r.desc)+'</div></div>';
+    else h+='<div class="pi-r pi-nod">'+_pesc(r.name)+'</div>';
+  });
+  _poiPanel.innerHTML=h+'</div>';
+  _poiPanel.style.left=Math.min(x+12, innerWidth-270)+'px';
+  _poiPanel.style.top=Math.max(8, Math.min(y+12, innerHeight-170))+'px';
+  _poiPanel.style.display='block';
+  _poiPanel.querySelector('.pi-x').onclick=hidePOIInfo;
+  _poiPanel.querySelectorAll('.pi-r.pi-tog').forEach(row=>{ const tg=row.querySelector('.pi-tg');
+    row.onclick=()=>{ tg.textContent=row.classList.toggle('open')?'−':'＋'; }; });
+}
+
 renderer.domElement.addEventListener('click',e=>{
-  const ml=document.getElementById('markerlist');
-  if(!placeMode||!_downXY||!ml||ml.style.display!=='block') return;   // only with the panel open
-  if(Math.abs(e.clientX-_downXY[0])+Math.abs(e.clientY-_downXY[1])>6) return;   // it was a drag
+  if(_downXY && Math.abs(e.clientX-_downXY[0])+Math.abs(e.clientY-_downXY[1])>6) return;   // drag: ignore
   _m2.x=(e.clientX/innerWidth)*2-1; _m2.y=-(e.clientY/innerHeight)*2+1;
   _rc.setFromCamera(_m2,camera);
+  // 1) clicked a pin? open the info panel
+  const pins=_rc.intersectObjects(Object.values(markerMeshes),true);
+  if(pins.length){ let g=pins[0].object; while(g && !(g.userData&&g.userData.id)) g=g.parent;
+    if(g&&g.userData&&g.userData.id){ openPOIInfo(g.userData, e.clientX, e.clientY); return; } }
+  // 2) place mode: drop a marker on the map
+  const ml=document.getElementById('markerlist');
+  if(!placeMode||!ml||ml.style.display!=='block') return;
   const hit=_rc.intersectObjects(Object.values(meshes));
   if(hit.length){ const g=unxform(hit[0].point.x,hit[0].point.y,hit[0].point.z);
     const cat=(document.getElementById('mkcat')||{}).value||'note'; const label=prompt('Marker label:','')||'(marker)';

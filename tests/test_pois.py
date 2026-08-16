@@ -66,3 +66,21 @@ def test_no_provisional_bonfires(doc):
     prov = [p["name"] for a in doc["areas"].values() for p in a["pois"]
             if p["cat"] == "bonfire" and p.get("prov")]
     assert not prov, f"provisional bonfires remain: {prov}"
+
+
+def test_loot_has_item_descriptions(doc):
+    # regression: simpleexplanation.fmg -> descs parallel to items (expandable tooltip)
+    forest = doc["areas"]["10_10_forest_of_fallen_giants"]["pois"]
+    chlo = next(p for p in forest if p["name"] == "Chloranthy Ring" and p.get("descs"))
+    assert chlo["descs"] == ["Raises stamina recovery speed"]
+    for a in doc["areas"].values():
+        for p in a["pois"]:
+            if "descs" in p:
+                assert "items" in p and len(p["descs"]) == len(p["items"]), p["name"]
+
+
+def test_boss_throne_canonical(doc):
+    # inconsistency fix: single canonical name, no abbreviated form
+    names = [p["name"] for a in doc["areas"].values() for p in a["pois"] if p["cat"] == "boss"]
+    assert "Throne Watcher & Throne Defender" in names
+    assert "Throne Watcher & Defender" not in names

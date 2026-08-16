@@ -30,7 +30,22 @@
     return true;                                                           // still standing near where peek began
   }
 
-  const API={ xform, unxform, resolvePeek };
+  // Build the info-panel rows for a POI mark: one row per item, pairing each item
+  // name with its description (parallel `descs` array). Falls back to the mark
+  // label when the pin has no item breakdown. `hasDesc` flags rows worth an
+  // expandable (+) toggle. The UI keeps every description collapsed by default.
+  function poiRows(mark){
+    const items=(mark&&mark.items)||null, ds=(mark&&mark.descs)||[];
+    let rows;
+    if(items && items.length){
+      rows=items.map(function(nm,i){ return { name:nm, desc:(ds[i]||'').trim() }; });
+    }else{
+      rows=[{ name:(mark&&mark.label)||'', desc:'' }];
+    }
+    return { rows:rows, hasDesc:rows.some(function(r){ return !!r.desc; }) };
+  }
+
+  const API={ xform, unxform, resolvePeek, poiRows };
   if(typeof module!=='undefined' && module.exports) module.exports=API;   // node
   root.RL=API;                                                            // browser
 })(typeof globalThis!=='undefined'?globalThis:this);
