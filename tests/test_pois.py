@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+"""Integrity tests for the POI pack (pois/ds2_pois.json). Run: python -m pytest tests/ -q"""
+import json, os
+import pytest
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+POIS = os.path.join(ROOT, "pois", "ds2_pois.json")
+AREAS = os.path.join(ROOT, "maps", "areas.json")
+
+
+@pytest.fixture(scope="module")
+def doc():
+    return json.load(open(POIS, encoding="utf-8"))
+
+
+def test_top_level_shape(doc):
+    assert "meta" in doc and "areas" in doc
+    assert "cats" in doc["meta"]
+
+
+def test_poi_fields_and_coords(doc):
+    for ak, area in doc["areas"].items():
+        assert "pois" in area, ak
+        for p in area["pois"]:
+            assert {"id", "cat", "name"} <= set(p), p
+            c = p.get("coords")
+            if c is not None:
+                assert len(c) == 3 and all(isinstance(v, (int, float)) for v in c), p["id"]
+
+
+def test_no_duplicate_ids(doc):
+    ids = [p["id"] for a in doc["areas"].values() for p in a["pois"]]
+    dups = sorted({i for i in ids if ids.count(i) > 1})
+    assert not dups, f"duplicate ids: {dups}"
+
+
+def test_area_keys_exist_in_areas_json(doc):
+    keys = {x["key"] for x in json.load(open(AREAS, encoding="utf-8"))}
+    missing = [ak for ak in doc["areas"] if ak not in keys]
+    assert not missing, f"areas not in maps/areas.json: {missing}"
+
+
+def test_every_poi_cat_declared_in_meta(doc):
+    valid = set(doc["meta"]["cats"])
+    bad = sorted({p["cat"] for a in doc["areas"].values() for p in a["pois"] if p["cat"] not in valid})
+    assert not bad, f"cats used but not declared in meta.cats: {bad}"

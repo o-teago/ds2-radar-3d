@@ -169,9 +169,10 @@ addEventListener('mousemove',e=>{ if(!drag)return; const dx=e.clientX-drag[0],dy
     _up.crossVectors(_right,_fwd).normalize();
     target.addScaledVector(_right, -dx*s);
     target.addScaledVector(_up,     dy*s);
-    follow=false;
+    if((follow||camLock) && !peekUntilMove){ peekUntilMove=true; peekBase=lastGame?{x:lastGame.x,z:lastGame.z}:null; }  // pan FREE; walking resumes follow/align
   } else {                                        // ORBIT: rotate around the target
     yaw-=dx*0.005; pitch=Math.max(-1.4,Math.min(1.4,pitch+dy*0.005));
+    if((follow||camLock) && !peekUntilMove){ peekUntilMove=true; peekBase=lastGame?{x:lastGame.x,z:lastGame.z}:null; }  // orbit FREE; walking resumes
   }
 });
 renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();
@@ -187,7 +188,7 @@ scene.add(player);
 const ring=new THREE.Mesh(new THREE.RingGeometry(1.0,1.4,24), new THREE.MeshBasicMaterial({color:0xff4545,side:THREE.DoubleSide}));
 ring.rotation.x=-Math.PI/2; scene.add(ring);
 let pscale=1;   // dot size (keys [ and ]) — multiplies the distance scaling
-function setPScale(v){ pscale=Math.max(0.2,Math.min(8,v)); }
+function setPScale(v){ pscale=Math.max(0.2,Math.min(8,v)); if(typeof saveSettings==='function') saveSettings(); }
 let trailOn=true; const trailPts=[]; const trailRaw=[]; let trailLine=null;
 let follow=true, havePos=false;
 let peekUntilMove=false, peekBase=null;   // go to a marker with follow ON: peek until you walk again
@@ -204,7 +205,7 @@ let camLock=false, camOff=Math.PI, camSign=1;
 let moveHeading=null, lastHX=null, lastHZ=null;
 let lastGame=null;   // last raw game position (used by markers + TP detection)
 function camBadge(){ }   // card removed (the "Align to move" chip already shows the state)
-function toggleCamLock(){ camLock=!camLock; if(camLock){ follow=true; } camBadge(); }
+function toggleCamLock(){ camLock=!camLock; if(camLock){ follow=true; peekUntilMove=false; } camBadge(); }
 
 // ---- websocket ----
 const coordsEl=document.getElementById('coords'), metaEl=document.getElementById('meta'), stEl=document.getElementById('st');
@@ -224,9 +225,19 @@ connect();
 
 // ---- markers / points of interest ----
 const MCAT={boss:['Boss','#ff4545'], enemy:['Enemy','#ff8a8a'], item:['Item','#ffd23f'],
-  key:['Key item','#ff9f2e'], npc:['NPC','#3fd07f'], bonfire:['Bonfire','#ff6a2e'],
+  chest:['Chest','#d9a441'], fog:['Fog / Wall','#b0a8d0'], key:['Key item','#ff9f2e'], npc:['NPC','#3fd07f'], bonfire:['Bonfire','#ff6a2e'],
   shortcut:['Shortcut','#7fa7ff'], secret:['Secret','#b07fff'], note:['Note','#cfe0ff']};
 let markers=[], hiddenCat=new Set(), showLabels=true, placeMode=false; const markerMeshes={};
+let poiMarks=[];   // POIs from the pack (pois/ds2_pois.json) with coords derived from the game's MSB
+async function loadPOIPack(){
+  try{
+    const doc=await fetch('pois/ds2_pois.json').then(r=>r.json());
+    poiMarks=[];
+    for(const ak in doc.areas){ for(const p of doc.areas[ak].pois){
+      if(p.coords){ poiMarks.push({id:'poi_'+p.id, area:ak, x:p.coords[0], y:p.coords[1], z:p.coords[2], cat:p.cat, label:p.name}); } } }
+    if(typeof renderMarkers==='function') renderMarkers();
+  }catch(e){ console.log('POI pack:',e); }
+}
 function _rr(ctx,x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
 function makeLabel(text,color){
   const c=document.createElement('canvas'), ctx=c.getContext('2d');
@@ -241,7 +252,7 @@ function makeLabel(text,color){
   const s=0.06; sp.scale.set(w*s,h*s,1); sp.renderOrder=999;
   return sp;
 }
-const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍'};
+const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',chest:'🧰',fog:'🌫️',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍'};
 function makeIcon(cat){
   const c=document.createElement('canvas'); c.width=c.height=64; const x=c.getContext('2d');
   x.beginPath(); x.arc(32,32,29,0,7); x.fillStyle='rgba(9,12,18,0.88)'; x.fill();
@@ -257,11 +268,26 @@ function mkColor(cat){ return (MCAT[cat]||MCAT.note)[1]; }
 function loadMarkers(){ try{ const s=localStorage.getItem('ds2radar_markers'); if(s) markers=JSON.parse(s)||[]; }catch(e){} }
 function saveMarkers(){ try{ localStorage.setItem('ds2radar_markers',JSON.stringify(markers)); }catch(e){} }
 loadMarkers();
+// ---- remember settings (filters, labels, view, mode, dot size) ----
+let rememberOn = localStorage.getItem('ds2radar_remember')==='1';
+function _settings(){ try{ return JSON.parse(localStorage.getItem('ds2radar_settings'))||{}; }catch(e){ return {}; } }
+function saveSettings(){ if(!rememberOn) return;
+  try{ localStorage.setItem('ds2radar_settings', JSON.stringify({hiddenCat:[...hiddenCat], showLabels, pscale, follow, trailOn, camLock, worldMode})); }catch(e){}
+}
+function applySettings(){ if(!rememberOn) return; const s=_settings();
+  if(s.hiddenCat) hiddenCat=new Set(s.hiddenCat);
+  if('showLabels' in s) showLabels=s.showLabels;
+  if('pscale' in s) pscale=s.pscale;
+  if('follow' in s) follow=s.follow;
+  if('trailOn' in s) trailOn=s.trailOn;
+  if('camLock' in s) camLock=s.camLock;
+}
+applySettings();   // restore before building the UI (worldMode is applied later, async)
 function renderMarkers(){
   for(const id in markerMeshes){ const g=markerMeshes[id]; scene.remove(g);
     g.traverse(o=>{ if(o.material){ if(o.material.map) o.material.map.dispose(); o.material.dispose(); } });
     delete markerMeshes[id]; }
-  markers.forEach(m=>{
+  markers.concat(poiMarks).forEach(m=>{
     if(hiddenCat.has(m.cat)) return;
     if(m.area && !meshes[m.area]) return;               // only show over the loaded area
     const P=xform(m.x,m.y,m.z);
@@ -308,13 +334,13 @@ function buildMarkerList(){
   Object.keys(MCAT).forEach(k=>{ const on=!hiddenCat.has(k);
     const chip=document.createElement('button'); chip.className='fchip'+(on?' on':''); chip.innerHTML=`${MK_EMOJI[k]} ${MCAT[k][0]}`;
     if(on) chip.style.borderColor=mkColor(k);
-    chip.onclick=()=>{ if(hiddenCat.has(k))hiddenCat.delete(k); else hiddenCat.add(k); renderMarkers(); buildMarkerList(); };
+    chip.onclick=()=>{ if(hiddenCat.has(k))hiddenCat.delete(k); else hiddenCat.add(k); renderMarkers(); buildMarkerList(); saveSettings(); };
     filt.appendChild(chip); });
   box.appendChild(filt);
   const io=document.createElement('div'); io.className='mlio';
   const lt=document.createElement('button'); lt.className='fchip'+(showLabels?' on':''); lt.innerHTML='🏷 Labels';
   if(showLabels) lt.style.borderColor='#9fd0ff';
-  lt.onclick=()=>{ showLabels=!showLabels; renderMarkers(); buildMarkerList(); };
+  lt.onclick=()=>{ showLabels=!showLabels; renderMarkers(); buildMarkerList(); saveSettings(); };
   const bE=document.createElement('button'); bE.textContent='⭳ Export'; bE.onclick=exportMarkers;
   const bI=document.createElement('button'); bI.textContent='⭱ Import'; bI.onclick=()=>document.getElementById('mkimport').click();
   io.appendChild(lt); io.appendChild(bE); io.appendChild(bI); box.appendChild(io);
@@ -331,6 +357,7 @@ function buildMarkerList(){
     row.appendChild(ic); row.appendChild(nm); row.appendChild(del); list.appendChild(row); });
 }
 buildMarkerList();
+loadPOIPack();   // load the POI pack (bonfires, chests, bosses, fog/walls, loot) and pin it
 const _mkimp=document.getElementById('mkimport'); if(_mkimp) _mkimp.onchange=e=>{ if(e.target.files[0]) importMarkers(e.target.files[0]); };
 document.getElementById('markerbtn').onclick=()=>{ const b=document.getElementById('markerlist');
   const show=b.style.display!=='block'; b.style.display=show?'block':'none';
@@ -441,6 +468,7 @@ function setMode(m){
   }
   updateAreaNav();
   if(typeof refreshChips==='function') refreshChips();
+  saveSettings();
 }
 function updateAreaNav(){   // "Go to area" and "Areas" only in whole-world mode
   const n=document.getElementById('areanav'); if(n) n.style.display = worldMode==='inteiro'?'inline':'none';
@@ -468,6 +496,7 @@ async function initAreas(){
     let def=pendingArea && AREAS.find(a=>a.key===pendingArea) ? pendingArea
             : (AREAS.find(a=>a.key==='10_04_majula')?'10_04_majula':AREAS[0].key);
     pendingArea=null; loadArea(def);
+    if(rememberOn && _settings().worldMode==='inteiro') setMode('inteiro');   // restore saved mode
   }catch(err){ metaEl.textContent='ERROR areas.json: '+err.message; }
 }
 initAreas();
@@ -530,10 +559,8 @@ function onPos(x,y,z){
       trailLine=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x3fa7ff})); scene.add(trailLine);
     }
   }
-  if(follow){
-    if(peekUntilMove && peekBase && Math.abs(x-peekBase.x)+Math.abs(z-peekBase.z)>1.2) peekUntilMove=false;  // walked -> back to the player
-    if(!peekUntilMove) target.set(P.x,P.y,P.z);
-  }
+  if(peekUntilMove && peekBase && Math.abs(x-peekBase.x)+Math.abs(z-peekBase.z)>1.2) peekUntilMove=false;  // walked -> resume follow/align
+  if(follow && !peekUntilMove) target.set(P.x,P.y,P.z);
   pruneAreas(P.x,P.z);
   // movement direction (heading), only updates when you walk enough (stays locked while standing still)
   if(lastHX===null){ lastHX=P.x; lastHZ=P.z; }
@@ -549,7 +576,7 @@ function onPos(x,y,z){
 addEventListener('keydown',e=>{
   if(/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;   // typing in a field -> no shortcuts
   const k=e.key.toLowerCase(); const st=e.shiftKey?10:1;
-  if(k==='f'){ follow=!follow; if(follow&&havePos)target.copy(player.position); }
+  if(k==='f'){ follow=!follow; if(follow&&havePos){target.copy(player.position); peekUntilMove=false;} }
   else if(k==='t'){ trailOn=!trailOn; if(!trailOn&&trailLine){scene.remove(trailLine);trailLine=null;trailPts.length=0;} }
   else if(k==='m'){ setMode(worldMode==='dinamico'?'inteiro':'dinamico'); }
   else if(k==='n'){ toggleNoclip(); }
@@ -572,6 +599,7 @@ addEventListener('keydown',e=>{
   else if(k==='r'){ adj.ox=adj.oy=adj.oz=0; adj.fx=adj.fz=1; adj.swap=false; }
   else return;
   refreshChips();
+  saveSettings();
   e.preventDefault();
 });
 
@@ -580,17 +608,18 @@ let chipDefs=null;
 function makeChips(){
   const bar=document.getElementById('chips'); if(!bar)return;
   chipDefs=[
-    {id:'follow',label:'Follow',key:'F',on:()=>follow,act:()=>{follow=!follow; if(follow&&havePos)target.copy(player.position);}},
+    {id:'follow',label:'Follow',key:'F',on:()=>follow,act:()=>{follow=!follow; if(follow&&havePos){target.copy(player.position); peekUntilMove=false;}}},
     {id:'align',label:'Align to move',key:'L',on:()=>camLock,act:toggleCamLock},
     {id:'trail',label:'Trail',key:'T',on:()=>trailOn,act:()=>{trailOn=!trailOn; if(!trailOn&&trailLine){scene.remove(trailLine);trailLine=null;trailPts.length=0;}}},
     {id:'noclip',label:'Noclip',key:'N',on:()=>noclip,act:toggleNoclip},
     {id:'mode',label:()=>worldMode==='inteiro'?'Whole world':'Dynamic',key:'M',neutral:true,act:()=>setMode(worldMode==='dinamico'?'inteiro':'dinamico')},
     {id:'cleartrail',label:'Clear trail',action:true,act:clearTrail},
     {id:'exporttrail',label:'Export trail',action:true,act:exportTrail},
+    {id:'remember',label:'Remember',key:'',on:()=>rememberOn,act:()=>{ rememberOn=!rememberOn; localStorage.setItem('ds2radar_remember', rememberOn?'1':'0'); if(rememberOn) saveSettings(); else localStorage.removeItem('ds2radar_settings'); }},
   ];
   bar.innerHTML='';
   chipDefs.forEach(d=>{ const c=document.createElement('button'); c.className='chip'; c.id='chip_'+d.id;
-    c.onclick=()=>{ d.act(); refreshChips(); }; bar.appendChild(c); });
+    c.onclick=()=>{ d.act(); refreshChips(); saveSettings(); }; bar.appendChild(c); });
   refreshChips();
 }
 function refreshChips(){
@@ -599,7 +628,7 @@ function refreshChips(){
     const lbl=typeof d.label==='function'?d.label():d.label;
     if(d.action){ c.className='chip action'; c.innerHTML=lbl; }
     else if(d.neutral){ c.className='chip neutral'; c.innerHTML=`${lbl} <span class="k">${d.key}</span>`; }
-    else { const on=d.on(); c.className='chip '+(on?'on':'off'); c.innerHTML=`${lbl} <b>${on?'ON':'off'}</b> <span class="k">${d.key}</span>`; }
+    else { const on=d.on(); c.className='chip '+(on?'on':'off'); c.innerHTML=`${lbl} <b>${on?'ON':'off'}</b>${d.key?' <span class="k">'+d.key+'</span>':''}`; }
   });
 }
 makeChips();
@@ -610,7 +639,7 @@ let lastT=Date.now();
 function loop(){ requestAnimationFrame(loop);
   const now=Date.now(); const dt=Math.min(3,(now-lastT)/16.667); lastT=now;
   if(noclip) flyStep(dt);
-  else if(camLock){
+  else if(camLock && !peekUntilMove){
     if(moveHeading!==null){                             // align to movement
       let tgt=camSign*moveHeading+camOff;
       let d=tgt-yaw; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;  // shortest path

@@ -8,7 +8,8 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 - Automatic area switching (loads the right map as you move)
 - Full-world view (all 24 areas at once) or dynamic (nearby only)
 - Free camera: orbit, pan, zoom, and a noclip fly mode
-- **Markers / points of interest** — drop bosses, items, NPCs, bonfires and more on the 3D map, with emoji icons, floating labels, per-category filters, and export/import (JSON)
+- **Bundled interactive POI map** — ~680 points of interest (bonfires, chests, bosses with names, fog gates / illusory walls, item pickups) auto-extracted from the game's map data and pinned on the 3D world; filter by category
+- **Markers / points of interest** — drop your own bosses, items, NPCs, bonfires and more on the 3D map, with emoji icons, floating labels, per-category filters, and export/import (JSON)
 - "Align to movement" mode, per-area show/hide panel, trail export (CSV)
 
 > ⚠️ Read-only tool for personal/offline use. Don't use it online.
@@ -17,7 +18,7 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 
 ## Status & compatibility
 
-This is the **v1.01** community release. It is **fully tested and confirmed working
+This is the **v1.02** community release. It is **fully tested and confirmed working
 on Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02** (the version
 the bundled `config.ini` is validated for). On that version everything works
 perfectly.
@@ -143,8 +144,10 @@ radar.html           The 3D radar (Three.js front-end)
 three.min.js         Three.js (bundled, offline)
 config.ini           Per-version offsets (position chain + area addresses). Edit your IP here.
 maps/                Map geometry — areas.json + <area>_v.bin / _i.bin (same for all versions)
+pois/                Bundled POI pack (ds2_pois.json — bonfires, chests, bosses, fog/walls, loot)
 finder/              Generate config.ini for a new version (finder_scan.py, finder_validate.py)
 tools/               Raw building blocks (position finder, pointer scan, map dump…)
+tests/               pytest integrity tests for the POI dataset
 screenshots/         Images used in this README
 ```
 
@@ -173,6 +176,18 @@ fighting a flat image, we could drop the player straight onto the real 3D geomet
 That detour turned a simple minimap into this full 3D radar.
 
 ## Changelog
+
+### v1.02
+- **Bundled interactive POI map** — ~680 pins auto-extracted from the game's map
+  data (MSB): every bonfire, chest, boss (named), fog gate / illusory wall, and
+  item pickup, placed on the 3D world. Loaded from `pois/ds2_pois.json`; filter by
+  category in the Markers panel.
+- **"Remember" toggle** (bottom-right chip) — persists your filters, labels, mode,
+  dot size and view toggles across reloads.
+- **Sticky Follow / Align** — with Follow or Align ON you can now freely drag/orbit
+  the camera; it resumes following/aligning as soon as the player moves.
+- New marker categories: **Chest** 🧰 and **Fog / Wall** 🌫️.
+- Added `tests/` (pytest) for POI dataset integrity.
 
 ### v1.01
 - **New: Markers / points of interest.** Drop markers on the 3D map — bosses,

@@ -8,7 +8,8 @@ você sobre a geometria 3D real dos mapas, no navegador.
 - Troca de área automática (carrega o mapa certo conforme você anda)
 - Mundo inteiro (as 24 áreas de uma vez) ou dinâmico (só as próximas)
 - Câmera livre: orbitar, arrastar, zoom, e modo noclip (voar)
-- **Marcadores / pontos de interesse** — coloque chefes, itens, NPCs, fogueiras e mais no mapa 3D, com ícones emoji, labels flutuantes, filtros por categoria e exportar/importar (JSON)
+- **Mapa de POIs interativo (incluído)** — ~680 pontos de interesse (fogueiras, baús, chefes com nome, fog gates / paredes ilusórias, itens de loot) extraídos automaticamente dos dados de mapa do jogo e pinados no mundo 3D; filtre por categoria
+- **Marcadores / pontos de interesse** — coloque seus próprios chefes, itens, NPCs, fogueiras e mais no mapa 3D, com ícones emoji, labels flutuantes, filtros por categoria e exportar/importar (JSON)
 - Modo "alinhar ao movimento", painel de ligar/desligar áreas, exportar trilha (CSV)
 
 > ⚠️ Ferramenta somente-leitura, para uso pessoal/offline. Não use online.
@@ -17,7 +18,7 @@ você sobre a geometria 3D real dos mapas, no navegador.
 
 ## Status & compatibilidade
 
-Este é o release **v1.01** da comunidade. Está **totalmente testado e confirmado
+Este é o release **v1.02** da comunidade. Está **totalmente testado e confirmado
 funcionando no Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02**
 (a versão para a qual o `config.ini` incluso foi validado). Nessa versão tudo
 funciona perfeitamente.
@@ -144,8 +145,10 @@ radar.html           O radar 3D (front-end Three.js)
 three.min.js         Three.js (embutido, offline)
 config.ini           Offsets por-versão (cadeia da posição + área). Ponha seu IP aqui.
 maps/                Geometria — areas.json + <area>_v.bin / _i.bin (igual em toda versão)
+pois/                Pack de POIs incluído (ds2_pois.json — fogueiras, baús, chefes, fog/paredes, loot)
 finder/              Gera o config.ini pra outra versão (finder_scan.py, finder_validate.py)
 tools/               Peças cruas (achador de posição, pointer scan, dump de mapa…)
+tests/               Testes pytest de integridade do dataset de POIs
 screenshots/         Imagens usadas neste README
 ```
 
@@ -175,6 +178,18 @@ sobre a geometria 3D real. Esse desvio transformou um minimapa simples neste rad
 3D completo.
 
 ## Changelog
+
+### v1.02
+- **Mapa de POIs interativo (incluído)** — ~680 pinos extraídos automaticamente dos
+  dados de mapa do jogo (MSB): toda fogueira, baú, chefe (com nome), fog gate /
+  parede ilusória e item de loot, no mundo 3D. Carregado do `pois/ds2_pois.json`;
+  filtrável por categoria no painel Markers.
+- **Chip "Remember"** (canto inferior direito) — salva seus filtros, labels, modo,
+  tamanho da bola e toggles de view, e restaura ao recarregar.
+- **Follow / Align grudentos** — com Follow ou Align ligado, agora dá pra arrastar/
+  orbitar a câmera livremente; volta a seguir/alinhar assim que o player anda.
+- Categorias novas de marcador: **Chest** 🧰 e **Fog / Wall** 🌫️.
+- Adicionado `tests/` (pytest) pra integridade do dataset de POIs.
 
 ### v1.01
 - **Novo: Marcadores / pontos de interesse.** Coloque marcadores no mapa 3D —
