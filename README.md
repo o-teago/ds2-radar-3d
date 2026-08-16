@@ -8,6 +8,7 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 - Automatic area switching (loads the right map as you move)
 - Full-world view (all 24 areas at once) or dynamic (nearby only)
 - Free camera: orbit, pan, zoom, and a noclip fly mode
+- **Markers / points of interest** — drop bosses, items, NPCs, bonfires and more on the 3D map, with emoji icons, floating labels, per-category filters, and export/import (JSON)
 - "Align to movement" mode, per-area show/hide panel, trail export (CSV)
 
 > ⚠️ Read-only tool for personal/offline use. Don't use it online.
@@ -16,7 +17,7 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 
 ## Status & compatibility
 
-This is the **v1.0** community release. It is **fully tested and confirmed working
+This is the **v1.01** community release. It is **fully tested and confirmed working
 on Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02** (the version
 the bundled `config.ini` is validated for). On that version everything works
 perfectly.
@@ -126,6 +127,11 @@ If stage 2 says "0 chains tracked", just rescan (stage 1) and try again.
 - Bottom chips show state (green = ON). The **? shortcuts** button lists everything.
 - In "Whole world" mode: **Areas** panel to show/hide/isolate maps, **Clear trail**
   and **Export trail** (CSV with real in-game X,Y,Z).
+- **Markers ▾** panel: **＋ Add here** drops a marker at your live position ·
+  **📌 Place on map** then click the 3D geometry · pick a category (boss, item,
+  NPC, bonfire…) · click a category chip to show/hide it · toggle floating
+  **Labels** · **Export/Import** your markers as JSON. Markers are saved in the
+  browser (localStorage) and only draw over the area that's currently loaded.
 
 ---
 
@@ -165,6 +171,28 @@ we could find never matched the world. Then we found the **3D model of the game'
 maps** (the `dks2mv` map-viewer geometry), and everything clicked: instead of
 fighting a flat image, we could drop the player straight onto the real 3D geometry.
 That detour turned a simple minimap into this full 3D radar.
+
+## Changelog
+
+### v1.01
+- **New: Markers / points of interest.** Drop markers on the 3D map — bosses,
+  enemies, items, key items, NPCs, bonfires, shortcuts, secrets, notes — each with
+  its own emoji icon and color. Add one at your live position (**＋ Add here**) or
+  click the map (**📌 Place on map**), filter by category, toggle floating labels,
+  and export/import the whole set as JSON. Markers persist in the browser.
+- **Follow now survives a teleport.** With **Follow ON**, warping in-game (or any
+  big position jump / area change) snaps the camera back onto the player instead of
+  staying on the now-unloaded old spot. With Follow OFF the view stays put, as before.
+- **Player dot scales with zoom.** The dot and its ring now keep a roughly constant
+  on-screen size — readable up close *and* when zoomed far out (the markers already
+  did this). `[` / `]` still resize it on top of that.
+- Small UX polish: shortcuts are ignored while typing in a text field, and the
+  whole-world loader stops cleanly when you switch back to dynamic mid-load.
+
+### v1.0
+- First public release. Live position + trail, automatic area switching,
+  dynamic / whole-world modes, free camera with noclip, align-to-movement,
+  per-area panel, CSV trail export. Validated on CUSA01760, patch 1.02.
 
 ## Contributing
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>DS2 Radar 3D</title>
@@ -19,7 +19,31 @@
   #arealist .alr span{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px;color:#cfe0ff}
   #arealist button{background:#243b55;color:#cfe0ff;border:1px solid #26344a;border-radius:5px;font:inherit;font-size:11px;cursor:pointer;padding:2px 7px}
   #arealist .iso{background:#3a2b55}
-  /* chips de estado (rodape) */
+  #markerbtn{background:#182a1a;color:#a0ffb0;border:1px solid #3a7a4a;border-radius:6px;padding:5px 9px;font:inherit;cursor:pointer}
+  #markerlist{position:fixed;right:12px;top:56px;z-index:3;width:300px;background:rgba(9,12,18,.97);border:1px solid #2a3547;border-radius:10px;padding:10px;font-size:12px;display:none}
+  #markerlist .mlh{display:flex;justify-content:space-between;align-items:center;font-weight:bold;color:#a0ffb0;margin-bottom:8px;font-size:13px}
+  #markerlist .cnt{background:#1a2740;color:#bcd4ff;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:normal}
+  #markerlist .mladd{display:flex;gap:5px;margin-bottom:5px}
+  #markerlist .mladd select{background:#16202e;color:#cfe0ff;border:1px solid #26344a;border-radius:6px;padding:5px;font:inherit;font-size:11px}
+  #markerlist .mladd input{flex:1;min-width:0;background:#16202e;color:#cfe0ff;border:1px solid #26344a;border-radius:6px;padding:5px 7px;font:inherit;font-size:11px}
+  #markerlist .mladdb{display:flex;gap:5px}
+  #markerlist .mladdb button{flex:1;background:#243b55;color:#cfe0ff;border:1px solid #26344a;border-radius:6px;padding:6px;font:inherit;font-size:11px;cursor:pointer}
+  #markerlist .mladdb button.prim{background:#1f5a3a;border-color:#3a7a4a;color:#c8ffdc;font-weight:bold}
+  #markerlist .mladdb button.active{background:#3a5a3a;border-color:#3fd07f;color:#8affb0}
+  #markerlist .mlsec{display:flex;justify-content:space-between;color:#6f7f98;text-transform:uppercase;font-size:10px;letter-spacing:.5px;margin:9px 2px 6px;border-top:1px solid #1c2636;padding-top:8px}
+  #markerlist .mlfilt{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+  #markerlist .mlio{display:flex;gap:5px;margin-top:7px}
+  #markerlist .fchip{background:#141a24;border:1px solid #2a3547;color:#5f6f88;border-radius:14px;padding:4px 9px;font:inherit;font-size:11px;cursor:pointer;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #markerlist .fchip.on{color:#e8eefc}
+  #markerlist .mlio .fchip,#markerlist .mlio>button{flex:1;text-align:center;background:#243b55;color:#cfe0ff;border:1px solid #26344a;border-radius:14px;padding:5px;font:inherit;font-size:11px;cursor:pointer}
+  #markerlist .mllist{max-height:34vh;overflow:auto;margin-top:4px}
+  #markerlist .mlempty{color:#5b6b86;padding:8px 2px;font-style:italic}
+  #markerlist .mlr{display:flex;align-items:center;gap:7px;padding:4px 2px;border-bottom:1px solid #141c28}
+  #markerlist .mlr .ic{flex:0 0 auto;font-size:14px}
+  #markerlist .mlr .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cfe0ff;cursor:pointer}
+  #markerlist .mlr .nm:hover{color:#fff;text-decoration:underline}
+  #markerlist .mlr .del{background:#2a1820;border:1px solid #6a3a4a;color:#ff9090;border-radius:5px;padding:0 7px;cursor:pointer;font-size:13px}
+  /* state chips (footer) */
   #chips{position:fixed;left:12px;bottom:10px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;max-width:74vw}
   .chip{background:#0e1420;border:1px solid #2a3547;color:#8ea3c0;border-radius:16px;padding:5px 11px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap;user-select:none}
   .chip b{font-weight:bold}
@@ -47,8 +71,11 @@
   </select>
   <span id="verwrap">&nbsp; <label style="cursor:pointer"><input type="checkbox" id="addon"> additional content</label></span>
   <span id="areanav" style="display:none">&nbsp; Go to area: <select id="area"><option>loading…</option></select>
-  &nbsp; <button id="listbtn">Areas ▾</button></span></div>
+  &nbsp; <button id="listbtn">Areas ▾</button></span>
+  &nbsp; <button id="markerbtn">Markers ▾</button></div>
 <div id="arealist"></div>
+<div id="markerlist"></div>
+<input type="file" id="mkimport" accept=".json" style="display:none">
 <div id="noclip">✈ NOCLIP · WASD/QE move · Shift faster · mouse look · scroll speed · N exit</div>
 <div id="chips"></div>
 <button id="helpbtn">? shortcuts</button>
@@ -60,6 +87,8 @@
   <b>K</b> flip direction · <b>,</b> / <b>.</b> adjust offset<br>
   <div class="sec">Player / trail</div>
   <b>T</b> trail on/off · <b>[</b> / <b>]</b> dot size<br>
+  <div class="sec">Markers / map POIs</div>
+  <b>Markers ▾</b> panel · <b>+ here</b> drops a marker at your position · <b>place</b> then click the map · filter by category · export/import JSON<br>
   <div class="sec">Position calibration (advanced)</div>
   arrows: move X/Z · PgUp/PgDn: height · <b>X</b>/<b>Z</b>: flip axis · <b>V</b>: swap XZ · <b>R</b>: reset (Shift = bigger step)
 </div>
@@ -71,18 +100,18 @@ const renderer=new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(innerWidth,innerHeight); renderer.setPixelRatio(devicePixelRatio); document.body.appendChild(renderer.domElement);
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
 
-// luzes + grelha
+// lights + grid
 scene.add(new THREE.AmbientLight(0x8090b0, 0.9));
 const dl=new THREE.DirectionalLight(0xffffff, 0.8); dl.position.set(80,160,60); scene.add(dl);
 const dl2=new THREE.DirectionalLight(0x4060a0, 0.4); dl2.position.set(-80,60,-60); scene.add(dl2);
 const grid=new THREE.GridHelper(400,40,0x223047,0x141c2a); grid.position.y=-0.2; scene.add(grid);
 
-// ---- alvo de orbita + camera manual ----
+// ---- orbit target + manual camera ----
 let target=new THREE.Vector3(0,0,0);
 let dist=180, yaw=0.7, pitch=0.9;
-// noclip = camera livre voando (WASD), sem mexer no personagem
+// noclip = free flying camera (WASD), does not touch the character
 let noclip=false, lookYaw=0, lookPitch=0, flyFast=false;
-const freePos=new THREE.Vector3(); const keysDown=new Set(); let flySpeed=0.5;  // por quadro-60fps; scroll ajusta
+const freePos=new THREE.Vector3(); const keysDown=new Set(); let flySpeed=0.5;  // per 60fps-frame; scroll adjusts
 function lookDir(){ return new THREE.Vector3(Math.sin(lookYaw)*Math.cos(lookPitch), Math.sin(lookPitch), Math.cos(lookYaw)*Math.cos(lookPitch)); }
 function updateCam(){
   if(noclip){
@@ -116,8 +145,9 @@ function flyStep(dt){
   if(keysDown.has('e')||keysDown.has('space')) freePos.y+=sp;
   if(keysDown.has('q')) freePos.y-=sp;
 }
-// teclas de voo (so quando noclip): estado continuo
-addEventListener('keydown',e=>{ if(e.key==='Shift') flyFast=true; if(!noclip)return;
+// fly keys (only while noclip): continuous state
+addEventListener('keydown',e=>{ if(/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+  if(e.key==='Shift') flyFast=true; if(!noclip)return;
   let k=e.key.toLowerCase(); if(k===' ')k='space';
   if(['w','a','s','d','q','e','space'].includes(k)){ keysDown.add(k); e.preventDefault(); } });
 addEventListener('keyup',e=>{ if(e.key==='Shift') flyFast=false;
@@ -125,14 +155,14 @@ addEventListener('keyup',e=>{ if(e.key==='Shift') flyFast=false;
 updateCam();
 let drag=null, panMode=false;
 const _fwd=new THREE.Vector3(), _right=new THREE.Vector3(), _up=new THREE.Vector3();
-function isPan(e){ return e.button===2 || e.button===1 || e.shiftKey; }  // direito/meio/Shift+esq = arrastar mapa
+function isPan(e){ return e.button===2 || e.button===1 || e.shiftKey; }  // right/middle/Shift+left = pan the map
 renderer.domElement.addEventListener('mousedown',e=>{ drag=[e.clientX,e.clientY]; panMode=isPan(e); });
 addEventListener('mouseup',()=>drag=null);
 addEventListener('mousemove',e=>{ if(!drag)return; const dx=e.clientX-drag[0],dy=e.clientY-drag[1]; drag=[e.clientX,e.clientY];
-  if(noclip){                                    // NOCLIP: mouse olha em volta (FPS)
+  if(noclip){                                    // NOCLIP: mouse looks around (FPS)
     lookYaw-=dx*0.005; lookPitch=Math.max(-1.5,Math.min(1.5,lookPitch-dy*0.005)); return;
   }
-  if(panMode){                                   // PAN: move o alvo no plano da tela (arrasta o mapa)
+  if(panMode){                                   // PAN: move the target on the screen plane (drag the map)
     const s=dist*0.0016;
     camera.getWorldDirection(_fwd);
     _right.crossVectors(_fwd,camera.up).normalize();
@@ -140,38 +170,40 @@ addEventListener('mousemove',e=>{ if(!drag)return; const dx=e.clientX-drag[0],dy
     target.addScaledVector(_right, -dx*s);
     target.addScaledVector(_up,     dy*s);
     follow=false;
-  } else {                                        // ORBIT: gira em torno do alvo
+  } else {                                        // ORBIT: rotate around the target
     yaw-=dx*0.005; pitch=Math.max(-1.4,Math.min(1.4,pitch+dy*0.005));
   }
 });
 renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();
-  if(noclip){ flySpeed=Math.max(0.05,Math.min(20, flySpeed*(e.deltaY<0?1.25:0.8)));  // scroll = velocidade de voo
+  if(noclip){ flySpeed=Math.max(0.05,Math.min(20, flySpeed*(e.deltaY<0?1.25:0.8)));  // scroll = fly speed
     const b=document.getElementById('noclip'); if(b) b.textContent=`✈ NOCLIP · speed ${flySpeed.toFixed(2)} · WASD/QE · Shift faster · scroll speed · N exit`; }
   else { dist=Math.max(8,Math.min(1200,dist*(e.deltaY<0?0.9:1.1))); }
 },{passive:false});
 renderer.domElement.addEventListener('contextmenu',e=>e.preventDefault());
 
-// ---- jogador ----
-const player=new THREE.Mesh(new THREE.SphereGeometry(1.1,16,16), new THREE.MeshBasicMaterial({color:0xff4545}));
+// ---- player ----
+const player=new THREE.Mesh(new THREE.SphereGeometry(0.7,16,16), new THREE.MeshBasicMaterial({color:0xff4545}));
 scene.add(player);
-const ring=new THREE.Mesh(new THREE.RingGeometry(1.6,2.2,24), new THREE.MeshBasicMaterial({color:0xff4545,side:THREE.DoubleSide}));
+const ring=new THREE.Mesh(new THREE.RingGeometry(1.0,1.4,24), new THREE.MeshBasicMaterial({color:0xff4545,side:THREE.DoubleSide}));
 ring.rotation.x=-Math.PI/2; scene.add(ring);
-let pscale=1;   // tamanho da bola (teclas [ e ])
-function setPScale(v){ pscale=Math.max(0.2,Math.min(8,v)); player.scale.setScalar(pscale); ring.scale.setScalar(pscale); }
+let pscale=1;   // dot size (keys [ and ]) — multiplies the distance scaling
+function setPScale(v){ pscale=Math.max(0.2,Math.min(8,v)); }
 let trailOn=true; const trailPts=[]; const trailRaw=[]; let trailLine=null;
 let follow=true, havePos=false;
+let peekUntilMove=false, peekBase=null;   // go to a marker with follow ON: peek until you walk again
 function clearTrail(){ if(trailLine){scene.remove(trailLine); trailLine.geometry.dispose(); trailLine=null;} trailPts.length=0; trailRaw.length=0; }
 function exportTrail(){
   if(!trailRaw.length){ alert('Trail is empty — walk a bit first.'); return; }
   const s='area,x,y,z\n'+trailRaw.map(p=>p.join(',')).join('\n');
   const blob=new Blob([s],{type:'text/csv'});
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='ds2_trilha.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+  a.download='ds2_trail.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
 }
-// item 4: ALINHAR o radar a direcao do MOVIMENTO (calculada da posicao). Tecla L.
+// align the radar to the MOVEMENT direction (computed from position). Key L.
 let camLock=false, camOff=Math.PI, camSign=1;
 let moveHeading=null, lastHX=null, lastHZ=null;
-function camBadge(){ }   // card removido (o chip "Alinhar mov." ja mostra o estado)
+let lastGame=null;   // last raw game position (used by markers + TP detection)
+function camBadge(){ }   // card removed (the "Align to move" chip already shows the state)
 function toggleCamLock(){ camLock=!camLock; if(camLock){ follow=true; } camBadge(); }
 
 // ---- websocket ----
@@ -190,33 +222,164 @@ function connect(){
 }
 connect();
 
-// geometria vem por HTTP. DOIS MODOS (seletor no topo, ou tecla M):
-//   'dinamico' = carrega a area atual + vizinhas, descarrega ao afastar
-//   'inteiro'  = carrega TODAS as areas de uma vez (mundo inteiro)
+// ---- markers / points of interest ----
+const MCAT={boss:['Boss','#ff4545'], enemy:['Enemy','#ff8a8a'], item:['Item','#ffd23f'],
+  key:['Key item','#ff9f2e'], npc:['NPC','#3fd07f'], bonfire:['Bonfire','#ff6a2e'],
+  shortcut:['Shortcut','#7fa7ff'], secret:['Secret','#b07fff'], note:['Note','#cfe0ff']};
+let markers=[], hiddenCat=new Set(), showLabels=true, placeMode=false; const markerMeshes={};
+function _rr(ctx,x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+function makeLabel(text,color){
+  const c=document.createElement('canvas'), ctx=c.getContext('2d');
+  const font='bold 40px Consolas,monospace'; ctx.font=font;
+  const w=Math.ceil(ctx.measureText(text).width)+28, h=56;
+  c.width=w; c.height=h; ctx.font=font; ctx.textBaseline='middle';
+  ctx.fillStyle='rgba(9,12,18,0.86)'; _rr(ctx,1,1,w-2,h-2,12); ctx.fill();
+  ctx.strokeStyle=color; ctx.lineWidth=2.5; _rr(ctx,1,1,w-2,h-2,12); ctx.stroke();
+  ctx.fillStyle='#eef3fb'; ctx.fillText(text,14,h/2+2);
+  const tex=new THREE.CanvasTexture(c); tex.minFilter=THREE.LinearFilter;
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,depthTest:false,transparent:true}));
+  const s=0.06; sp.scale.set(w*s,h*s,1); sp.renderOrder=999;
+  return sp;
+}
+const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍'};
+function makeIcon(cat){
+  const c=document.createElement('canvas'); c.width=c.height=64; const x=c.getContext('2d');
+  x.beginPath(); x.arc(32,32,29,0,7); x.fillStyle='rgba(9,12,18,0.88)'; x.fill();
+  x.lineWidth=3.5; x.strokeStyle=mkColor(cat); x.stroke();
+  x.font='32px "Segoe UI Emoji",serif'; x.textAlign='center'; x.textBaseline='middle';
+  x.fillText(MK_EMOJI[cat]||'📍',32,35);
+  const tex=new THREE.CanvasTexture(c); tex.minFilter=THREE.LinearFilter;
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,depthTest:false,transparent:true}));
+  sp.scale.set(4.2,4.2,1); sp.renderOrder=998;
+  return sp;
+}
+function mkColor(cat){ return (MCAT[cat]||MCAT.note)[1]; }
+function loadMarkers(){ try{ const s=localStorage.getItem('ds2radar_markers'); if(s) markers=JSON.parse(s)||[]; }catch(e){} }
+function saveMarkers(){ try{ localStorage.setItem('ds2radar_markers',JSON.stringify(markers)); }catch(e){} }
+loadMarkers();
+function renderMarkers(){
+  for(const id in markerMeshes){ const g=markerMeshes[id]; scene.remove(g);
+    g.traverse(o=>{ if(o.material){ if(o.material.map) o.material.map.dispose(); o.material.dispose(); } });
+    delete markerMeshes[id]; }
+  markers.forEach(m=>{
+    if(hiddenCat.has(m.cat)) return;
+    if(m.area && !meshes[m.area]) return;               // only show over the loaded area
+    const P=xform(m.x,m.y,m.z);
+    const g=new THREE.Group(); g.position.set(P.x,P.y+2.6,P.z);
+    g.add(makeIcon(m.cat));
+    if(showLabels){ const lbl=makeLabel(m.label, mkColor(m.cat)); lbl.position.y=5.2; g.add(lbl); }
+    scene.add(g); markerMeshes[m.id]=g;
+  });
+}
+function newId(){ return Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36); }
+function addMarker(x,y,z,cat,label){ markers.push({id:newId(),area:activeKey||'',x,y,z,cat:cat||'note',label:label||'(marker)'});
+  saveMarkers(); renderMarkers(); buildMarkerList(); }
+function delMarker(id){ markers=markers.filter(m=>m.id!==id); saveMarkers(); renderMarkers(); buildMarkerList(); }
+function gotoMarker(m){ const P=xform(m.x,m.y,m.z); target.set(P.x,P.y,P.z); dist=Math.min(dist,90);
+  if(follow && lastGame){ peekUntilMove=true; peekBase={x:lastGame.x,z:lastGame.z}; }   // follow ON: peek; walking returns to the player
+}
+function exportMarkers(){ const blob=new Blob([JSON.stringify(markers,null,1)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='ds2_markers.json';
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href); }
+function importMarkers(file){ const r=new FileReader(); r.onload=()=>{ try{ const arr=JSON.parse(r.result);
+  if(Array.isArray(arr)){ const have=new Set(markers.map(m=>m.id));
+    arr.forEach(m=>{ if(!m.id)m.id=newId(); if(!have.has(m.id))markers.push(m); });
+    saveMarkers(); renderMarkers(); buildMarkerList(); } }catch(e){ alert('Invalid markers file'); } }; r.readAsText(file); }
+function buildMarkerList(){
+  const box=document.getElementById('markerlist'); if(!box) return; box.innerHTML='';
+  const h=document.createElement('div'); h.className='mlh';
+  h.innerHTML=`<span>📍 Markers</span><span class="cnt">${markers.length}</span>`; box.appendChild(h);
+  // --- add ---
+  const add=document.createElement('div'); add.className='mladd';
+  const sel=document.createElement('select'); sel.id='mkcat';
+  Object.keys(MCAT).forEach(k=>{ const o=document.createElement('option'); o.value=k; o.textContent=`${MK_EMOJI[k]} ${MCAT[k][0]}`; sel.appendChild(o); });
+  const inp=document.createElement('input'); inp.id='mklabel'; inp.placeholder='label…';
+  const doAdd=()=>{ if(!lastGame){alert('No position yet');return;} addMarker(lastGame.x,lastGame.y,lastGame.z,sel.value,inp.value); inp.value=''; };
+  inp.onkeydown=e=>{ if(e.key==='Enter') doAdd(); };
+  add.appendChild(sel); add.appendChild(inp); box.appendChild(add);
+  const addb=document.createElement('div'); addb.className='mladdb';
+  const bAdd=document.createElement('button'); bAdd.className='prim'; bAdd.textContent='＋ Add here'; bAdd.title='add at your live position'; bAdd.onclick=doAdd;
+  const bPlace=document.createElement('button'); bPlace.textContent='📌 Place on map'; bPlace.title='then click the 3D map'; bPlace.className=placeMode?'active':'';
+  bPlace.onclick=()=>{ placeMode=!placeMode; bPlace.className=placeMode?'active':''; };
+  addb.appendChild(bAdd); addb.appendChild(bPlace); box.appendChild(addb);
+  // --- filters ---
+  const fh=document.createElement('div'); fh.className='mlsec'; fh.innerHTML='<span>Categories (click to show/hide)</span>'; box.appendChild(fh);
+  const filt=document.createElement('div'); filt.className='mlfilt';
+  Object.keys(MCAT).forEach(k=>{ const on=!hiddenCat.has(k);
+    const chip=document.createElement('button'); chip.className='fchip'+(on?' on':''); chip.innerHTML=`${MK_EMOJI[k]} ${MCAT[k][0]}`;
+    if(on) chip.style.borderColor=mkColor(k);
+    chip.onclick=()=>{ if(hiddenCat.has(k))hiddenCat.delete(k); else hiddenCat.add(k); renderMarkers(); buildMarkerList(); };
+    filt.appendChild(chip); });
+  box.appendChild(filt);
+  const io=document.createElement('div'); io.className='mlio';
+  const lt=document.createElement('button'); lt.className='fchip'+(showLabels?' on':''); lt.innerHTML='🏷 Labels';
+  if(showLabels) lt.style.borderColor='#9fd0ff';
+  lt.onclick=()=>{ showLabels=!showLabels; renderMarkers(); buildMarkerList(); };
+  const bE=document.createElement('button'); bE.textContent='⭳ Export'; bE.onclick=exportMarkers;
+  const bI=document.createElement('button'); bI.textContent='⭱ Import'; bI.onclick=()=>document.getElementById('mkimport').click();
+  io.appendChild(lt); io.appendChild(bE); io.appendChild(bI); box.appendChild(io);
+  // --- list ---
+  const visible=markers.filter(m=>!hiddenCat.has(m.cat));
+  const lh=document.createElement('div'); lh.className='mlsec'; lh.innerHTML=`<span>List</span><span class="cnt">${visible.length}</span>`; box.appendChild(lh);
+  const list=document.createElement('div'); list.className='mllist'; box.appendChild(list);
+  if(!visible.length){ const e=document.createElement('div'); e.className='mlempty'; e.textContent='No markers yet — use “＋ Add here”.'; list.appendChild(e); return; }
+  visible.forEach(m=>{
+    const row=document.createElement('div'); row.className='mlr';
+    const ic=document.createElement('span'); ic.className='ic'; ic.textContent=MK_EMOJI[m.cat]||'📍';
+    const nm=document.createElement('span'); nm.className='nm'; nm.textContent=m.label; nm.title='go to · '+(m.area||''); nm.onclick=()=>gotoMarker(m);
+    const del=document.createElement('button'); del.className='del'; del.textContent='×'; del.title='delete'; del.onclick=()=>delMarker(m.id);
+    row.appendChild(ic); row.appendChild(nm); row.appendChild(del); list.appendChild(row); });
+}
+buildMarkerList();
+const _mkimp=document.getElementById('mkimport'); if(_mkimp) _mkimp.onchange=e=>{ if(e.target.files[0]) importMarkers(e.target.files[0]); };
+document.getElementById('markerbtn').onclick=()=>{ const b=document.getElementById('markerlist');
+  const show=b.style.display!=='block'; b.style.display=show?'block':'none';
+  if(!show){ placeMode=false; }   // closed the panel -> disable place mode
+};
+// click-to-place (raycast)
+const _rc=new THREE.Raycaster(), _m2=new THREE.Vector2(); let _downXY=null;
+function unxform(px,py,pz){ let rx=(px-adj.ox)/adj.fx, rz=(pz-adj.oz)/adj.fz, ry=py-adj.oy; if(adj.swap){const t=rx;rx=rz;rz=t;} return {x:rx,y:ry,z:rz}; }
+renderer.domElement.addEventListener('mousedown',e=>{ _downXY=[e.clientX,e.clientY]; });
+renderer.domElement.addEventListener('click',e=>{
+  const ml=document.getElementById('markerlist');
+  if(!placeMode||!_downXY||!ml||ml.style.display!=='block') return;   // only with the panel open
+  if(Math.abs(e.clientX-_downXY[0])+Math.abs(e.clientY-_downXY[1])>6) return;   // it was a drag
+  _m2.x=(e.clientX/innerWidth)*2-1; _m2.y=-(e.clientY/innerHeight)*2+1;
+  _rc.setFromCamera(_m2,camera);
+  const hit=_rc.intersectObjects(Object.values(meshes));
+  if(hit.length){ const g=unxform(hit[0].point.x,hit[0].point.y,hit[0].point.z);
+    const cat=(document.getElementById('mkcat')||{}).value||'note'; const label=prompt('Marker label:','')||'(marker)';
+    addMarker(g.x,g.y,g.z,cat,label); }
+});
+
+// geometry comes over HTTP. TWO MODES (selector at the top, or key M):
+//   'dinamico' = load current area + neighbours, unload as you walk away
+//   'inteiro'  = load ALL areas at once (whole world)
 const meshes={};                 // key -> THREE.Mesh (userData: {key,cx,cz,r,nv,nt})
 let AREAS=[], activeKey=null, pendingArea=null, areasReady=false;
 let worldMode='dinamico';
-let hidden=new Set();    // areas que o usuario escondeu (painel de areas)
-const cbById={};         // checkboxes do painel por chave
-const PRUNE_MARGIN=140;  // so descarrega area quando o player esta > raio+margem dela
+let hidden=new Set();    // areas the user hid (area panel)
+const cbById={};         // panel checkboxes by key
+const PRUNE_MARGIN=140;  // only unload an area when the player is > radius+margin away from it
 function removeMesh(k){ const m=meshes[k]; if(!m)return; scene.remove(m); m.geometry.dispose(); m.material.dispose(); delete meshes[k]; }
 function metaShow(extra){
   const loaded=Object.keys(meshes).length;
   const m=meshes[activeKey];
-  let s = m ? `${m.userData.nv.toLocaleString()} v · ${m.userData.nt.toLocaleString()} tris · centro(${m.userData.cx.toFixed(0)},0,${m.userData.cz.toFixed(0)}) r${m.userData.r.toFixed(0)}` : '';
+  let s = m ? `${m.userData.nv.toLocaleString()} v · ${m.userData.nt.toLocaleString()} tris · center(${m.userData.cx.toFixed(0)},0,${m.userData.cz.toFixed(0)}) r${m.userData.r.toFixed(0)}` : '';
   if(loaded>1) s+=`  ·  ${loaded} areas`;
   if(extra) s=extra+(s?'  ·  '+s:'');
   metaEl.textContent=s;
 }
-// AUTO-TROCA: o server manda {area:"10_04"} quando voce muda de area no jogo.
-// Cada mapa (inclusive as DUAS Majulas 10_04 e 10_29) e uma area normal e independente.
+// AUTO-SWITCH: the server sends {area:"10_04"} when you change area in the game.
+// Each map (including the TWO Majulas 10_04 and 10_29) is a normal, independent area.
 function onArea(key){
   if(!areasReady){ pendingArea=key; return; }
   if(!AREAS.find(a=>a.key===key)){ if(activeKey)metaShow('area '+key+' has no geometry (.iv)'); return; }
   if(activeKey===key) return;
+  peekUntilMove=false;              // changed area (TP) -> follow returns to the player
   loadArea(key);
 }
-async function ensureLoaded(key){        // carrega+constroi se faltar
+async function ensureLoaded(key){        // load+build if missing
   if(meshes[key]) return;
   const [vb,ib]=await Promise.all([
     fetch('maps/'+key+'_v.bin').then(r=>r.arrayBuffer()),
@@ -224,23 +387,25 @@ async function ensureLoaded(key){        // carrega+constroi se faltar
   ]);
   buildGeo(key, new Float32Array(vb), new Uint32Array(ib));
 }
-async function loadArea(key){            // define a area ATIVA (player) e garante que esta carregada
+async function loadArea(key){            // set the ACTIVE area (player) and make sure it is loaded
   const sel=document.getElementById('area'); if(sel && [...sel.options].some(o=>o.value===key)) sel.value=key;
   activeKey=key;
   try{ await ensureLoaded(key); refreshVis(); metaShow(); }
   catch(err){ metaShow('ERROR: '+err.message); }
 }
-async function loadAll(){                 // modo inteiro: carrega TODAS (escondidas ficam so invisiveis)
+async function loadAll(){                 // whole-world mode: load ALL (hidden ones just stay invisible)
   for(let i=0;i<AREAS.length;i++){
+    if(worldMode!=='inteiro') return;     // user switched mode -> abort (don't re-add areas)
     metaShow(`loading world ${i+1}/${AREAS.length}`);
     try{ await ensureLoaded(AREAS[i].key); }catch(e){}
+    if(worldMode!=='inteiro'){ if(AREAS[i].key!==activeKey) removeMesh(AREAS[i].key); return; }  // switched during load
   }
   refreshVis(); metaShow('whole world');
 }
-// ---- painel de areas: liga/desliga e isola (com persistencia) ----
-// a area ATIVA (onde o player esta) sempre aparece, mesmo se escondida no painel
+// ---- area panel: toggle and isolate (with persistence) ----
+// the ACTIVE area (where the player is) always shows, even if hidden in the panel
 function shouldShow(k){ return !hidden.has(k) || k===activeKey; }
-function refreshVis(){ for(const k in meshes) meshes[k].visible=shouldShow(k); }
+function refreshVis(){ for(const k in meshes) meshes[k].visible=shouldShow(k); if(typeof renderMarkers==='function')renderMarkers(); }
 function saveHidden(){ try{ localStorage.setItem('ds2radar_hidden', JSON.stringify([...hidden])); }catch(e){} }
 function syncList(){ for(const k in cbById) cbById[k].checked=!hidden.has(k); }
 function showAll(){ hidden.clear(); saveHidden(); refreshVis(); syncList(); metaShow(); }
@@ -270,31 +435,31 @@ function setMode(m){
   worldMode=m;
   const ms=document.getElementById('mode'); if(ms) ms.value=m;
   if(m==='inteiro'){ loadAll(); }
-  else {                                   // dinamico: descarrega TUDO menos a area ativa
+  else {                                   // dynamic: unload EVERYTHING except the active area
     for(const k in meshes){ if(k!==activeKey) removeMesh(k); }
     metaShow();
   }
   updateAreaNav();
   if(typeof refreshChips==='function') refreshChips();
 }
-function updateAreaNav(){   // "Ir p/ area" e "Areas" so no modo mundo inteiro
+function updateAreaNav(){   // "Go to area" and "Areas" only in whole-world mode
   const n=document.getElementById('areanav'); if(n) n.style.display = worldMode==='inteiro'?'inline':'none';
   if(worldMode!=='inteiro'){ const al=document.getElementById('arealist'); if(al) al.style.display='none'; }
 }
 async function initAreas(){
   try{
     AREAS=await fetch('maps/areas.json').then(r=>r.json());
-    // carrega as escolhas de visibilidade salvas; 1a vez = esconde as que sujam o god-view
+    // load saved visibility choices; first run = hide the ones that clutter the god-view
     const saved=localStorage.getItem('ds2radar_hidden');
     if(saved){ try{ hidden=new Set(JSON.parse(saved)); }catch(e){} }
     else { hidden=new Set(['10_02_things_betwixt','20_26_dragon_memories']); saveHidden(); }
-    // "Ir p/ area": TODAS as areas (inclusive as duas Majulas; id no texto pra distinguir)
+    // "Go to area": ALL areas (including both Majulas; id in the text to tell them apart)
     const sel=document.getElementById('area'); sel.innerHTML='';
     AREAS.forEach(a=>{ const o=document.createElement('option'); o.value=a.key;
       const id=a.key.split('_').slice(0,2).join('_');
       o.textContent=`${a.name} · ${id} (${Math.round(a.nt/1000)}k tris)`; sel.appendChild(o); });
     sel.onchange=()=>{ pendingArea=null; loadArea(sel.value); };
-    const wrap=document.getElementById('verwrap'); if(wrap) wrap.style.display='none';  // sem "adicional"
+    const wrap=document.getElementById('verwrap'); if(wrap) wrap.style.display='none';  // no "additional"
     buildAreaList();
     const lb=document.getElementById('listbtn'); const al=document.getElementById('arealist');
     if(lb&&al) lb.onclick=()=>{ al.style.display = al.style.display==='block'?'none':'block'; };
@@ -328,31 +493,35 @@ function buildGeo(key, verts, idx){
   metaShow();
   if(!havePos){ target.copy(bs.center); dist=bs.radius*1.6; follow=false; }
 }
-// descarrega areas de onde o player ja se afastou (so no modo dinamico)
+// unload areas the player has already walked away from (dynamic mode only)
 function pruneAreas(px,pz){
   if(worldMode!=='dinamico') return;
+  let removed=false;
   for(const k in meshes){
     if(k===activeKey) continue;
     const u=meshes[k].userData;
-    if(Math.hypot(px-u.cx, pz-u.cz) > u.r + PRUNE_MARGIN) removeMesh(k);
+    if(Math.hypot(px-u.cx, pz-u.cz) > u.r + PRUNE_MARGIN){ removeMesh(k); removed=true; }
   }
+  if(removed && typeof renderMarkers==='function') renderMarkers();
 }
 
-// ajuste memoria->modelo (offset + flip + swap XZ). Ajuste ao vivo com teclas.
-const adj={ox:0,oy:0,oz:0,fx:1,fz:1,swap:true};  // memoria<->.iv: eixos X e Z trocados
+// memory->model adjustment (offset + flip + swap XZ). Tune live with keys.
+const adj={ox:0,oy:0,oz:0,fx:1,fz:1,swap:true};  // memory<->.iv: X and Z axes swapped
 function xform(x,y,z){
   let px=x, pz=z;
   if(adj.swap){ const t=px; px=pz; pz=t; }
   return {x:px*adj.fx+adj.ox, y:y+adj.oy, z:pz*adj.fz+adj.oz};
 }
 function onPos(x,y,z){
+  if(lastGame && Math.abs(x-lastGame.x)+Math.abs(z-lastGame.z)>50) peekUntilMove=false;  // TP/big jump -> follow returns to the player
+  lastGame={x:x,y:y,z:z};
   const P=xform(x,y,z);
   player.position.set(P.x,P.y,P.z); ring.position.set(P.x,P.y+0.2,P.z); havePos=true;
   coordsEl.innerHTML=`X <b>${x.toFixed(1)}</b> Y <b>${y.toFixed(1)}</b> Z <b>${z.toFixed(1)}</b>`
     +`<br><span style="color:#8fa0bd">adjust: off(${adj.ox},${adj.oy},${adj.oz}) flip(${adj.fx},${adj.fz})${adj.swap?' SWAP':''}</span>`;
   if(trailOn){ const last=trailPts[trailPts.length-1];
     const jump=last?Math.abs(last.x-P.x)+Math.abs(last.z-P.z):0;
-    // mantem a trilha inteira (inclusive nos TPs) - util p/ speedrun: glitches, rotas, warps
+    // keep the whole trail (including TPs) - handy for speedruns: glitches, routes, warps
     if(!last||jump>0.3){ trailPts.push(new THREE.Vector3(P.x,P.y+0.3,P.z));
       trailRaw.push([(activeKey||'').split('_').slice(0,2).join('_'), x.toFixed(2), y.toFixed(2), z.toFixed(2)]);
       if(trailPts.length>20000){ trailPts.shift(); trailRaw.shift(); }
@@ -361,9 +530,12 @@ function onPos(x,y,z){
       trailLine=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x3fa7ff})); scene.add(trailLine);
     }
   }
-  if(follow) target.set(P.x,P.y,P.z);
+  if(follow){
+    if(peekUntilMove && peekBase && Math.abs(x-peekBase.x)+Math.abs(z-peekBase.z)>1.2) peekUntilMove=false;  // walked -> back to the player
+    if(!peekUntilMove) target.set(P.x,P.y,P.z);
+  }
   pruneAreas(P.x,P.z);
-  // direcao do movimento (heading), so atualiza quando anda o bastante (fica travado parado)
+  // movement direction (heading), only updates when you walk enough (stays locked while standing still)
   if(lastHX===null){ lastHX=P.x; lastHZ=P.z; }
   else { const dx=P.x-lastHX, dz=P.z-lastHZ; if(Math.hypot(dx,dz)>0.5){
     const h=Math.atan2(dx,dz);
@@ -374,7 +546,9 @@ function onPos(x,y,z){
   }}
 }
 
-addEventListener('keydown',e=>{const k=e.key.toLowerCase(); const st=e.shiftKey?10:1;
+addEventListener('keydown',e=>{
+  if(/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;   // typing in a field -> no shortcuts
+  const k=e.key.toLowerCase(); const st=e.shiftKey?10:1;
   if(k==='f'){ follow=!follow; if(follow&&havePos)target.copy(player.position); }
   else if(k==='t'){ trailOn=!trailOn; if(!trailOn&&trailLine){scene.remove(trailLine);trailLine=null;trailPts.length=0;} }
   else if(k==='m'){ setMode(worldMode==='dinamico'?'inteiro':'dinamico'); }
@@ -385,7 +559,7 @@ addEventListener('keydown',e=>{const k=e.key.toLowerCase(); const st=e.shiftKey?
   else if(e.key==='.'){ camOff+=e.shiftKey?0.5:0.05; camBadge(); }
   else if(e.key==='['){ setPScale(pscale*0.8); }
   else if(e.key===']'){ setPScale(pscale*1.25); }
-  // AJUSTE de alinhamento (setas = offset X/Z; PgUp/PgDn = Y; x/z = flip; v = swap XZ; r = reset)
+  // alignment tuning (arrows = offset X/Z; PgUp/PgDn = Y; x/z = flip; v = swap XZ; r = reset)
   else if(e.key==='ArrowLeft'){ adj.ox-=st; }
   else if(e.key==='ArrowRight'){ adj.ox+=st; }
   else if(e.key==='ArrowUp'){ adj.oz-=st; }
@@ -401,7 +575,7 @@ addEventListener('keydown',e=>{const k=e.key.toLowerCase(); const st=e.shiftKey?
   e.preventDefault();
 });
 
-// ---- chips de estado (rodape) + ajuda ----
+// ---- state chips (footer) + help ----
 let chipDefs=null;
 function makeChips(){
   const bar=document.getElementById('chips'); if(!bar)return;
@@ -437,12 +611,16 @@ function loop(){ requestAnimationFrame(loop);
   const now=Date.now(); const dt=Math.min(3,(now-lastT)/16.667); lastT=now;
   if(noclip) flyStep(dt);
   else if(camLock){
-    if(moveHeading!==null){                             // alinha ao movimento
+    if(moveHeading!==null){                             // align to movement
       let tgt=camSign*moveHeading+camOff;
-      let d=tgt-yaw; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;  // caminho curto
-      yaw+=d*Math.min(1,0.05*dt);                        // suave e independente de FPS
+      let d=tgt-yaw; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;  // shortest path
+      yaw+=d*Math.min(1,0.05*dt);                        // smooth and FPS-independent
     } }
   updateCam();
+  for(const id in markerMeshes){ const g=markerMeshes[id];   // markers ~constant size on screen
+    g.scale.setScalar(Math.max(0.35, Math.min(3, camera.position.distanceTo(g.position)*0.009))); }
+  { const s=Math.max(0.6,Math.min(6, camera.position.distanceTo(player.position)*0.018))*pscale;  // player dot ~constant size on screen
+    player.scale.setScalar(s); ring.scale.setScalar(s); }
   ring.material.opacity=0.6+0.4*Math.sin(Date.now()*0.005); ring.material.transparent=true;
   renderer.render(scene,camera); }
 loop();

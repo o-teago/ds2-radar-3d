@@ -8,6 +8,7 @@ você sobre a geometria 3D real dos mapas, no navegador.
 - Troca de área automática (carrega o mapa certo conforme você anda)
 - Mundo inteiro (as 24 áreas de uma vez) ou dinâmico (só as próximas)
 - Câmera livre: orbitar, arrastar, zoom, e modo noclip (voar)
+- **Marcadores / pontos de interesse** — coloque chefes, itens, NPCs, fogueiras e mais no mapa 3D, com ícones emoji, labels flutuantes, filtros por categoria e exportar/importar (JSON)
 - Modo "alinhar ao movimento", painel de ligar/desligar áreas, exportar trilha (CSV)
 
 > ⚠️ Ferramenta somente-leitura, para uso pessoal/offline. Não use online.
@@ -16,7 +17,7 @@ você sobre a geometria 3D real dos mapas, no navegador.
 
 ## Status & compatibilidade
 
-Este é o release **v1.0** da comunidade. Está **totalmente testado e confirmado
+Este é o release **v1.01** da comunidade. Está **totalmente testado e confirmado
 funcionando no Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02**
 (a versão para a qual o `config.ini` incluso foi validado). Nessa versão tudo
 funciona perfeitamente.
@@ -126,6 +127,12 @@ Se o estágio 2 disser "0 chains tracked", refaça o estágio 1 e tente de novo.
 - Os chips embaixo mostram o estado (verde = ON). O botão **? shortcuts** lista tudo.
 - No modo "Mundo inteiro": painel **Areas** pra ligar/desligar/isolar mapas,
   **Clear trail** e **Export trail** (CSV com X,Y,Z reais do jogo).
+- Painel **Markers ▾**: **＋ Add here** solta um marcador na sua posição ao vivo ·
+  **📌 Place on map** aí você clica na geometria 3D · escolha a categoria (chefe,
+  item, NPC, fogueira…) · clique no chip da categoria pra mostrar/esconder ·
+  ligue/desligue os **Labels** flutuantes · **Export/Import** dos marcadores em
+  JSON. Os marcadores ficam salvos no navegador (localStorage) e só aparecem sobre
+  a área que está carregada.
 
 ---
 
@@ -166,6 +173,31 @@ os mapas que a gente achava nunca alinhavam com o mundo. Aí encontramos o
 encaixou: em vez de brigar com uma imagem plana, dava pra colocar o player direto
 sobre a geometria 3D real. Esse desvio transformou um minimapa simples neste radar
 3D completo.
+
+## Changelog
+
+### v1.01
+- **Novo: Marcadores / pontos de interesse.** Coloque marcadores no mapa 3D —
+  chefes, inimigos, itens, itens-chave, NPCs, fogueiras, atalhos, segredos, notas —
+  cada um com seu ícone emoji e cor. Adicione na sua posição ao vivo (**＋ Add
+  here**) ou clicando no mapa (**📌 Place on map**), filtre por categoria,
+  ligue/desligue as labels flutuantes, e exporte/importe tudo em JSON. Os
+  marcadores ficam salvos no navegador.
+- **Follow agora sobrevive ao teleporte.** Com **Follow ON**, dar TP no jogo (ou
+  qualquer salto grande de posição / troca de área) trava a câmera de volta no
+  player, em vez de ficar no lugar antigo já descarregado. Com Follow OFF a câmera
+  fica onde você deixou, como antes.
+- **A bolinha escala com o zoom.** A bola e o anel agora mantêm um tamanho ~constante
+  na tela — dá pra ler de perto *e* com o zoom afastado (os marcadores já faziam
+  isso). `[` / `]` continuam ajustando por cima disso.
+- Polimento de UX: os atalhos são ignorados enquanto você digita num campo de
+  texto, e o carregamento do mundo inteiro para direito ao voltar pro dinâmico no
+  meio do load.
+
+### v1.0
+- Primeiro release público. Posição ao vivo + trilha, troca de área automática,
+  modos dinâmico / mundo inteiro, câmera livre com noclip, alinhar ao movimento,
+  painel por área, exportar trilha em CSV. Validado no CUSA01760, patch 1.02.
 
 ## Contribuindo
 
