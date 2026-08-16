@@ -1241,7 +1241,7 @@
         {
           "id": "ffg_bf_crestfallen",
           "cat": "bonfire",
-          "name": "The Crestfallen's Retreat",
+          "name": "Cardinal Tower",
           "desc": "Fogueira de entrada da area.",
           "coords": [
             79.84,
@@ -1249,13 +1249,12 @@
             -183.16
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ffg_bf_cardinal",
           "cat": "bonfire",
-          "name": "Cardinal Tower",
+          "name": "Soldiers' Rest",
           "desc": "Fogueira-chave; hub interno da area, varios atalhos voltam pra ca.",
           "coords": [
             11.0,
@@ -1263,13 +1262,12 @@
             -213.7
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ffg_bf_soldiers_rest",
           "cat": "bonfire",
-          "name": "Soldier's Rest",
+          "name": "The Crestfallen's Retreat",
           "desc": "Fogueira mais funda, rumo ao elevador do Last Giant.",
           "coords": [
             -113.02,
@@ -1277,8 +1275,7 @@
             -165.66
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ffg_bf_place_unbeknownst",
@@ -1291,8 +1288,7 @@
             -158.56
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ffg_boss_pursuer",
@@ -3553,7 +3549,6 @@
             -18.52,
             207.95
           ],
-          "prov": true,
           "auto": true,
           "source": "msb:o00_0100",
           "missable": false,
@@ -3568,7 +3563,6 @@
             -6.17,
             277.76
           ],
-          "prov": true,
           "auto": true,
           "source": "msb:o00_0100",
           "missable": false,
@@ -3577,13 +3571,12 @@
         {
           "id": "hbf_2",
           "cat": "bonfire",
-          "name": "Cathedral of Blue",
+          "name": "The Blue Cathedral",
           "coords": [
             -162.01,
             -1.76,
             189.6
           ],
-          "prov": true,
           "auto": true,
           "source": "msb:o00_0100",
           "missable": false,
@@ -4156,8 +4149,7 @@
             604.24
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "lb_bf_mcduff",
@@ -4171,8 +4163,7 @@
             580.28
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "lb_bf_servants",
@@ -4186,8 +4177,7 @@
             481.19
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "lb_bf_straid",
@@ -4201,13 +4191,12 @@
             551.41
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "lb_bf_tower_apart",
           "cat": "bonfire",
-          "name": "The Tower Apart",
+          "name": "Exile Holding Cells",
           "sub": "Lost Bastille",
           "desc": "Onde cai o ninho/aguia do Pursuer (rota da Bastille). Tem o Dull Ember (SotFS).",
           "coords": [
@@ -4216,8 +4205,7 @@
             535.43
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "lb_boss_ruin_sentinels",
@@ -4301,8 +4289,7 @@
             601.19
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "sr_boss_lost_sinner",
@@ -4366,8 +4353,7 @@
             664.61
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bl_boss_gargoyles",
@@ -6112,8 +6098,7 @@
             55.63
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "hc_bf_bridge",
@@ -6127,8 +6112,7 @@
             41.33
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "hc_bf_lockaway",
@@ -6142,8 +6126,7 @@
             105.37
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "hc_boss_skeleton_lords",
@@ -6207,8 +6190,7 @@
             -42.89
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "up_boss_chariot",
@@ -6874,7 +6856,7 @@
         {
           "id": "hv_bf_poison",
           "cat": "bonfire",
-          "name": "Poison Pool",
+          "name": "The Mines",
           "sub": "Harvest Valley",
           "desc": "Entre pocas de veneno.",
           "coords": [
@@ -6883,13 +6865,12 @@
             415.92
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "hv_bf_mines",
           "cat": "bonfire",
-          "name": "The Mines",
+          "name": "Lower Earthen Peak",
           "sub": "Harvest Valley",
           "desc": "Fogueira mais adiante.",
           "coords": [
@@ -6898,8 +6879,7 @@
             538.62
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "hv_item_branch",
@@ -6924,7 +6904,7 @@
         {
           "id": "ep_bf_lower",
           "cat": "bonfire",
-          "name": "Lower Earthen Peak",
+          "name": "Poison Pool",
           "sub": "Earthen Peak",
           "desc": "Fogueira de baixo.",
           "coords": [
@@ -6933,8 +6913,7 @@
             325.09
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ep_bf_central",
@@ -6948,8 +6927,7 @@
             483.34
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ep_bf_upper",
@@ -6963,8 +6941,7 @@
             524.37
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ep_boss_covetous",
@@ -7967,7 +7944,7 @@
         {
           "id": "ik_bf_threshold",
           "cat": "bonfire",
-          "name": "Threshold Bridge",
+          "name": "Ironhearth Hall",
           "sub": "Iron Keep",
           "desc": "Fogueira de entrada.",
           "coords": [
@@ -7976,13 +7953,12 @@
             652.29
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ik_bf_ironhearth",
           "cat": "bonfire",
-          "name": "Ironhearth Hall",
+          "name": "Threshold Bridge",
           "sub": "Iron Keep",
           "desc": "Liberada apos o Smelter Demon.",
           "coords": [
@@ -7991,8 +7967,7 @@
             592.98
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ik_bf_eygil",
@@ -8006,8 +7981,7 @@
             714.28
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ik_boss_smelter",
@@ -8081,8 +8055,7 @@
             649.6
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bs_boss_bell_leader",
@@ -9160,8 +9133,7 @@
             -162.02
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "sw_bf_forkroad",
@@ -9175,8 +9147,7 @@
             -181.3
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "sw_bf_ruins",
@@ -10020,8 +9991,7 @@
             -215.24
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "dp_bf_ordeal",
@@ -10034,8 +10004,7 @@
             -174.31
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "dp_boss_rat_authority",
@@ -10345,7 +10314,7 @@
         {
           "id": "bct_bf_campsite",
           "cat": "bonfire",
-          "name": "Royal Army Campsite",
+          "name": "Lower Brightstone Cove",
           "sub": "Brightstone Cove",
           "desc": "Fogueira de entrada.",
           "coords": [
@@ -10354,8 +10323,7 @@
             -8.5
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bct_bf_chapel",
@@ -10369,8 +10337,7 @@
             -148.94
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bct_bf_lower",
@@ -10384,8 +10351,7 @@
             -8.19
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bct_boss_freja",
@@ -11497,8 +11463,7 @@
             -14.37
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "gos_bf_entrance",
@@ -11511,8 +11476,7 @@
             48.93
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "gos_boss_rat_vanguard",
@@ -11794,7 +11758,7 @@
         {
           "id": "gut_bf_central",
           "cat": "bonfire",
-          "name": "Central Gutter",
+          "name": "Black Gulch Mouth",
           "sub": "The Gutter",
           "desc": "Area muito escura — aumentar brilho ajuda a nao cair.",
           "coords": [
@@ -11803,8 +11767,7 @@
             -109.58
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "gut_bf_upper",
@@ -11818,8 +11781,7 @@
             -92.4
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "gut_npc_queen",
@@ -11853,8 +11815,7 @@
             -72.67
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bg_bf_hidden",
@@ -11868,8 +11829,7 @@
             12.2
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "bg_boss_rotten",
@@ -13346,7 +13306,7 @@
         {
           "id": "sa_bf_entrance",
           "cat": "bonfire",
-          "name": "Shrine of Amana (entrada)",
+          "name": "Tower of Prayer",
           "desc": "Fogueira logo na entrada.",
           "coords": [
             -756.95,
@@ -13354,13 +13314,12 @@
             -385.27
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "sa_bf_cave",
           "cat": "bonfire",
-          "name": "Tranquil Walk (reentrancia de caverna)",
+          "name": "Crumbled Ruins",
           "desc": "Numa caverna a esquerda, mais adiante.",
           "coords": [
             -965.26,
@@ -13368,8 +13327,7 @@
             -409.89
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "sa_boss_demon_song",
@@ -14042,13 +14000,12 @@
             -372.69
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "dc_bf_under",
           "cat": "bonfire",
-          "name": "Under Castle Drangleic",
+          "name": "Central Castle Drangleic",
           "sub": "Drangleic Castle",
           "desc": "Fogueira inferior.",
           "coords": [
@@ -14057,13 +14014,12 @@
             -353.36
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "dc_bf_central",
           "cat": "bonfire",
-          "name": "Central Castle Drangleic",
+          "name": "Forgotten Chamber",
           "sub": "Drangleic Castle",
           "desc": "Fogueira central.",
           "coords": [
@@ -14072,13 +14028,12 @@
             -408.52
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "dc_bf_forgotten",
           "cat": "bonfire",
-          "name": "Forgotten Chamber",
+          "name": "Under Castle Drangleic",
           "sub": "Drangleic Castle",
           "desc": "Atras de parede ilusoria.",
           "coords": [
@@ -14087,8 +14042,7 @@
             -333.39
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "dc_boss_twin_dragonriders",
@@ -14675,7 +14629,7 @@
         {
           "id": "uc_bf_entrance",
           "cat": "bonfire",
-          "name": "Undead Crypt Entrance",
+          "name": "Undead Ditch",
           "desc": "Nao acenda tocha perto da entrada, senao irrita o Grave Warden Agdayne.",
           "coords": [
             -1053.01,
@@ -14683,8 +14637,7 @@
             -182.29
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "uc_bf_ditch",
@@ -14697,8 +14650,7 @@
             -104.29
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "uc_boss_velstadt",
@@ -15050,8 +15002,7 @@
             -272.59
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ak_bf_ritual",
@@ -15064,8 +15015,7 @@
             -270.94
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ak_boss_guardian_dragon",
@@ -15471,7 +15421,7 @@
         {
           "id": "da_bf_aerie",
           "cat": "bonfire",
-          "name": "Dragon Aerie",
+          "name": "Shrine Entrance",
           "sub": "Dragon Aerie",
           "desc": "Unica fogueira da sub-area.",
           "coords": [
@@ -15480,8 +15430,7 @@
             -451.98
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "da_item_aged_feather",
@@ -15516,7 +15465,7 @@
         {
           "id": "ds_bf_entrance",
           "cat": "bonfire",
-          "name": "Shrine Entrance",
+          "name": "Dragon Aerie",
           "sub": "Dragon Shrine",
           "desc": "Fogueira da sub-area.",
           "coords": [
@@ -15525,8 +15474,7 @@
             -291.38
           ],
           "missable": false,
-          "spoiler": false,
-          "prov": true
+          "spoiler": false
         },
         {
           "id": "ds_boss_ancient_dragon",

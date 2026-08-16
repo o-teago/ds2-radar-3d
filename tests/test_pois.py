@@ -51,3 +51,18 @@ def test_forest_loot_named_with_real_items(doc):
     names = {p["name"] for p in doc["areas"]["10_10_forest_of_fallen_giants"]["pois"]}
     assert "Chloranthy Ring" in names
     assert "Titanite Slab" in names
+
+
+def test_bonfires_canonical_names(doc):
+    # regression for the o00_0100(+0xa0)->nameId->bonfirename.fmg link + FMG-text confirmation
+    bf = lambda ak: {p["name"] for p in doc["areas"][ak]["pois"] if p["cat"] == "bonfire"}
+    assert {"Cardinal Tower", "Soldiers' Rest"} <= bf("10_10_forest_of_fallen_giants")
+    assert "McDuff's Workshop" in bf("10_16_the_lost_bastille_sinners_rise_belfry_luna")
+    assert "The Blue Cathedral" in bf("10_31_heide_s_tower_of_flame_cathedral_of_blue")
+
+
+def test_no_provisional_bonfires(doc):
+    # invariant: every placed bonfire has a canonical name (nothing left flagged prov)
+    prov = [p["name"] for a in doc["areas"].values() for p in a["pois"]
+            if p["cat"] == "bonfire" and p.get("prov")]
+    assert not prov, f"provisional bonfires remain: {prov}"
