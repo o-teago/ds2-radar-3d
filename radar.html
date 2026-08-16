@@ -93,6 +93,7 @@
   arrows: move X/Z · PgUp/PgDn: height · <b>X</b>/<b>Z</b>: flip axis · <b>V</b>: swap XZ · <b>R</b>: reset (Shift = bigger step)
 </div>
 <script src="three.min.js"></script>
+<script src="radar_logic.js"></script>
 <script>
 const scene=new THREE.Scene(); scene.background=new THREE.Color(0x080a0f);
 const camera=new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 5000);
@@ -365,7 +366,7 @@ document.getElementById('markerbtn').onclick=()=>{ const b=document.getElementBy
 };
 // click-to-place (raycast)
 const _rc=new THREE.Raycaster(), _m2=new THREE.Vector2(); let _downXY=null;
-function unxform(px,py,pz){ let rx=(px-adj.ox)/adj.fx, rz=(pz-adj.oz)/adj.fz, ry=py-adj.oy; if(adj.swap){const t=rx;rx=rz;rz=t;} return {x:rx,y:ry,z:rz}; }
+function unxform(px,py,pz){ return RL.unxform(adj,px,py,pz); }   // radar_logic.js (tested)
 renderer.domElement.addEventListener('mousedown',e=>{ _downXY=[e.clientX,e.clientY]; });
 renderer.domElement.addEventListener('click',e=>{
   const ml=document.getElementById('markerlist');
@@ -520,7 +521,7 @@ function buildGeo(key, verts, idx){
   mesh.visible=shouldShow(key);
   scene.add(mesh); meshes[key]=mesh;
   metaShow();
-  if(!havePos){ target.copy(bs.center); dist=bs.radius*1.6; follow=false; }
+  if(!havePos){ target.copy(bs.center); dist=bs.radius*1.6; follow=false; if(typeof refreshChips==='function') refreshChips(); }  // keep chip in sync
 }
 // unload areas the player has already walked away from (dynamic mode only)
 function pruneAreas(px,pz){
@@ -536,13 +537,9 @@ function pruneAreas(px,pz){
 
 // memory->model adjustment (offset + flip + swap XZ). Tune live with keys.
 const adj={ox:0,oy:0,oz:0,fx:1,fz:1,swap:true};  // memory<->.iv: X and Z axes swapped
-function xform(x,y,z){
-  let px=x, pz=z;
-  if(adj.swap){ const t=px; px=pz; pz=t; }
-  return {x:px*adj.fx+adj.ox, y:y+adj.oy, z:pz*adj.fz+adj.oz};
-}
+function xform(x,y,z){ return RL.xform(adj,x,y,z); }   // logic in radar_logic.js (tested)
 function onPos(x,y,z){
-  if(lastGame && Math.abs(x-lastGame.x)+Math.abs(z-lastGame.z)>50) peekUntilMove=false;  // TP/big jump -> follow returns to the player
+  peekUntilMove = RL.resolvePeek(peekUntilMove, peekBase, lastGame, x, z);   // TP / null base / walked -> resume follow (radar_logic.js, tested)
   lastGame={x:x,y:y,z:z};
   const P=xform(x,y,z);
   player.position.set(P.x,P.y,P.z); ring.position.set(P.x,P.y+0.2,P.z); havePos=true;
@@ -559,7 +556,6 @@ function onPos(x,y,z){
       trailLine=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x3fa7ff})); scene.add(trailLine);
     }
   }
-  if(peekUntilMove && peekBase && Math.abs(x-peekBase.x)+Math.abs(z-peekBase.z)>1.2) peekUntilMove=false;  // walked -> resume follow/align
   if(follow && !peekUntilMove) target.set(P.x,P.y,P.z);
   pruneAreas(P.x,P.z);
   // movement direction (heading), only updates when you walk enough (stays locked while standing still)

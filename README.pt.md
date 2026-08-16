@@ -18,7 +18,7 @@ você sobre a geometria 3D real dos mapas, no navegador.
 
 ## Status & compatibilidade
 
-Este é o release **v1.02** da comunidade. Está **totalmente testado e confirmado
+Este é o release **v1.03** da comunidade. Está **totalmente testado e confirmado
 funcionando no Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02**
 (a versão para a qual o `config.ini` incluso foi validado). Nessa versão tudo
 funciona perfeitamente.
@@ -142,13 +142,14 @@ Se o estágio 2 disser "0 chains tracked", refaça o estágio 1 e tente de novo.
 ```
 server.py            Backend: lê a memória do PS4, serve a página, WebSocket. Rode este.
 radar.html           O radar 3D (front-end Three.js)
+radar_logic.js       Lógica pura e testada (transform de coordenada + estado follow/peek)
 three.min.js         Three.js (embutido, offline)
 config.ini           Offsets por-versão (cadeia da posição + área). Ponha seu IP aqui.
 maps/                Geometria — areas.json + <area>_v.bin / _i.bin (igual em toda versão)
 pois/                Pack de POIs incluído (ds2_pois.json — fogueiras, baús, chefes, fog/paredes, loot)
 finder/              Gera o config.ini pra outra versão (finder_scan.py, finder_validate.py)
 tools/               Peças cruas (achador de posição, pointer scan, dump de mapa…)
-tests/               Testes pytest de integridade do dataset de POIs
+tests/               Testes — pytest (dataset de POIs) + node --test (radar_logic.js)
 screenshots/         Imagens usadas neste README
 ```
 
@@ -178,6 +179,14 @@ sobre a geometria 3D real. Esse desvio transformou um minimapa simples neste rad
 3D completo.
 
 ## Changelog
+
+### v1.03
+- **Correção:** com Follow/Align ligado, a câmera podia travar num ponto vazio
+  depois de um teleporte (ou depois de arrastar antes da 1ª posição chegar).
+  Corrigido e travado com testes de regressão.
+- **Núcleo testável:** a lógica pura do radar (transform memória↔mesh + máquina de
+  estado do follow/peek) foi pra `radar_logic.js`, coberta por testes node
+  (`node --test tests/`).
 
 ### v1.02
 - **Mapa de POIs interativo (incluído)** — ~680 pinos extraídos automaticamente dos

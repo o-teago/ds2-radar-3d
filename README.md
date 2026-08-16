@@ -18,7 +18,7 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 
 ## Status & compatibility
 
-This is the **v1.02** community release. It is **fully tested and confirmed working
+This is the **v1.03** community release. It is **fully tested and confirmed working
 on Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02** (the version
 the bundled `config.ini` is validated for). On that version everything works
 perfectly.
@@ -141,13 +141,14 @@ If stage 2 says "0 chains tracked", just rescan (stage 1) and try again.
 ```
 server.py            Backend: reads PS4 memory, serves the page, WebSocket. Run this.
 radar.html           The 3D radar (Three.js front-end)
+radar_logic.js       Pure, tested logic (coordinate transform + follow/peek state)
 three.min.js         Three.js (bundled, offline)
 config.ini           Per-version offsets (position chain + area addresses). Edit your IP here.
 maps/                Map geometry — areas.json + <area>_v.bin / _i.bin (same for all versions)
 pois/                Bundled POI pack (ds2_pois.json — bonfires, chests, bosses, fog/walls, loot)
 finder/              Generate config.ini for a new version (finder_scan.py, finder_validate.py)
 tools/               Raw building blocks (position finder, pointer scan, map dump…)
-tests/               pytest integrity tests for the POI dataset
+tests/               tests — pytest (POI dataset) + node --test (radar_logic.js)
 screenshots/         Images used in this README
 ```
 
@@ -176,6 +177,14 @@ fighting a flat image, we could drop the player straight onto the real 3D geomet
 That detour turned a simple minimap into this full 3D radar.
 
 ## Changelog
+
+### v1.03
+- **Bugfix:** with Follow/Align ON, the camera could get stuck on an empty spot
+  after a teleport (or after dragging before the first position arrived). Fixed and
+  locked with regression tests.
+- **Testable core:** the pure radar logic (memory↔mesh transform + follow/peek
+  state machine) moved to `radar_logic.js`, covered by node tests
+  (`node --test tests/`).
 
 ### v1.02
 - **Bundled interactive POI map** — ~680 pins auto-extracted from the game's map
