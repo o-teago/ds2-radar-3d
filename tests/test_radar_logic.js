@@ -64,3 +64,30 @@ test('poiRows: sem items (boss/bonfire) -> fallback no label, sem +', () => {
   assert.deepStrictEqual(r.rows, [{name:'The Pursuer', desc:''}]);
   assert.strictEqual(r.hasDesc, false);
 });
+
+const POIS=[
+  {label:'Cardinal Tower', cat:'bonfire', x:80, y:0, z:-183},
+  {label:'The Far Fire',   cat:'bonfire', x:0,  y:0, z:0},
+  {label:'Titanite Slab',  cat:'item',    x:10, y:0, z:0},
+];
+
+test('poiSearch: filtra por substring (case-insensitive)', () => {
+  const r=RL.poiSearch(POIS, 'fire', null, 50);
+  assert.deepStrictEqual(r.map(x=>x.poi.label), ['The Far Fire']);
+});
+
+test('poiSearch: com player ordena por distancia horizontal (mais perto primeiro)', () => {
+  const r=RL.poiSearch(POIS, '', {x:0, z:0}, 50);
+  assert.deepStrictEqual(r.map(x=>x.poi.label), ['The Far Fire','Titanite Slab','Cardinal Tower']);
+  assert.strictEqual(Math.round(r[1].dist), 10);   // Titanite Slab a 10 de distancia
+});
+
+test('poiSearch: sem player ordena alfabetico e dist=null', () => {
+  const r=RL.poiSearch(POIS, '', null, 50);
+  assert.deepStrictEqual(r.map(x=>x.poi.label), ['Cardinal Tower','The Far Fire','Titanite Slab']);
+  assert.strictEqual(r[0].dist, null);
+});
+
+test('poiSearch: respeita o limite', () => {
+  assert.strictEqual(RL.poiSearch(POIS, '', {x:0,z:0}, 2).length, 2);
+});

@@ -45,7 +45,25 @@
     return { rows:rows, hasDesc:rows.some(function(r){ return !!r.desc; }) };
   }
 
-  const API={ xform, unxform, resolvePeek, poiRows };
+  // Search + rank POIs for the finder panel. Filters by name substring (case-insensitive),
+  // then — when the live player position is known — sorts by horizontal distance (nearest
+  // first, i.e. "near me"); otherwise alphabetical. Returns [{poi, dist}] capped at `limit`.
+  function poiSearch(pois, query, player, limit){
+    const q=(query||'').trim().toLowerCase();
+    const out=[];
+    for(let i=0;i<pois.length;i++){
+      const p=pois[i];
+      if(q && (p.label||'').toLowerCase().indexOf(q)<0) continue;
+      let dist=null;
+      if(player){ const dx=p.x-player.x, dz=p.z-player.z; dist=Math.sqrt(dx*dx+dz*dz); }
+      out.push({poi:p, dist:dist});
+    }
+    if(player) out.sort(function(a,b){ return a.dist-b.dist; });
+    else out.sort(function(a,b){ return (a.poi.label||'').localeCompare(b.poi.label||''); });
+    return (limit && out.length>limit) ? out.slice(0,limit) : out;
+  }
+
+  const API={ xform, unxform, resolvePeek, poiRows, poiSearch };
   if(typeof module!=='undefined' && module.exports) module.exports=API;   // node
   root.RL=API;                                                            // browser
 })(typeof globalThis!=='undefined'?globalThis:this);

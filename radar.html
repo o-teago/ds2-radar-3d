@@ -43,6 +43,19 @@
   #markerlist .mlr .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cfe0ff;cursor:pointer}
   #markerlist .mlr .nm:hover{color:#fff;text-decoration:underline}
   #markerlist .mlr .del{background:#2a1820;border:1px solid #6a3a4a;color:#ff9090;border-radius:5px;padding:0 7px;cursor:pointer;font-size:13px}
+  /* Find POI panel (search by name + distance from the player) */
+  #findbtn{background:#1a2230;color:#bcd4ff;border:1px solid #33507a;border-radius:6px;padding:5px 9px;font:inherit;cursor:pointer}
+  #poilist{position:fixed;right:12px;top:56px;z-index:3;width:300px;background:rgba(9,12,18,.97);border:1px solid #2a3547;border-radius:10px;padding:10px;font-size:12px;display:none}
+  #poilist .mlh{display:flex;justify-content:space-between;align-items:center;font-weight:bold;color:#bcd4ff;margin-bottom:8px;font-size:13px}
+  #poilist .cnt{background:#1a2740;color:#bcd4ff;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:normal}
+  #poilist #poiq{width:100%;box-sizing:border-box;background:#16202e;color:#cfe0ff;border:1px solid #26344a;border-radius:6px;padding:6px 8px;font:inherit;font-size:12px;margin-bottom:6px}
+  #poilist .mllist{max-height:60vh;overflow:auto}
+  #poilist .mlempty{color:#5b6b86;padding:8px 2px;font-style:italic}
+  #poilist .mlr{display:flex;align-items:center;gap:7px;padding:4px 2px;border-bottom:1px solid #141c28}
+  #poilist .mlr .ic{flex:0 0 auto;font-size:14px}
+  #poilist .mlr .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cfe0ff;cursor:pointer}
+  #poilist .mlr .nm:hover{color:#fff;text-decoration:underline}
+  #poilist .mlr .dist{flex:0 0 auto;color:#8ea3c0;font-size:11px}
   /* state chips (footer) */
   #chips{position:fixed;left:12px;bottom:10px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;max-width:74vw}
   .chip{background:#0e1420;border:1px solid #2a3547;color:#8ea3c0;border-radius:16px;padding:5px 11px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap;user-select:none}
@@ -88,9 +101,11 @@
   <span id="verwrap">&nbsp; <label style="cursor:pointer"><input type="checkbox" id="addon"> additional content</label></span>
   <span id="areanav" style="display:none">&nbsp; Go to area: <select id="area"><option>loading…</option></select>
   &nbsp; <button id="listbtn">Areas ▾</button></span>
+  &nbsp; <button id="findbtn">🔎 Find ▾</button>
   &nbsp; <button id="markerbtn">Markers ▾</button></div>
 <div id="arealist"></div>
 <div id="markerlist"></div>
+<div id="poilist"></div>
 <input type="file" id="mkimport" accept=".json" style="display:none">
 <div id="noclip">✈ NOCLIP · WASD/QE move · Shift faster · mouse look · scroll speed · N exit</div>
 <div id="chips"></div>
@@ -388,7 +403,43 @@ loadPOIPack();   // load the POI pack (bonfires, chests, bosses, fog/walls, loot
 const _mkimp=document.getElementById('mkimport'); if(_mkimp) _mkimp.onchange=e=>{ if(e.target.files[0]) importMarkers(e.target.files[0]); };
 document.getElementById('markerbtn').onclick=()=>{ const b=document.getElementById('markerlist');
   const show=b.style.display!=='block'; b.style.display=show?'block':'none';
+  if(show){ closePOIPanel(); }
   if(!show){ placeMode=false; }   // closed the panel -> disable place mode
+};
+
+// ---- Find POI: search by name + distance from the player (near-me) ----
+let _poiTimer=null;
+function closePOIPanel(){ const b=document.getElementById('poilist'); if(b)b.style.display='none';
+  if(_poiTimer){ clearInterval(_poiTimer); _poiTimer=null; } }
+function renderPOIResults(){
+  const qEl=document.getElementById('poiq'); if(!qEl) return;
+  const src=poiMarks.filter(m=>!hiddenCat.has(m.cat));
+  const res=RL.poiSearch(src, qEl.value, lastGame?{x:lastGame.x,z:lastGame.z}:null, 80);
+  document.getElementById('poicnt').textContent=res.length;
+  const list=document.getElementById('poires');
+  if(!res.length){ list.innerHTML='<div class="mlempty">no POI matches</div>'; return; }
+  list.innerHTML='';
+  res.forEach(r=>{ const p=r.poi;
+    const row=document.createElement('div'); row.className='mlr';
+    const ic=document.createElement('span'); ic.className='ic'; ic.textContent=MK_EMOJI[p.cat]||'📍';
+    const nm=document.createElement('span'); nm.className='nm'; nm.textContent=p.label; nm.title='go to · '+(p.area||''); nm.onclick=()=>gotoMarker(p);
+    row.appendChild(ic); row.appendChild(nm);
+    if(r.dist!=null){ const d=document.createElement('span'); d.className='dist'; d.textContent=Math.round(r.dist)+'m'; row.appendChild(d); }
+    list.appendChild(row);
+  });
+}
+document.getElementById('findbtn').onclick=()=>{ const b=document.getElementById('poilist');
+  const show=b.style.display!=='block';
+  if(show){
+    b.innerHTML='<div class="mlh"><span>🔎 Find POI</span><span class="cnt" id="poicnt">0</span></div>'
+      +'<input id="poiq" placeholder="search name… (bonfire, item, NPC, boss)" autocomplete="off">'
+      +'<div class="mllist" id="poires"></div>';
+    document.getElementById('poiq').oninput=renderPOIResults;
+    b.style.display='block';
+    const m=document.getElementById('markerlist'); if(m){ m.style.display='none'; placeMode=false; }
+    renderPOIResults(); document.getElementById('poiq').focus();
+    _poiTimer=setInterval(renderPOIResults, 700);   // live distance refresh
+  } else { closePOIPanel(); }
 };
 // click-to-place (raycast)
 const _rc=new THREE.Raycaster(), _m2=new THREE.Vector2(); let _downXY=null;

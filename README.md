@@ -8,7 +8,8 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 - Automatic area switching (loads the right map as you move)
 - Full-world view (all 24 areas at once) or dynamic (nearby only)
 - Free camera: orbit, pan, zoom, and a noclip fly mode
-- **Bundled interactive POI map** — ~680 points of interest (bonfires, chests, bosses with names, fog gates / illusory walls, item pickups) auto-extracted from the game's map data and pinned on the 3D world; filter by category
+- **Bundled interactive POI map** — ~1,140 points of interest auto-extracted from the game's own data and pinned on the 3D world: bonfires (canonical names), chests and loot **showing the real item name** (click a pin to expand item descriptions), key items, 125 **NPCs** (game names + positions), bosses with names, fog gates and illusory walls, ladders/levers and more; filter by category
+- **Find POI** — search any pin by name (bonfire, item, NPC, boss…) and fly the camera to it; results are sorted by live distance from your player ("near me")
 - **Markers / points of interest** — drop your own bosses, items, NPCs, bonfires and more on the 3D map, with emoji icons, floating labels, per-category filters, and export/import (JSON)
 - "Align to movement" mode, per-area show/hide panel, trail export (CSV)
 
@@ -18,7 +19,7 @@ and shows it on the real 3D geometry of the game's maps, in your browser.
 
 ## Status & compatibility
 
-This is the **v1.03** community release. It is **fully tested and confirmed working
+This is the **v1.04** community release. It is **fully tested and confirmed working
 on Dark Souls II: Scholar of the First Sin — CUSA01760, patch 1.02** (the version
 the bundled `config.ini` is validated for). On that version everything works
 perfectly.
@@ -36,6 +37,9 @@ works, please share your `config.ini` (with the CUSA + patch) so others benefit.
 ---
 
 ## Screenshots
+
+![Named POIs on the Lost Bastille](screenshots/radar-pois.png)
+*The bundled POI map — chests and loot show the real item names, NPCs, bosses and more, pinned on the 3D world (Lost Bastille shown).*
 
 ![Majula in 3D with the live player position](screenshots/radar-majula.png)
 *Live position (red dot) and trail on Majula's real 3D geometry.*
@@ -177,6 +181,18 @@ fighting a flat image, we could drop the player straight onto the real 3D geomet
 That detour turned a simple minimap into this full 3D radar.
 
 ## Changelog
+
+### v1.04
+- **Named loot & item descriptions** — every chest / corpse / lootspot now shows the
+  real item name (linked from the game's item-lot data); click a pin to expand each
+  item's description. Key items get their own category.
+- **125 NPCs from the game's own data** — merchants, questline and covenant NPCs, with
+  canonical names (`npcmenu.fmg`) and precise positions, recovered by reconciling the
+  generator params against the map coordinate space.
+- **Canonical bonfire names** and a boss pass — deduped, positions on the arena floor,
+  proper names (e.g. *Throne Watcher & Throne Defender*).
+- **Find POI** — search any pin by name and fly to it; sorted by live distance.
+- More `radar_logic.js` coverage (POI rows + search).
 
 ### v1.03
 - **Bugfix:** with Follow/Align ON, the camera could get stuck on an empty spot
