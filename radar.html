@@ -226,7 +226,7 @@ connect();
 
 // ---- markers / points of interest ----
 const MCAT={boss:['Boss','#ff4545'], enemy:['Enemy','#ff8a8a'], item:['Item','#ffd23f'],
-  chest:['Chest','#d9a441'], fog:['Fog / Wall','#b0a8d0'], key:['Key item','#ff9f2e'], npc:['NPC','#3fd07f'], bonfire:['Bonfire','#ff6a2e'],
+  chest:['Chest','#d9a441'], fog:['Fog gate','#b0a8d0'], wall:['Illusory wall','#c08a5a'], key:['Key item','#ff9f2e'], npc:['NPC','#3fd07f'], bonfire:['Bonfire','#ff6a2e'],
   shortcut:['Shortcut','#7fa7ff'], secret:['Secret','#b07fff'], note:['Note','#cfe0ff']};
 let markers=[], hiddenCat=new Set(), showLabels=true, placeMode=false; const markerMeshes={};
 let poiMarks=[];   // POIs from the pack (pois/ds2_pois.json) with coords derived from the game's MSB
@@ -253,7 +253,7 @@ function makeLabel(text,color){
   const s=0.06; sp.scale.set(w*s,h*s,1); sp.renderOrder=999;
   return sp;
 }
-const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',chest:'🧰',fog:'🌫️',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍'};
+const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',chest:'🧰',fog:'🌫️',wall:'🧱',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍'};
 function makeIcon(cat){
   const c=document.createElement('canvas'); c.width=c.height=64; const x=c.getContext('2d');
   x.beginPath(); x.arc(32,32,29,0,7); x.fillStyle='rgba(9,12,18,0.88)'; x.fill();
@@ -330,7 +330,14 @@ function buildMarkerList(){
   bPlace.onclick=()=>{ placeMode=!placeMode; bPlace.className=placeMode?'active':''; };
   addb.appendChild(bAdd); addb.appendChild(bPlace); box.appendChild(addb);
   // --- filters ---
-  const fh=document.createElement('div'); fh.className='mlsec'; fh.innerHTML='<span>Categories (click to show/hide)</span>'; box.appendChild(fh);
+  const fh=document.createElement('div'); fh.className='mlsec'; fh.innerHTML='<span>Categories</span>';
+  const fbtns=document.createElement('span'); fbtns.style.cssText='display:flex;gap:4px';
+  const _fb='background:#243b55;color:#cfe0ff;border:1px solid #26344a;border-radius:5px;font:inherit;font-size:10px;cursor:pointer;padding:1px 6px';
+  const bAll=document.createElement('button'); bAll.textContent='✓ all'; bAll.style.cssText=_fb;
+  bAll.onclick=()=>{ hiddenCat.clear(); renderMarkers(); buildMarkerList(); saveSettings(); };
+  const bNone=document.createElement('button'); bNone.textContent='✗ none'; bNone.style.cssText=_fb;
+  bNone.onclick=()=>{ Object.keys(MCAT).forEach(k=>hiddenCat.add(k)); renderMarkers(); buildMarkerList(); saveSettings(); };
+  fbtns.appendChild(bAll); fbtns.appendChild(bNone); fh.appendChild(fbtns); box.appendChild(fh);
   const filt=document.createElement('div'); filt.className='mlfilt';
   Object.keys(MCAT).forEach(k=>{ const on=!hiddenCat.has(k);
     const chip=document.createElement('button'); chip.className='fchip'+(on?' on':''); chip.innerHTML=`${MK_EMOJI[k]} ${MCAT[k][0]}`;

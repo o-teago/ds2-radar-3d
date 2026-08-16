@@ -44,3 +44,10 @@ def test_every_poi_cat_declared_in_meta(doc):
     valid = set(doc["meta"]["cats"])
     bad = sorted({p["cat"] for a in doc["areas"].values() for p in a["pois"] if p["cat"] not in valid})
     assert not bad, f"cats used but not declared in meta.cats: {bad}"
+
+
+def test_forest_loot_named_with_real_items(doc):
+    # regression for the object(+0xa0)->ItemLotParam2->items_db pipeline: known Forest chests
+    names = {p["name"] for p in doc["areas"]["10_10_forest_of_fallen_giants"]["pois"]}
+    assert "Chloranthy Ring" in names
+    assert "Titanite Slab" in names
