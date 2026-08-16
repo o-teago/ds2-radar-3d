@@ -227,7 +227,7 @@ connect();
 // ---- markers / points of interest ----
 const MCAT={boss:['Boss','#ff4545'], enemy:['Enemy','#ff8a8a'], item:['Item','#ffd23f'],
   chest:['Chest','#d9a441'], fog:['Fog gate','#b0a8d0'], wall:['Illusory wall','#c08a5a'], key:['Key item','#ff9f2e'], npc:['NPC','#3fd07f'], bonfire:['Bonfire','#ff6a2e'],
-  shortcut:['Shortcut','#7fa7ff'], secret:['Secret','#b07fff'], note:['Note','#cfe0ff']};
+  shortcut:['Shortcut','#7fa7ff'], secret:['Secret','#b07fff'], note:['Note','#cfe0ff'], interactive:['Interactive','#8fbf6f']};
 let markers=[], hiddenCat=new Set(), showLabels=true, placeMode=false; const markerMeshes={};
 let poiMarks=[];   // POIs from the pack (pois/ds2_pois.json) with coords derived from the game's MSB
 async function loadPOIPack(){
@@ -253,7 +253,7 @@ function makeLabel(text,color){
   const s=0.06; sp.scale.set(w*s,h*s,1); sp.renderOrder=999;
   return sp;
 }
-const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',chest:'🧰',fog:'🌫️',wall:'🧱',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍'};
+const MK_EMOJI={boss:'💀',enemy:'⚔️',item:'💰',chest:'🧰',fog:'🌫️',wall:'🧱',key:'🗝️',npc:'🗣️',bonfire:'🔥',shortcut:'🪜',secret:'❓',note:'📍',interactive:'⚙️'};
 function makeIcon(cat){
   const c=document.createElement('canvas'); c.width=c.height=64; const x=c.getContext('2d');
   x.beginPath(); x.arc(32,32,29,0,7); x.fillStyle='rgba(9,12,18,0.88)'; x.fill();
