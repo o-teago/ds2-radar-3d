@@ -50,6 +50,7 @@ clients = set()
 last_area = None
 eboot_base = 0x400000
 AREA_ADDRS = []
+PS4 = None; PID = None      # conexao atual (a auto-reconexao atualiza)
 
 # map name prefix "MM_NN" -> full areas.json key (e.g. "10_04" -> "10_04_majula")
 def load_area_map():
@@ -129,10 +130,11 @@ async def read_area(ps4,pid):
     key=AREA_MAP.get(pre)                         # chave completa (ou None se sem geometria)
     return pre, key, f"{pre} -> {key or 'SEM GEOMETRIA'} | "+dbg
 
-async def reader(ps4, pid):
+async def reader():
     global last_area
-    tick=0; pend=None; pend_n=0; base=None
+    tick=0; pend=None; pend_n=0; base=None; errs=0
     while True:
+        ps4, pid = PS4, PID                    # usa a conexao atual (pode ter reconectado)
         try:
             # resolve a cadeia estatica -> bloco de posicao (segue realocacoes; permanente)
             nb=await resolve_base(ps4,pid)
@@ -157,29 +159,45 @@ async def reader(ps4, pid):
                         last_area=ar; pend=None; pend_n=0
                         print("AREA CHANGE ->",ar)
                         await broadcast(json.dumps({"area":ar}))
+            errs=0                               # leitura ok -> zera o contador de falhas
         except Exception as e:
-            print("read err:", e)
+            errs+=1; print("read err:", e)
+            if errs>=3:                          # conexao ps4debug caiu -> reconecta (nao congela)
+                print("conexao ps4debug caiu; reconectando...")
+                if await connect(): errs=0; base=None
+                else: await asyncio.sleep(2)
         tick+=1
         await asyncio.sleep(1.0/HZ)
 
+async def connect():
+    """(Re)estabelece a conexao ps4debug: acha o pid, resolve eboot_base. Retorna ps4 ou None.
+    Usado no start E na auto-reconexao (ps4debug atende 1 cliente; outra ferramenta que conecte derruba a nossa)."""
+    global eboot_base, AREA_ADDRS, PS4, PID
+    try:
+        ps4=ps4debug.PS4Debug(PS4_IP)
+        if asyncio.iscoroutine(ps4): ps4=await ps4
+        procs=await ps4.get_processes()
+        pid=next((getattr(p,"pid",None) for p in procs if "eboot" in str(getattr(p,"name",""))),None)
+        if pid is None: print("DS2 process not found"); return None
+        maps=await ps4.get_process_maps(pid)
+        exe=[m.start for m in maps if 'executable' in str(getattr(m,'name','') or '')]
+        eboot_base=min(exe) if exe else 0x400000
+        AREA_ADDRS=[eboot_base+o for o in AREA_OFFS]
+        PS4=ps4; PID=pid
+        b=await resolve_base(ps4,pid)
+        print(f"ps4debug OK — pid={pid} eboot_base=0x{eboot_base:X}" + (f" position->0x{b:X}" if b else " (position not resolved yet)"))
+        return ps4
+    except Exception as e:
+        print("connect failed:", repr(e)); return None
+
 async def main():
-    global eboot_base, AREA_ADDRS
     start_http()
-    ps4=ps4debug.PS4Debug(PS4_IP)
-    if asyncio.iscoroutine(ps4): ps4=await ps4
-    procs=await ps4.get_processes()
-    pid=next((getattr(p,"pid",None) for p in procs if "eboot" in str(getattr(p,"name",""))),None)
-    if pid is None: print("DS2 process not found"); return
-    # real eboot_base (module 'executable') -> position and area become permanent
-    maps=await ps4.get_process_maps(pid)
-    exe=[m.start for m in maps if 'executable' in str(getattr(m,'name','') or '')]
-    eboot_base=min(exe) if exe else 0x400000
-    AREA_ADDRS=[eboot_base+o for o in AREA_OFFS]
-    b=await resolve_base(ps4,pid)
-    print(f"DS2 pid={pid}  eboot_base=0x{eboot_base:X}  position->0x{b:X}" if b else f"DS2 pid={pid}  eboot_base=0x{eboot_base:X}  (position not resolved yet)")
+    ps4=await connect()
+    while ps4 is None:
+        print("retry connect em 3s..."); await asyncio.sleep(3); ps4=await connect()
     print(f">>> OPEN IN BROWSER:  http://localhost:{HTTP_PORT}/radar.html  <<<")
     async with websockets.serve(handler,"localhost",WS_PORT):
-        await reader(ps4,pid)
+        await reader()
 
 if __name__=="__main__":
     asyncio.run(main())
